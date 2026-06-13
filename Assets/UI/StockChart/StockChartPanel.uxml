@@ -1,0 +1,37 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/StockChart/StockChartPanel.uss?fileID=7433441132597879392&amp;guid=695598e442361e2489b2786b29453310&amp;type=3#StockChartPanel"/>
+    <ui:VisualElement name="top-panel" class="top-panel">
+        <ui:VisualElement name="avatar-area" class="avatar-area" style="width: 287px;">
+            <ui:VisualElement name="avatar-portrait" class="avatar-portrait"/>
+            <ui:VisualElement name="emote-buttons" class="emote-buttons">
+                <ui:VisualElement class="emote-btn"/>
+                <ui:VisualElement class="emote-btn"/>
+                <ui:VisualElement class="emote-btn"/>
+                <ui:VisualElement class="emote-btn"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="chart-section" class="chart-section">
+            <ui:VisualElement name="stock-info-panel" class="stock-info-panel">
+                <ui:VisualElement class="stock-info-row">
+                    <ui:VisualElement class="stock-color-dot stock-color-a"/>
+                    <ui:Label name="stock-name-0" text="A" class="stock-name"/>
+                    <ui:Label name="stock-trend-0" text="" class="stock-trend"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="stock-info-row">
+                    <ui:VisualElement class="stock-color-dot stock-color-b"/>
+                    <ui:Label name="stock-name-1" text="B" class="stock-name"/>
+                    <ui:Label name="stock-trend-1" text="" class="stock-trend"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="stock-info-row">
+                    <ui:VisualElement class="stock-color-dot stock-color-c"/>
+                    <ui:Label name="stock-name-2" text="C" class="stock-name"/>
+                    <ui:Label name="stock-trend-2" text="" class="stock-trend"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="chart-area" class="chart-area">
+                <ui:VisualElement name="event-labels" class="event-labels"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Label name="timer-label" text="09:00" class="timer-label"/>
+    </ui:VisualElement>
+</ui:UXML>
