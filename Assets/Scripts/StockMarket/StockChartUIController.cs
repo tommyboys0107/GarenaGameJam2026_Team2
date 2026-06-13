@@ -227,33 +227,15 @@ private void UpdateEventLabels()
 
         private void ApplyEffectsAndMark(string eventName, StockEffect[] effects)
         {
-            if (effects == null) return;
+            if (effects == null || _marketManager == null) return;
 
             foreach (var effect in effects)
             {
-                for (int i = 0; i < _marketManager.Stocks.Length; i++)
-                {
-                    string code = i switch
-                    {
-                        0 => "NARC",
-                        1 => "LOCK",
-                        2 => "BYTE",
-                        _ => ""
-                    };
-
-                    if (effect.stockCode == code)
-                    {
-                        _marketManager.Stocks[i].CurrentPrice = Mathf.Clamp(
-                            _marketManager.Stocks[i].CurrentPrice + effect.value,
-                            _marketManager.MinPrice,
-                            _marketManager.MaxPrice
-                        );
-                    }
-                }
+                _marketManager.ApplyStockEffect(effect.stockCode, effect.value);
             }
 
-            // 在線圖上標記事件（顯示選項/事件名稱）
-            _marketManager.TriggerEvent(eventName, -1, _marketManager.Stocks[0].CurrentTrend);
+            // 在線圖上標記事件
+            _marketManager.TriggerEvent(eventName, -1, TrendLevel.Flat);
             RefreshChart();
         }
     }

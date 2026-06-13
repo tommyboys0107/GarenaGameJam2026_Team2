@@ -5,7 +5,6 @@ namespace BlackMarketTrader
 {
     /// <summary>
     /// 測試用腳本，按 Play 後自動啟動股市，並可用鍵盤觸發事件
-    /// 使用 New Input System
     /// </summary>
     public class StockMarketTestRunner : MonoBehaviour
     {
@@ -27,40 +26,48 @@ namespace BlackMarketTrader
             var keyboard = Keyboard.current;
             if (keyboard == null) return;
 
-            // 按 1: 觸發事件，商品A 大漲
+            // 按 1: NARC +30
             if (keyboard.digit1Key.wasPressedThisFrame)
             {
-                _marketManager.TriggerEvent("政策利多", 0, TrendLevel.BigRise);
-                Debug.Log("[StockMarket] Event: 政策利多 -> A 大漲");
+                _marketManager.ApplyStockEffect("NARC", 30);
+                _marketManager.TriggerEvent("政策利多", -1, TrendLevel.Flat);
+                Debug.Log("[StockMarket] NARC +30");
             }
 
-            // 按 2: 觸發事件，商品B 大跌
+            // 按 2: LOCK -20
             if (keyboard.digit2Key.wasPressedThisFrame)
             {
-                _marketManager.TriggerEvent("市場崩盤", 1, TrendLevel.BigDrop);
-                Debug.Log("[StockMarket] Event: 市場崩盤 -> B 大跌");
+                _marketManager.ApplyStockEffect("LOCK", -20);
+                _marketManager.TriggerEvent("市場崩盤", -1, TrendLevel.Flat);
+                Debug.Log("[StockMarket] LOCK -20");
             }
 
-            // 按 3: 觸發事件，全部商品大漲
+            // 按 3: 全部 +20
             if (keyboard.digit3Key.wasPressedThisFrame)
             {
-                _marketManager.TriggerEvent("全面爆發", -1, TrendLevel.BigRise);
-                Debug.Log("[StockMarket] Event: 全面爆發 -> All 大漲");
+                _marketManager.ApplyStockEffect("NARC", 20);
+                _marketManager.ApplyStockEffect("LOCK", 20);
+                _marketManager.ApplyStockEffect("BYTE", 20);
+                _marketManager.TriggerEvent("全面爆發", -1, TrendLevel.Flat);
+                Debug.Log("[StockMarket] All +20");
             }
 
-            // 按 4: 觸發事件，全部商品大跌
+            // 按 4: 全部 -30
             if (keyboard.digit4Key.wasPressedThisFrame)
             {
-                _marketManager.TriggerEvent("黑天魚事件", -1, TrendLevel.BigDrop);
-                Debug.Log("[StockMarket] Event: 黑天魚事件 -> All 大跌");
+                _marketManager.ApplyStockEffect("NARC", -30);
+                _marketManager.ApplyStockEffect("LOCK", -30);
+                _marketManager.ApplyStockEffect("BYTE", -30);
+                _marketManager.TriggerEvent("黑天魚事件", -1, TrendLevel.Flat);
+                Debug.Log("[StockMarket] All -30");
             }
 
-            // 按 R: 重置股市
+            // 按 R: 重置
             if (keyboard.rKey.wasPressedThisFrame)
             {
                 _marketManager.ResetMarket();
                 _marketManager.StartMarket();
-                Debug.Log("[StockMarket] Market reset and restarted!");
+                Debug.Log("[StockMarket] Market reset!");
             }
         }
     }

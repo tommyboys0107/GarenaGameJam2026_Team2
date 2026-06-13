@@ -46,16 +46,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlackMarketTrader.StockMarketManager
   _tickInterval: 1
-  _trendChangeInterval: 10
   _minPrice: 0
   _maxPrice: 1000
   _maxDataPoints: 60
-  _initialPriceA: 700
+  _transitionDuration: 5
+  _enableDrift: 1
+  _driftInterval: 10
+  _driftPercentMin: -3
+  _driftPercentMax: 3
+  _trendThresholds:
+    SmallRiseThreshold: 1
+    BigRiseThreshold: 3
   _volatilityA: 1
-  _initialPriceB: 500
-  _volatilityB: 1.5
-  _initialPriceC: 300
-  _volatilityC: 0.8
+  _volatilityB: 1
+  _volatilityC: 1
 --- !u!114 &6357246629720015372
 MonoBehaviour:
   m_ObjectHideFlags: 0
