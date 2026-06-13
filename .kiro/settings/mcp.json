@@ -11,7 +11,7 @@
         "CLICKUP_TEAM_ID": "9018838308",
         "DOCUMENT_SUPPORT": "true"
       },
-      "disabled": false,
+      "disabled": true,
       "autoApprove": [
         "list_documents"
       ],
