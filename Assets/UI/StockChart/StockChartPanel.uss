@@ -11,9 +11,11 @@
     position: relative;
 }
 
-/* === 最左頭像區 === */
+/* === 左側頭像區 (400px) === */
 .avatar-area {
-    width: 120px;
+    width: 400px;
+    flex-shrink: 0;
+    flex-grow: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -23,8 +25,9 @@
 }
 
 .avatar-portrait {
-    width: 90px;
-    height: 90px;
+    width: 295px;
+    height: 288px;
+    flex-shrink: 0;
     background-color: rgba(60, 60, 80, 0.7);
     border-radius: 6px;
     border-width: 2px;
@@ -34,13 +37,15 @@
 
 .emote-buttons {
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    width: 292px;
+    height: 92px;
+    flex-shrink: 0;
 }
 
 .emote-btn {
-    width: 24px;
-    height: 24px;
+    flex-grow: 1;
+    height: 100%;
     margin: 2px;
     border-radius: 4px;
     background-color: rgba(80, 80, 100, 0.6);
@@ -57,9 +62,12 @@
 /* 商品資訊（線圖左側） */
 .stock-info-panel {
     width: 100px;
+    flex-shrink: 0;
     flex-direction: column;
     justify-content: center;
     padding: 8px;
+    margin-left: 24px;
+    margin-right: 24px;
 }
 
 .stock-info-row {
@@ -69,9 +77,9 @@
 }
 
 .stock-color-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
     margin-right: 6px;
 }
 
