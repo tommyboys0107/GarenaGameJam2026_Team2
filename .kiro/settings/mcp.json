@@ -2,7 +2,7 @@
   "mcpServers": {
     "unity-mcp": {
       "url": "http://localhost:8080/mcp",
-      "disabled": false,
+      "disabled": true,
       "autoApprove": [
         "*"
       ]
