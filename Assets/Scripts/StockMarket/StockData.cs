@@ -115,10 +115,19 @@ namespace BlackMarketTrader
 
         private TrendLevel GetTrendFromRate(float ratePerSecond, TrendThresholds t)
         {
-            if (ratePerSecond >= t.BigRiseThreshold) return TrendLevel.BigRise;
-            if (ratePerSecond >= t.SmallRiseThreshold) return TrendLevel.SmallRise;
-            if (ratePerSecond <= -t.BigRiseThreshold) return TrendLevel.BigDrop;
-            if (ratePerSecond <= -t.SmallRiseThreshold) return TrendLevel.SmallDrop;
+            // 用相對於初始價的比率來判定趨勢，避免高價位時漂移顯示過大
+            float relativeRate = (InitialPrice > 0) ? Mathf.Abs(ratePerSecond) / InitialPrice * 100f : Mathf.Abs(ratePerSecond);
+            
+            if (ratePerSecond >= 0)
+            {
+                if (relativeRate >= t.BigRiseThreshold) return TrendLevel.BigRise;
+                if (relativeRate >= t.SmallRiseThreshold) return TrendLevel.SmallRise;
+            }
+            else
+            {
+                if (relativeRate >= t.BigRiseThreshold) return TrendLevel.BigDrop;
+                if (relativeRate >= t.SmallRiseThreshold) return TrendLevel.SmallDrop;
+            }
             return TrendLevel.Flat;
         }
 
@@ -161,10 +170,10 @@ namespace BlackMarketTrader
     [Serializable]
     public class TrendThresholds
     {
-        [Tooltip("每秒變化率超過此值判定為小漲/小跌")]
-        public float SmallRiseThreshold = 1f;
+        [Tooltip("每秒變化率（佔初始價%）超過此值判定為小漲/小跌")]
+        public float SmallRiseThreshold = 0.2f;
 
-        [Tooltip("每秒變化率超過此值判定為大漲/大跌")]
-        public float BigRiseThreshold = 3f;
+        [Tooltip("每秒變化率（佔初始價%）超過此值判定為大漲/大跌")]
+        public float BigRiseThreshold = 0.8f;
     }
 }

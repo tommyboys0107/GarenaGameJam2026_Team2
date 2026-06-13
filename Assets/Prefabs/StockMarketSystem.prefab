@@ -51,12 +51,13 @@ MonoBehaviour:
   _maxDataPoints: 60
   _transitionDuration: 5
   _enableDrift: 1
-  _driftInterval: 10
+  _driftInterval: 2
+  _driftTransitionDuration: 2.5
   _driftPercentMin: -3
   _driftPercentMax: 3
   _trendThresholds:
-    SmallRiseThreshold: 1
-    BigRiseThreshold: 3
+    SmallRiseThreshold: 0.3
+    BigRiseThreshold: 1
   _volatilityA: 1
   _volatilityB: 1
   _volatilityC: 1

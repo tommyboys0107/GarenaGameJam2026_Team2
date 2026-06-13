@@ -25,7 +25,9 @@ namespace BlackMarketTrader
         [Header("自然漂移")]
         [SerializeField] private bool _enableDrift = true;
         [SerializeField] private float _driftInterval = 10f;
-        [Tooltip("自然漂移的百分比範圍 (相對於初始價)")]
+        [Tooltip("漂移到達目標的時間（秒）")]
+        [SerializeField] private float _driftTransitionDuration = 8f;
+        [Tooltip("自然漂移的百分比範圍 (相對於當前價)")]
         [SerializeField] private float _driftPercentMin = -3f;
         [SerializeField] private float _driftPercentMax = 3f;
 
@@ -120,14 +122,32 @@ namespace BlackMarketTrader
                 RecordDataPoint();
             }
 
-            // 自然漂移
+            // 自然漂移（只在沒有事件影響時才作用）
             if (_enableDrift)
             {
-                _driftTimer += Time.deltaTime;
-                if (_driftTimer >= _driftInterval)
+                bool allIdle = true;
+                foreach (var stock in Stocks)
                 {
-                    _driftTimer -= _driftInterval;
-                    NaturalDrift();
+                    if (stock.TransitionTimeRemaining > 0f)
+                    {
+                        allIdle = false;
+                        break;
+                    }
+                }
+
+                if (allIdle)
+                {
+                    _driftTimer += Time.deltaTime;
+                    if (_driftTimer >= _driftInterval)
+                    {
+                        _driftTimer -= _driftInterval;
+                        NaturalDrift();
+                    }
+                }
+                else
+                {
+                    // 有事件在進行中，重置漂移計時器
+                    _driftTimer = 0f;
                 }
             }
         }
@@ -151,13 +171,16 @@ namespace BlackMarketTrader
         /// </summary>
         private void NaturalDrift()
         {
+            var sb = new System.Text.StringBuilder("[StockMarket] 自然漂移: ");
             foreach (var stock in Stocks)
             {
                 float driftPercent = UnityEngine.Random.Range(_driftPercentMin, _driftPercentMax);
                 float newTarget = stock.CurrentPrice * (1f + driftPercent / 100f);
                 newTarget = Mathf.Clamp(newTarget, _minPrice, _maxPrice);
-                stock.SetTargetAbsolute(newTarget, _transitionDuration);
+                stock.SetTargetAbsolute(newTarget, _driftTransitionDuration);
+                sb.Append($"{stock.Name}→${newTarget:F0}({driftPercent:+0.0;-0.0}%) ");
             }
+            Debug.Log(sb.ToString());
         }
 
         /// <summary>
