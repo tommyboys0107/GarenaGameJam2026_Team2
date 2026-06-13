@@ -150,19 +150,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.GameFlowController
   gameManager: {fileID: 760677885}
   voteManager: {fileID: 1327887409}
-  voteStartTimes:
-  - 10
-  - 45
-  voteRounds:
-  - option1: "\u80A1\u5E02\u66B4\u8DCC"
-    option2: "\u9ED1\u5E02\u67E5\u7A05"
-    option3: "\u5167\u7DDA\u6D88\u606F"
-  - option1: "\u901A\u8CA8\u81A8\u8139"
-    option2: "\u4EA4\u6613\u51CD\u7D50"
-    option3: "\u9ED1\u5E55\u66DD\u5149"
-  - option1: "\u5168\u9762\u5D29\u76E4"
-    option2: "\u4E00\u591C\u66B4\u5BCC"
-    option3: "\u838A\u5BB6\u4ECB\u5165"
+  tvChoiceUI: {fileID: 908955910}
+  slotDuration: 10
+  playerChoiceTimeout: 8
 --- !u!4 &193585829
 Transform:
   m_ObjectHideFlags: 0
@@ -814,6 +804,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: b44356047e7496e4e8114889e5aedb3b, type: 3}
+--- !u!114 &908955910 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4058048218165760596, guid: b44356047e7496e4e8114889e5aedb3b, type: 3}
+  m_PrefabInstance: {fileID: 908955909}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe1619723ab4fb4fa33a69e9b5d3e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TVChoiceUI
 --- !u!1 &1245550115
 GameObject:
   m_ObjectHideFlags: 0
