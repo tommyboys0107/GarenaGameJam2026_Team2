@@ -31,9 +31,8 @@ inclusion: auto
 
 ## Push 規則
 
-- 永遠推送到 feature branch，不直接推送到 main
-- Branch 命名：使用功能名稱（如 `StockMarket`、`PlayerController`）
-- 使用 `git push -u origin <branch-name>` 設定 remote tracking
+- 推送到目前所在的 branch，不需要特別切換
+- 使用 `git push` 推送當前 branch
 - 推送前確認 working tree clean
 
 ## 範例
