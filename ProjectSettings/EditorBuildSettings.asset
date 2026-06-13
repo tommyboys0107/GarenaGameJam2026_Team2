@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 862933a0b6617af49a164ae2772d0c19
+  - enabled: 1
+    path: Assets/Scenes/Twitch.unity
+    guid: 8006530ca1b87f34f870674ffce92438
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
