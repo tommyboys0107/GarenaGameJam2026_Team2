@@ -114,6 +114,22 @@
     position: relative;
 }
 
+/* Y軸刻度 */
+.y-axis {
+    width: 80px;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.y-label {
+    font-size: 32px;
+    color: rgba(180, 180, 200, 0.8);
+    -unity-text-align: middle-right;
+}
+
 .stock-chart {
     flex-grow: 1;
     min-height: 100px;

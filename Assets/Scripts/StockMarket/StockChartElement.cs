@@ -19,11 +19,11 @@ namespace BlackMarketTrader
         private int _maxDataPoints = 60;
 
         // 繪製參數
-        private const float PADDING_LEFT = 60f;
+        private const float PADDING_LEFT = 10f;
         private const float PADDING_RIGHT = 20f;
         private const float PADDING_TOP = 30f;
         private const float PADDING_BOTTOM = 20f;
-        private const float LINE_WIDTH = 2.5f;
+        private const float LINE_WIDTH = 6f;
         private const float EVENT_LINE_WIDTH = 1.5f;
         private const float GRID_LINE_WIDTH = 0.5f;
 

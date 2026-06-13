@@ -12,12 +12,27 @@ namespace BlackMarketTrader
         [Header("Stock Settings")]
         [SerializeField] private float _tickInterval = 1f;        // 每幾秒更新一次價格
         [SerializeField] private float _trendChangeInterval = 10f; // 每幾秒隨機變更趨勢
-        [SerializeField] private float _initialPrice = 50f;       // 初始價格
-        [SerializeField] private float _minPrice = 5f;            // 最低價格
-        [SerializeField] private float _maxPrice = 100f;          // 最高價格
+        [SerializeField] private float _minPrice = 0f;            // 最低價格
+        [SerializeField] private float _maxPrice = 1000f;          // 最高價格
         [SerializeField] private int _maxDataPoints = 60;         // 最多顯示幾個數據點
 
-        public StockData[] Stocks { get; private set; }
+        [Header("Stock A")]
+        [SerializeField] private float _initialPriceA = 500f;
+        [SerializeField] private float _volatilityA = 1f;
+
+        [Header("Stock B")]
+        [SerializeField] private float _initialPriceB = 300f;
+        [SerializeField] private float _volatilityB = 1.5f;
+
+        [Header("Stock C")]
+        [SerializeField] private float _initialPriceC = 700f;
+        [SerializeField] private float _volatilityC = 0.8f;
+
+        public float MinPrice => _minPrice;
+        public float MaxPrice => _maxPrice;
+
+        
+public StockData[] Stocks { get; private set; }
         public List<StockEvent> Events { get; private set; } = new List<StockEvent>();
         public int CurrentTimeIndex { get; private set; } = 0;
 
@@ -47,25 +62,31 @@ namespace BlackMarketTrader
             Stocks[0] = new StockData
             {
                 Name = "A",
-                LineColor = new Color(1f, 0.3f, 0.3f), // 紅色
+                LineColor = new Color(1f, 0.3f, 0.3f),
                 CurrentTrend = TrendLevel.Flat,
-                CurrentPrice = _initialPrice
+                InitialPrice = _initialPriceA,
+                CurrentPrice = _initialPriceA,
+                Volatility = _volatilityA
             };
 
             Stocks[1] = new StockData
             {
                 Name = "B",
-                LineColor = new Color(0.3f, 0.5f, 1f), // 藍色
+                LineColor = new Color(0.3f, 0.5f, 1f),
                 CurrentTrend = TrendLevel.Flat,
-                CurrentPrice = _initialPrice
+                InitialPrice = _initialPriceB,
+                CurrentPrice = _initialPriceB,
+                Volatility = _volatilityB
             };
 
             Stocks[2] = new StockData
             {
                 Name = "C",
-                LineColor = new Color(0.3f, 1f, 0.3f), // 綠色
+                LineColor = new Color(0.3f, 1f, 0.3f),
                 CurrentTrend = TrendLevel.Flat,
-                CurrentPrice = _initialPrice
+                InitialPrice = _initialPriceC,
+                CurrentPrice = _initialPriceC,
+                Volatility = _volatilityC
             };
 
             // 加入初始數據點

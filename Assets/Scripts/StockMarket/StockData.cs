@@ -37,25 +37,35 @@ namespace BlackMarketTrader
         public TrendLevel CurrentTrend; // 當前趨勢等級
         public List<float> PriceHistory = new List<float>(); // 價格歷史記錄
         public float CurrentPrice;      // 當前價格
+        public float InitialPrice;      // 初始價格（各商品可不同）
+        public float Volatility = 1f;   // 波動倍率（影響趨勢變化速度）
 
-        // 趨勢對應的價格變化範圍
+        // 趨勢對應的價格變化範圍，乘以 Volatility
         public float GetPriceChange()
         {
+            float baseChange;
             switch (CurrentTrend)
             {
                 case TrendLevel.BigRise:
-                    return UnityEngine.Random.Range(3f, 6f);
+                    baseChange = UnityEngine.Random.Range(3f, 6f);
+                    break;
                 case TrendLevel.SmallRise:
-                    return UnityEngine.Random.Range(0.5f, 2.5f);
+                    baseChange = UnityEngine.Random.Range(0.5f, 2.5f);
+                    break;
                 case TrendLevel.Flat:
-                    return UnityEngine.Random.Range(-0.5f, 0.5f);
+                    baseChange = UnityEngine.Random.Range(-0.5f, 0.5f);
+                    break;
                 case TrendLevel.SmallDrop:
-                    return UnityEngine.Random.Range(-2.5f, -0.5f);
+                    baseChange = UnityEngine.Random.Range(-2.5f, -0.5f);
+                    break;
                 case TrendLevel.BigDrop:
-                    return UnityEngine.Random.Range(-6f, -3f);
+                    baseChange = UnityEngine.Random.Range(-6f, -3f);
+                    break;
                 default:
-                    return 0f;
+                    baseChange = 0f;
+                    break;
             }
+            return baseChange * Volatility;
         }
 
         /// <summary>
