@@ -1,0 +1,15 @@
+Font: Chiron Hei HK  Style: Regular
+Point Size: 20   Padding: 9   SP/PD Ratio: 45.0%
+
+Characters included: 704/706
+Missing characters: 2
+Excluded characters: 0
+
+Characters missing from font file:
+----------------------------------------
+ID: 9	Hex: 9	Char [	]
+ID: 10	Hex: A	Char [
+]
+
+Characters excluded from packing:
+----------------------------------------
