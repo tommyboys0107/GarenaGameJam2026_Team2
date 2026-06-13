@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Data;
 
 namespace BlackMarketTrader
 {
     /// <summary>
     /// 股市系統管理器，控制三個商品的價格變動與趨勢邏輯
+    /// 從 CSV 讀取股票資訊（名稱、初始價格）
     /// </summary>
     public class StockMarketManager : MonoBehaviour
     {
@@ -16,16 +18,9 @@ namespace BlackMarketTrader
         [SerializeField] private float _maxPrice = 1000f;          // 最高價格
         [SerializeField] private int _maxDataPoints = 60;         // 最多顯示幾個數據點
 
-        [Header("Stock A")]
-        [SerializeField] private float _initialPriceA = 500f;
+        [Header("Volatility (波動倍率)")]
         [SerializeField] private float _volatilityA = 1f;
-
-        [Header("Stock B")]
-        [SerializeField] private float _initialPriceB = 300f;
         [SerializeField] private float _volatilityB = 1.5f;
-
-        [Header("Stock C")]
-        [SerializeField] private float _initialPriceC = 700f;
         [SerializeField] private float _volatilityC = 0.8f;
 
         public float MinPrice => _minPrice;
@@ -57,37 +52,31 @@ public StockData[] Stocks { get; private set; }
 
         private void InitializeStocks()
         {
+            // 從 CSV 讀取股票資訊
+            var stockInfos = CSVLoader.LoadStocks();
             Stocks = new StockData[3];
 
-            Stocks[0] = new StockData
-            {
-                Name = "A",
-                LineColor = new Color(1f, 0.3f, 0.3f),
-                CurrentTrend = TrendLevel.Flat,
-                InitialPrice = _initialPriceA,
-                CurrentPrice = _initialPriceA,
-                Volatility = _volatilityA
+            // 顏色對應
+            Color[] colors = {
+                new Color(1f, 0.3f, 0.3f), // NARC - 紅
+                new Color(0.3f, 0.5f, 1f), // LOCK - 藍
+                new Color(0.3f, 1f, 0.3f)  // BYTE - 綠
             };
+            float[] volatilities = { _volatilityA, _volatilityB, _volatilityC };
 
-            Stocks[1] = new StockData
+            for (int i = 0; i < 3 && i < stockInfos.Count; i++)
             {
-                Name = "B",
-                LineColor = new Color(0.3f, 0.5f, 1f),
-                CurrentTrend = TrendLevel.Flat,
-                InitialPrice = _initialPriceB,
-                CurrentPrice = _initialPriceB,
-                Volatility = _volatilityB
-            };
-
-            Stocks[2] = new StockData
-            {
-                Name = "C",
-                LineColor = new Color(0.3f, 1f, 0.3f),
-                CurrentTrend = TrendLevel.Flat,
-                InitialPrice = _initialPriceC,
-                CurrentPrice = _initialPriceC,
-                Volatility = _volatilityC
-            };
+                var info = stockInfos[i];
+                Stocks[i] = new StockData
+                {
+                    Name = info.name,
+                    LineColor = colors[i],
+                    CurrentTrend = TrendLevel.Flat,
+                    InitialPrice = info.initialPrice,
+                    CurrentPrice = info.initialPrice,
+                    Volatility = volatilities[i]
+                };
+            }
 
             // 加入初始數據點
             foreach (var stock in Stocks)

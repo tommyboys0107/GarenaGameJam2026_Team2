@@ -61,7 +61,7 @@
 
 /* 商品資訊（線圖左側） */
 .stock-info-panel {
-    width: 100px;
+    width: 160px;
     flex-shrink: 0;
     flex-direction: column;
     justify-content: center;
@@ -79,8 +79,11 @@
 .stock-color-dot {
     width: 18px;
     height: 18px;
+    min-width: 18px;
+    min-height: 18px;
     border-radius: 9px;
-    margin-right: 6px;
+    margin-right: 8px;
+    flex-shrink: 0;
 }
 
 .stock-color-a {

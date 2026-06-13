@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using Data;
 
 namespace BlackMarketTrader
 {
@@ -13,7 +14,12 @@ namespace BlackMarketTrader
         private Label[] _stockNameLabels;
         private Label[] _stockTrendLabels;
         private Label[] _yAxisLabels;
+        private Label _timerLabel;
         private VisualElement _eventLabelContainer;
+
+        private float _totalGameTime;
+        private float _timeRemaining;
+        private bool _timerRunning;
 
         private void Awake()
         {
@@ -52,6 +58,14 @@ namespace BlackMarketTrader
 
             _eventLabelContainer = root.Q<VisualElement>("event-labels");
 
+            // Timer label
+            _timerLabel = root.Q<Label>("timer-label");
+            var timeConfig = CSVLoader.LoadTimeConfig();
+            _totalGameTime = timeConfig.totalGameTime;
+            _timeRemaining = _totalGameTime;
+            _timerRunning = true;
+            UpdateTimerDisplay();
+
             if (_marketManager != null)
             {
                 _marketManager.OnPriceUpdated += RefreshChart;
@@ -66,6 +80,27 @@ namespace BlackMarketTrader
                 _marketManager.OnPriceUpdated -= RefreshChart;
                 _marketManager.OnEventTriggered -= OnEventTriggered;
             }
+        }
+
+        private void Update()
+        {
+            if (!_timerRunning) return;
+
+            _timeRemaining -= Time.deltaTime;
+            if (_timeRemaining <= 0f)
+            {
+                _timeRemaining = 0f;
+                _timerRunning = false;
+            }
+            UpdateTimerDisplay();
+        }
+
+        private void UpdateTimerDisplay()
+        {
+            if (_timerLabel == null) return;
+            int minutes = Mathf.FloorToInt(_timeRemaining / 60f);
+            int seconds = Mathf.FloorToInt(_timeRemaining % 60f);
+            _timerLabel.text = $"{minutes:00}:{seconds:00}";
         }
 
         private void RefreshChart()

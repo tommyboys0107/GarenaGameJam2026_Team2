@@ -16,17 +16,17 @@
             <ui:VisualElement name="stock-info-panel" class="stock-info-panel">
                 <ui:VisualElement class="stock-info-row">
                     <ui:VisualElement class="stock-color-dot stock-color-a" />
-                    <ui:Label name="stock-name-0" text="A" class="stock-name" />
+                    <ui:Label name="stock-name-0" text="納克製藥" class="stock-name" />
                     <ui:Label name="stock-trend-0" text="" class="stock-trend" />
                 </ui:VisualElement>
                 <ui:VisualElement class="stock-info-row">
                     <ui:VisualElement class="stock-color-dot stock-color-b" />
-                    <ui:Label name="stock-name-1" text="B" class="stock-name" />
+                    <ui:Label name="stock-name-1" text="洛克防務" class="stock-name" />
                     <ui:Label name="stock-trend-1" text="" class="stock-trend" />
                 </ui:VisualElement>
                 <ui:VisualElement class="stock-info-row">
                     <ui:VisualElement class="stock-color-dot stock-color-c" />
-                    <ui:Label name="stock-name-2" text="C" class="stock-name" />
+                    <ui:Label name="stock-name-2" text="拜特資安" class="stock-name" />
                     <ui:Label name="stock-trend-2" text="" class="stock-trend" />
                 </ui:VisualElement>
             </ui:VisualElement>
@@ -45,6 +45,6 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <!-- 右上角計時器 -->
-        <ui:Label name="timer-label" text="09:00" class="timer-label" />
+        <ui:Label name="timer-label" text="01:30" class="timer-label" />
     </ui:VisualElement>
 </ui:UXML>
