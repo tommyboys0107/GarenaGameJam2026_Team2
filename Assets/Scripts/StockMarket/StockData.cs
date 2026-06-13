@@ -43,6 +43,10 @@ namespace BlackMarketTrader
         // 目標價系統
         public float TargetPrice;
         public float TransitionTimeRemaining;
+        public bool IsEventDriven;
+
+        // 不含噪音的基礎價格（用於趨勢判定）
+        [NonSerialized] public float BasePrice;
 
         /// <summary>
         /// 當前趨勢等級（自動由速率判定）
@@ -91,26 +95,53 @@ namespace BlackMarketTrader
         {
             if (TransitionTimeRemaining <= 0f)
             {
-                // 已到達目標，不再移動
                 CurrentTrend = TrendLevel.Flat;
                 return;
             }
 
-            // 計算每秒變化率
-            float diff = TargetPrice - CurrentPrice;
+            // 用 BasePrice 計算速率（不受噪音影響）
+            float diff = TargetPrice - BasePrice;
             float ratePerSecond = diff / TransitionTimeRemaining;
 
-            // 移動價格
+            // 移動 BasePrice
             float step = ratePerSecond * deltaTime;
-            CurrentPrice += step;
-            CurrentPrice = Mathf.Clamp(CurrentPrice, minPrice, maxPrice);
+            BasePrice += step;
+            BasePrice = Mathf.Clamp(BasePrice, minPrice, maxPrice);
+
+            // CurrentPrice 跟著 BasePrice（噪音在 RecordDataPoint 加）
+            CurrentPrice = BasePrice;
 
             TransitionTimeRemaining -= deltaTime;
             if (TransitionTimeRemaining < 0f)
                 TransitionTimeRemaining = 0f;
 
-            // 根據速率判定趨勢等級
+            // 趨勢完全由理論速率決定
             CurrentTrend = GetTrendFromRate(ratePerSecond, thresholds);
+        }
+
+        /// <summary>
+        /// 噪音影響趨勢：用實際每秒價格變化重新判定，但不反轉方向
+        /// </summary>
+        public void ApplyNoiseToTrend(float lastPrice, float deltaTime, TrendThresholds thresholds)
+        {
+            if (deltaTime <= 0f) return;
+
+            // 用實際價格變化算出真實速率
+            float actualRate = (CurrentPrice - lastPrice) / deltaTime;
+
+            // 判定基礎方向（由目標決定）
+            float targetDirection = TargetPrice - CurrentPrice;
+
+            // 用實際速率判定趨勢
+            TrendLevel noisyTrend = GetTrendFromRate(actualRate, thresholds);
+
+            // 限制不反轉：如果目標是漲，趨勢最低只到 Flat
+            if (targetDirection > 0 && (noisyTrend == TrendLevel.SmallDrop || noisyTrend == TrendLevel.BigDrop))
+                noisyTrend = TrendLevel.Flat;
+            else if (targetDirection < 0 && (noisyTrend == TrendLevel.SmallRise || noisyTrend == TrendLevel.BigRise))
+                noisyTrend = TrendLevel.Flat;
+
+            CurrentTrend = noisyTrend;
         }
 
         private TrendLevel GetTrendFromRate(float ratePerSecond, TrendThresholds t)

@@ -34,6 +34,11 @@ namespace BlackMarketTrader
         [Header("趨勢判定門檻")]
         [SerializeField] private TrendThresholds _trendThresholds = new TrendThresholds();
 
+        [Header("價格震盪噪音")]
+        [SerializeField] private bool _enableNoise = true;
+        [Tooltip("噪音幅度（初始價的百分比）")]
+        [SerializeField] private float _noisePercent = 5f;
+
         [Header("波動倍率")]
         [SerializeField] private float _volatilityA = 1f;
         [SerializeField] private float _volatilityB = 1.5f;
@@ -80,6 +85,7 @@ namespace BlackMarketTrader
                     LineColor = colors[i],
                     InitialPrice = info.initialPrice,
                     CurrentPrice = info.initialPrice,
+                    BasePrice = info.initialPrice,
                     TargetPrice = info.initialPrice,
                     Volatility = volatilities[i],
                     TransitionTimeRemaining = 0f
@@ -158,6 +164,27 @@ namespace BlackMarketTrader
 
             foreach (var stock in Stocks)
             {
+                // 記錄時加入震盪噪音（只有事件驅動時）
+                if (_enableNoise && stock.TransitionTimeRemaining > 0f && stock.IsEventDriven)
+                {
+                    float noiseAmplitude = stock.InitialPrice * (_noisePercent / 100f) * stock.Volatility;
+                    float noise = UnityEngine.Random.Range(-noiseAmplitude, noiseAmplitude);
+
+                    // 限制噪音不會讓價格越過當前位置的反方向
+                    float direction = stock.TargetPrice - stock.CurrentPrice;
+                    if (direction > 0 && noise < 0)
+                    {
+                        noise = Mathf.Max(noise, -noiseAmplitude * 0.5f);
+                    }
+                    else if (direction < 0 && noise > 0)
+                    {
+                        noise = Mathf.Min(noise, noiseAmplitude * 0.5f);
+                    }
+
+                    stock.CurrentPrice += noise;
+                    stock.CurrentPrice = Mathf.Clamp(stock.CurrentPrice, _minPrice, _maxPrice);
+                }
+
                 stock.PriceHistory.Add(stock.CurrentPrice);
                 if (stock.PriceHistory.Count > _maxDataPoints)
                     stock.PriceHistory.RemoveAt(0);
@@ -178,6 +205,7 @@ namespace BlackMarketTrader
                 float newTarget = stock.CurrentPrice * (1f + driftPercent / 100f);
                 newTarget = Mathf.Clamp(newTarget, _minPrice, _maxPrice);
                 stock.SetTargetAbsolute(newTarget, _driftTransitionDuration);
+                stock.IsEventDriven = false;
                 sb.Append($"{stock.Name}→${newTarget:F0}({driftPercent:+0.0;-0.0}%) ");
             }
             Debug.Log(sb.ToString());
@@ -224,6 +252,7 @@ namespace BlackMarketTrader
                     float newTarget = Stocks[i].TargetPrice + absoluteDelta;
                     newTarget = Mathf.Clamp(newTarget, _minPrice, _maxPrice);
                     Stocks[i].SetTargetAbsolute(newTarget, _transitionDuration);
+                    Stocks[i].IsEventDriven = true;
                 }
             }
         }
