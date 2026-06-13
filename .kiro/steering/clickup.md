@@ -1,7 +1,3 @@
----
-inclusion: manual
----
-
 # ClickUp Integration
 
 When accessing ClickUp data (documents, tasks, pages, etc.), use the ClickUp REST API directly via `Invoke-RestMethod` in PowerShell. Do NOT use the ClickUp MCP server tools.
