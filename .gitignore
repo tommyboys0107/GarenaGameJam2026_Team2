@@ -1,0 +1,113 @@
+# ============================================
+# Unity 專案 .gitignore
+# 基於 GitHub 官方 Unity.gitignore 並加入常用規則
+# ============================================
+
+# --------------------------------------------
+# IDE / 編輯器
+# --------------------------------------------
+# JetBrains Rider
+.idea/
+*.DotSettings.user
+
+# Visual Studio
+.vs/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Visual Studio Code
+.vscode/
+
+# Consulo
+.consulo/
+ExportedObj/
+
+# --------------------------------------------
+# Unity 產生的目錄與快取（僅專案根目錄）
+# --------------------------------------------
+.utmp/
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# MemoryCaptures 體積大且可能含敏感資料
+/[Mm]emoryCaptures/
+
+# Recordings 體積大
+/[Rr]ecordings/
+
+# Unity 自動產生的 JetBrains 外掛
+Assets/Plugins/Editor/JetBrains*
+
+# Asset Store 工具（可選，若需提交請註解）
+Assets/AssetStoreTools*
+
+# --------------------------------------------
+# Unity 產生的檔案
+# --------------------------------------------
+*.log
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# 當機報告產生的檔案
+sysinfo.txt
+mono_crash.*
+
+# --------------------------------------------
+# 建置輸出
+# --------------------------------------------
+*.apk
+*.aab
+*.app
+*.unitypackage
+*.unitypackage.meta
+Release/
+
+# Gradle 快取（Android 建置）
+.gradle/
+
+# Crashlytics
+crashlytics-build.properties
+
+# --------------------------------------------
+# 其他資源與自動產生
+# --------------------------------------------
+# Blender 備份檔
+*.blend1
+*.blend1.meta
+
+# TestRunner 產生的場景
+InitTestScene*.unity*
+
+# Addressables
+ServerData
+[Aa]ssets/StreamingAssets/aa*
+[Aa]ssets/AddressableAssetsData/link.xml*
+[Aa]ssets/Addressables_Temp*
+[Aa]ssets/AddressableAssetsData/*/*.bin*
+
+# Visual Scripting 自動產生
+[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
+[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
+[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
+[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
+
+# Play Mode 測試產生的場景
+[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
