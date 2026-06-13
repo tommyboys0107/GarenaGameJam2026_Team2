@@ -23,6 +23,9 @@ namespace Gameplay
         [SerializeField] private TwitchVoteManager voteManager;
         [SerializeField] private TVChoiceUI tvChoiceUI;
 
+        [Header("事件描述 UI")]
+        [SerializeField] private TMPro.TMP_Text eventDescriptionText;
+
         [Header("時間設定")]
         [Tooltip("每個事件 slot 的持續時間（秒）")]
         [SerializeField] private float slotDuration = 10f;
@@ -144,6 +147,13 @@ namespace Gameplay
                     }
                 }
 
+                // 觀眾事件倒數（從 TwitchVoteManager 取剩餘時間）
+                if (CurrentSlotType == EventSlotType.Audience && IsWaitingForChoice)
+                {
+                    if (voteManager != null && tvChoiceUI != null)
+                        tvChoiceUI.UpdateTimer(voteManager.TimeRemaining);
+                }
+
                 // Slot 結束，進入下一個
                 if (_slotTimer >= slotDuration)
                 {
@@ -174,9 +184,17 @@ namespace Gameplay
 
             Debug.Log($"[GameFlow] 玩家選擇: {chosen.name} → 影響: {FormatEffects(chosen.effects)}");
 
+            // 隱藏倒數
+            if (tvChoiceUI != null)
+                tvChoiceUI.HideTimer();
+
             // 顯示結果
             if (tvChoiceUI != null)
                 tvChoiceUI.ShowResult(choiceIndex, chosen.resultText);
+
+            // 顯示詳細描述
+            if (eventDescriptionText != null)
+                eventDescriptionText.text = chosen.resultText;
 
             // 廣播事件
             OnStockEffectApplied?.Invoke(chosen.effects);
@@ -230,6 +248,10 @@ namespace Gameplay
 
             Debug.Log($"[GameFlow] Slot {CurrentSlotIndex + 1}/{_schedule.Length} 開始 — 類型: {CurrentSlotType}");
             OnSlotStarted?.Invoke(CurrentSlotIndex, CurrentSlotType);
+
+            // 清空上一輪的描述文字
+            if (eventDescriptionText != null)
+                eventDescriptionText.text = "";
 
             if (CurrentSlotType == EventSlotType.Trader)
             {
@@ -339,9 +361,17 @@ namespace Gameplay
 
             Debug.Log($"[GameFlow] 觀眾投票結果: {winner.name} → 影響: {FormatEffects(winner.effects)}");
 
+            // 隱藏倒數
+            if (tvChoiceUI != null)
+                tvChoiceUI.HideTimer();
+
             // 顯示結果
             if (tvChoiceUI != null)
                 tvChoiceUI.ShowResult(winnerIndex, winner.resultText);
+
+            // 顯示詳細描述
+            if (eventDescriptionText != null)
+                eventDescriptionText.text = winner.resultText;
 
             // 廣播事件
             OnStockEffectApplied?.Invoke(winner.effects);

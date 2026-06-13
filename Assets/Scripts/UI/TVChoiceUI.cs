@@ -51,10 +51,16 @@ namespace UI
             if (option2Text != null) option2Text.text = $"2. {opt2}";
             if (option3Text != null) option3Text.text = $"3. {opt3}";
 
+            // 重置選項文字透明度（ShowResult 會改 alpha）
+            ResetOptionColors();
+
             // 清空票數
             if (vote1CountText != null) vote1CountText.text = "0";
             if (vote2CountText != null) vote2CountText.text = "0";
             if (vote3CountText != null) vote3CountText.text = "0";
+
+            // 清空倒數
+            if (timerText != null) timerText.text = "";
 
             IsShowing = true;
         }
@@ -80,13 +86,19 @@ namespace UI
         }
 
         /// <summary>
+        /// 隱藏倒數計時。
+        /// </summary>
+        public void HideTimer()
+        {
+            if (timerText != null)
+                timerText.text = "";
+        }
+
+        /// <summary>
         /// 顯示結果。
         /// </summary>
         public void ShowResult(int winnerIndex, string resultText)
         {
-            if (titleText != null)
-                titleText.text = resultText;
-
             var texts = new[] { option1Text, option2Text, option3Text };
             for (int i = 0; i < 3; i++)
             {
@@ -108,6 +120,23 @@ namespace UI
                 tvScreenRoot.gameObject.SetActive(false);
 
             IsShowing = false;
+        }
+
+        /// <summary>
+        /// 重置選項文字顏色（alpha 回到 1）。
+        /// </summary>
+        private void ResetOptionColors()
+        {
+            var texts = new[] { option1Text, option2Text, option3Text };
+            foreach (var t in texts)
+            {
+                if (t != null)
+                {
+                    var color = t.color;
+                    color.a = 1f;
+                    t.color = color;
+                }
+            }
         }
     }
 }
