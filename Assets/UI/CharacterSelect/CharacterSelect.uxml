@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Style src="CharacterSelect.uss" />
+
+    <!-- Character Select Page (visible initially) -->
+    <ui:VisualElement name="character-page" class="page">
+        <ui:VisualElement name="background-image" class="background-image" />
+        <ui:Label name="title" text="選擇角色" class="title" />
+        <ui:VisualElement name="character-grid" class="grid-2x3" />
+    </ui:VisualElement>
+
+    <!-- Goal Select Page (hidden initially, starts off-screen to the right) -->
+    <ui:VisualElement name="goal-page" class="page page-right">
+        <ui:Label name="goal-title" text="選擇目標" class="title" />
+        <ui:VisualElement name="goal-grid" class="grid-2x3" />
+    </ui:VisualElement>
+
+    <!-- Tooltip (hidden by default) -->
+    <ui:VisualElement name="tooltip" class="tooltip hidden">
+        <ui:Label name="tooltip-text" />
+    </ui:VisualElement>
+
+    <!-- Fade Overlay (full-screen black, transparent initially) -->
+    <ui:VisualElement name="fade-overlay" class="fade-overlay" />
+</ui:UXML>

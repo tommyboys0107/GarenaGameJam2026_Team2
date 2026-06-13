@@ -10,6 +10,7 @@ namespace Core
         public string Name;        // 角色名稱
         public string Nickname;    // 外號
         public string Description; // 角色描述
+        public string ImageID;     // 角色圖片 ID (e.g. C01_Face)
     }
 
     /// <summary>
@@ -50,7 +51,8 @@ namespace Core
                     Id = row.TryGetValue("編號", out var id) ? id : "",
                     Name = row.TryGetValue("角色名稱", out var name) ? name : "",
                     Nickname = row.TryGetValue("外號", out var nick) ? nick : "",
-                    Description = row.TryGetValue("角色描述", out var desc) ? desc : ""
+                    Description = row.TryGetValue("角色描述", out var desc) ? desc : "",
+                    ImageID = row.TryGetValue("ImageID", out var imgId) ? imgId : ""
                 };
 
                 _characterDict[info.Id] = info;

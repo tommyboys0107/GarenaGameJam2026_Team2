@@ -1,5 +1,12 @@
 {
   "mcpServers": {
+    "unity-mcp": {
+      "url": "http://localhost:8080/mcp",
+      "disabled": false,
+      "autoApprove": [
+        "*"
+      ]
+    },
     "clickup": {
       "command": "npx",
       "args": [

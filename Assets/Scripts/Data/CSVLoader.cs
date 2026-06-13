@@ -130,12 +130,13 @@ namespace Data
 
             foreach (var cols in lines)
             {
-                if (cols.Length < 3) continue;
+                if (cols.Length < 4) continue;
                 list.Add(new GoalInfo
                 {
                     id = cols[0].Trim(),
-                    stockCode = cols[1].Trim(),
-                    targetPercent = int.Parse(cols[2].Trim())
+                    nickname = cols[1].Trim(),
+                    stockCode = cols[2].Trim(),
+                    targetPercent = int.Parse(cols[3].Trim())
                 });
             }
 

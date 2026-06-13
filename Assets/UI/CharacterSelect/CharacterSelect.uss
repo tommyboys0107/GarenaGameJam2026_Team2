@@ -1,0 +1,199 @@
+/* ============================================================
+   CharacterSelect.uss
+   角色選擇頁面 UI Toolkit 樣式
+   ============================================================ */
+
+/* === Root container === */
+.page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition-property: translate, opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+}
+
+.page-hidden {
+    display: none;
+}
+
+.page-right {
+    translate: 100% 0;
+}
+
+/* === Goal Page 專用黑色背景 === */
+#goal-page {
+    background-color: rgb(10, 10, 20);
+}
+
+/* === Background Image === */
+.background-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+/* === Title === */
+.title {
+    font-size: 48px;
+    color: white;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* === Grid Layout (2 rows × 3 columns) === */
+.grid-2x3 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 90%;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+/* === Character Card === */
+.character-card {
+    width: 30%;
+    height: 45%;
+    margin: 8px;
+    padding: 8px;
+    border-width: 3px;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    background-color: rgba(30, 30, 50, 0.7);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-property: border-color, scale;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.character-card:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    scale: 1.02 1.02;
+}
+
+.character-card--selected {
+    border-color: rgb(255, 215, 0);
+    border-width: 4px;
+    scale: 1.05 1.05;
+}
+
+/* === Character Portrait === */
+.character-portrait {
+    width: 100%;
+    flex-grow: 1;
+    margin-bottom: 4px;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+/* === Goal Option === */
+.goal-option {
+    width: 30%;
+    height: 40%;
+    margin: 8px;
+    padding: 12px;
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    background-color: rgba(20, 20, 40, 0.8);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 36px;
+}
+
+/* NOTE: goal-option has NO :hover or :active pseudo-class styling (R7.4) */
+
+/* === Key Hint === */
+.key-hint {
+    font-size: 36px;
+    color: rgb(200, 200, 200);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-top: 10px;
+    padding: 6px 16px;
+    border-width: 1px;
+    border-color: rgba(200, 200, 200, 0.5);
+    border-radius: 6px;
+    background-color: rgba(60, 60, 80, 0.6);
+}
+
+/* === Tooltip === */
+.tooltip {
+    position: absolute;
+    padding: 20px 24px;
+    background-color: rgba(20, 20, 30, 0.95);
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: white;
+    font-size: 24px;
+    max-width: 500px;
+    white-space: normal;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    opacity: 1;
+}
+
+.tooltip.hidden {
+    opacity: 0;
+    display: none;
+}
+
+/* === Back Button === */
+.back-button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 18px;
+    color: rgb(200, 200, 200);
+    background-color: rgba(60, 60, 80, 0.7);
+    border-width: 1px;
+    border-color: rgba(200, 200, 200, 0.5);
+    border-radius: 8px;
+    -unity-text-align: middle-center;
+    transition-property: background-color, border-color;
+    transition-duration: 0.2s;
+}
+
+.back-button:hover {
+    background-color: rgba(80, 80, 110, 0.9);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: white;
+}
+
+/* === Fade Overlay === */
+.fade-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+    picking-mode: ignore;
+}
+
+.fade-overlay--active {
+    opacity: 1;
+    picking-mode: position;
+}

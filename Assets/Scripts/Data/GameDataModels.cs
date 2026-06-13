@@ -60,6 +60,7 @@ namespace Data
     public class GoalInfo
     {
         public string id;         // G01
+        public string nickname;   // 外號，如 "教父 (Il Padrino)"
         public string stockCode;  // NARC
         public int targetPercent; // 40 or -40
     }
