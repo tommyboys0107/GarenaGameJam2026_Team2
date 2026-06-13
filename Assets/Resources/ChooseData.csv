@@ -1,31 +1,31 @@
 編號,選項名稱,影響股票數值,結果文字,Result,AudioID,備註
-E01-A,提前放空納克,"[NARC,-20],[BYTE,+8]",你在報告曝光前大量放空，納克崩盤，資安公司接手善後業務。,"NarcPharma crashes, ByteSec profits from cleanup.",E01-A-Result,主打NARC下跌
-E01-B,買通記者壓新聞,"[NARC,+8],[LOCK,-8]",記者被收買，試驗醜聞暫時壓下。納克穩住，但你欠了軍方人情。,"Story buried, NarcPharma stabilizes for now.",,穩住NARC
-E01-C,把情報賣給拜特,"[BYTE,+20],[NARC,-8]",拜特資安拿到數據後開發了醫療駭客工具，大賺一筆。,ByteSec weaponizes the leaked clinical data.,,主打BYTE上漲
-E02-A,搶先通知洛克,"[LOCK,+20],[NARC,-8]",洛克防務提前佈局拿下標案，製藥預算被擠壓。,"LockDefense wins bid, pharma budget slashed.",,主打LOCK上漲
-E02-B,兩邊賣情報,"[LOCK,+8],[BYTE,+8],[NARC,-8]",你把消息同時賣給兩家，大家都有甜頭，只有納克被犧牲。,"Intel sold to both sides, everyone gains slightly.",,平均獲利
-E02-C,自己圍標,"[LOCK,-20],[BYTE,+8],[NARC,+8]",你試圖自己圍標但被抓包，洛克防務信譽受損，其他人趁亂獲利。,"Bid-rigging exposed, LockDefense credibility tanks.",,主打LOCK下跌
-E03-A,大量囤貨再轉賣,"[NARC,+20],[LOCK,-8]",你搶在促銷前掃光庫存再高價轉賣，製藥行情暴漲。軍火乏人問津。,"Drug stockpile sold at premium, pharma booms.",,主打NARC上漲
-E03-B,舉報藥局換獎金,"[NARC,-20],[BYTE,+8],[LOCK,+8]",你向執法單位檢舉換取獎金，藥局被抄，製藥管道斷裂。,"Dark pharmacy raided, drug supply collapses.",,主打NARC下跌
-E03-C,跟藥局合作抽成,"[NARC,+8],[BYTE,+8]",你跟藥局談好抽成合作，雙方穩定獲利，用加密通訊交易。,Partnership deal with dark pharmacy secured.,,穩定小漲
-E04-A,賣給最高出價者,"[BYTE,-20],[LOCK,+8],[NARC,+8]",漏洞被公開利用，拜特資安信譽崩盤。實體交易需求回升。,"Zero-day exploit goes public, ByteSec collapses.",,主打BYTE下跌
-E04-B,私下勒索拜特,"[BYTE,-8]",你私下要求拜特付封口費，他們付了但規模不大。,"ByteSec pays hush money, minimal market impact.",,小幅影響
-E04-C,自己用來攻擊對手,"[BYTE,+8],[LOCK,-20]",你用漏洞癱瘓了洛克的通訊系統，拜特反而因此接到防禦訂單。,"Hack cripples LockDefense, ByteSec gets contracts.",,主打LOCK下跌
-E05-A,賣武器給雙方,"[LOCK,-8],[NARC,+20]",傭兵內戰升級，傷亡慘重，你趁機高價賣急救藥品。,"Arms sold to both factions, medical demand spikes.",,主打NARC上漲
-E05-B,幫一方收拾另一方,"[LOCK,+20],[BYTE,-8]",你幫贏的那邊鎮壓叛亂，洛克重新整合。但你被監控系統拍到了。,"Mutiny crushed, LockDefense consolidates power.",,主打LOCK上漲
-E05-C,散佈假消息擴大內亂,"[LOCK,-20],[BYTE,+20]",你用深偽影片煽動雙方，洛克徹底分裂。拜特的假消息服務大受歡迎。,Deepfake propaganda splits LockDefense apart.,,LOCK跌BYTE漲
-E06-A,全額投入,"[NARC,+8],[LOCK,+8],[BYTE,+8]",洗錢通道順利運作，三大產業資金流通加速，全面小漲。,Money laundering channel fully operational.,,三支均漲
-E06-B,只投一半留後路,"[NARC,+8],[LOCK,+8]",你保守投入，通道規模較小但穩定運作。,"Partial investment, channel runs at half capacity.",,兩支小漲
-E06-C,舉報通道換政治籌碼,"[NARC,-20],[LOCK,-20],[BYTE,+8]",你把洗錢通道賣給政府，換到免罪權。實體黑市重創。,"Channel exposed, physical black market devastated.",,兩支大跌
-E07-A,派人消除威脅,"[LOCK,+20],[NARC,-8]",吹哨者「意外失蹤」，洛克安然無恙。但你欠了殺手一個人情。,"Whistleblower vanishes, LockDefense stock saved.",,主打LOCK上漲
-E07-B,搶先公開洗白,"[LOCK,-8],[BYTE,+8]",你建議洛克自己先公開部分資訊做危機公關，損失控制在最小。,Controlled leak minimizes damage to LockDefense.,,小幅波動
-E07-C,把資料賣給競爭對手,"[LOCK,-20],[BYTE,+20],[NARC,+8]",你把黑資料賣給拜特，他們做成勒索工具。洛克名譽掃地。,"Data sold to ByteSec, LockDefense reputation ruined.",,LOCK跌BYTE漲
-E08-A,用於金融詐騙,"[BYTE,+20],[NARC,-8]",深偽CEO影片騙過投資人，拜特獲利豐厚。製藥產業成了詐騙目標。,Deepfake CEO scam nets millions for ByteSec.,,主打BYTE上漲
-E08-B,賣給軍方做心理戰,"[LOCK,+20],[BYTE,+8]",洛克防務買下技術用於戰場心理作戰，雙方都有利潤。,Military buys deepfake tech for psyops.,,主打LOCK上漲
-E08-C,開源釋出製造混亂,"[BYTE,-20],[NARC,+8],[LOCK,+8]",你把技術免費開源，市場上人人都有深偽工具，拜特的獨家優勢消失。,"Tech goes open-source, ByteSec loses edge.",,主打BYTE下跌
-E09-A,大筆投資當股東,"[NARC,+20],[LOCK,+8]",診所擴張成功，藥品需求暴增，保全服務也跟著水漲船高。,"Underground clinics boom, drug demand surges.",,主打NARC上漲
-E09-B,只提供藥品供應,"[NARC,+8],[BYTE,-8]",你當供應商抽成，風險小利潤穩定，但規模有限。,"Drug supply deal secured, steady returns.",,穩定小漲
-E09-C,拒絕並舉報搶地盤,"[NARC,-20],[BYTE,+8],[LOCK,+8]",你把對手的計畫洩漏給當局，趁機搶佔他們的客源。,"Rival clinic reported, market share seized.",,主打NARC下跌
-E10-A,入股劫持計畫,"[BYTE,+20],[LOCK,-20]",衛星被成功劫持，洛克無人機全數失聯。拜特公開叫賣存取權限。,"Satellite hijacked, LockDefense drones grounded.",,BYTE漲LOCK跌
-E10-B,通知洛克換取回報,"[LOCK,+20],[BYTE,-20]",你把計畫洩漏給洛克，他們反制成功並追殺駭客。拜特勢力受挫。,"LockDefense counters hack, ByteSec network exposed.",,LOCK漲BYTE跌
-E10-C,兩邊都不幫坐收漁利,"[NARC,+8],[LOCK,-8],[BYTE,-8]",雙方鬥到兩敗俱傷，你趁亂在藥品市場撿便宜。,"Both sides weakened, pharma picks up scraps.",,NARC小漲其餘跌
+E01-A,提前放空納克,"[NARC,-6],[BYTE,+3]",你在報告曝光前大量放空，納克崩盤，資安公司接手善後業務。,"NarcPharma crashes, ByteSec profits from cleanup.",E01-A-Result,主打NARC下跌
+E01-B,買通記者壓新聞,"[NARC,+2],[LOCK,-3]",記者被收買，試驗醜聞暫時壓下。納克穩住，但你欠了軍方人情。,"Story buried, NarcPharma stabilizes for now.",,穩住NARC
+E01-C,把情報賣給拜特,"[BYTE,+7],[NARC,-4]",拜特資安拿到數據後開發了醫療駭客工具，大賺一筆。,ByteSec weaponizes the leaked clinical data.,,主打BYTE上漲
+E02-A,搶先通知洛克,"[LOCK,+9],[NARC,-1]",洛克防務提前佈局拿下標案，製藥預算被擠壓。,"LockDefense wins bid, pharma budget slashed.",,主打LOCK上漲
+E02-B,兩邊賣情報,"[LOCK,+3],[BYTE,+2],[NARC,-4]",你把消息同時賣給兩家，大家都有甜頭，只有納克被犧牲。,"Intel sold to both sides, everyone gains slightly.",,平均獲利
+E02-C,自己圍標,"[LOCK,-8],[BYTE,+1],[NARC,+3]",你試圖自己圍標但被抓包，洛克防務信譽受損，其他人趁亂獲利。,"Bid-rigging exposed, LockDefense credibility tanks.",,主打LOCK下跌
+E03-A,大量囤貨再轉賣,"[NARC,+10],[LOCK,-2]",你搶在促銷前掃光庫存再高價轉賣，製藥行情暴漲。軍火乏人問津。,"Drug stockpile sold at premium, pharma booms.",,主打NARC上漲
+E03-B,舉報藥局換獎金,"[NARC,-5],[BYTE,+4],[LOCK,+1]",你向執法單位檢舉換取獎金，藥局被抄，製藥管道斷裂。,"Dark pharmacy raided, drug supply collapses.",,主打NARC下跌
+E03-C,跟藥局合作抽成,"[NARC,+2],[BYTE,+3]",你跟藥局談好抽成合作，雙方穩定獲利，用加密通訊交易。,Partnership deal with dark pharmacy secured.,,穩定小漲
+E04-A,賣給最高出價者,"[BYTE,-9],[LOCK,+1],[NARC,+4]",漏洞被公開利用，拜特資安信譽崩盤。實體交易需求回升。,"Zero-day exploit goes public, ByteSec collapses.",,主打BYTE下跌
+E04-B,私下勒索拜特,"[BYTE,-3]",你私下要求拜特付封口費，他們付了但規模不大。,"ByteSec pays hush money, minimal market impact.",,小幅影響
+E04-C,自己用來攻擊對手,"[BYTE,+2],[LOCK,-6]",你用漏洞癱瘓了洛克的通訊系統，拜特反而因此接到防禦訂單。,"Hack cripples LockDefense, ByteSec gets contracts.",,主打LOCK下跌
+E05-A,賣武器給雙方,"[LOCK,-4],[NARC,+8]",傭兵內戰升級，傷亡慘重，你趁機高價賣急救藥品。,"Arms sold to both factions, medical demand spikes.",,主打NARC上漲
+E05-B,幫一方收拾另一方,"[LOCK,+7],[BYTE,-2]",你幫贏的那邊鎮壓叛亂，洛克重新整合。但你被監控系統拍到了。,"Mutiny crushed, LockDefense consolidates power.",,主打LOCK上漲
+E05-C,散佈假消息擴大內亂,"[LOCK,-10],[BYTE,+5]",你用深偽影片煽動雙方，洛克徹底分裂。拜特的假消息服務大受歡迎。,Deepfake propaganda splits LockDefense apart.,,LOCK跌BYTE漲
+E06-A,全額投入,"[NARC,+1],[LOCK,+3],[BYTE,+2]",洗錢通道順利運作，三大產業資金流通加速，全面小漲。,Money laundering channel fully operational.,,三支均漲
+E06-B,只投一半留後路,"[NARC,+4],[LOCK,+1]",你保守投入，通道規模較小但穩定運作。,"Partial investment, channel runs at half capacity.",,兩支小漲
+E06-C,舉報通道換政治籌碼,"[NARC,-7],[LOCK,-9],[BYTE,+3]",你把洗錢通道賣給政府，換到免罪權。實體黑市重創。,"Channel exposed, physical black market devastated.",,兩支大跌
+E07-A,派人消除威脅,"[LOCK,+6],[NARC,-2]",吹哨者「意外失蹤」，洛克安然無恙。但你欠了殺手一個人情。,"Whistleblower vanishes, LockDefense stock saved.",,主打LOCK上漲
+E07-B,搶先公開洗白,"[LOCK,-1],[BYTE,+4]",你建議洛克自己先公開部分資訊做危機公關，損失控制在最小。,Controlled leak minimizes damage to LockDefense.,,小幅波動
+E07-C,把資料賣給競爭對手,"[LOCK,-5],[BYTE,+8],[NARC,+3]",你把黑資料賣給拜特，他們做成勒索工具。洛克名譽掃地。,"Data sold to ByteSec, LockDefense reputation ruined.",,LOCK跌BYTE漲
+E08-A,用於金融詐騙,"[BYTE,+10],[NARC,-1]",深偽CEO影片騙過投資人，拜特獲利豐厚。製藥產業成了詐騙目標。,Deepfake CEO scam nets millions for ByteSec.,,主打BYTE上漲
+E08-B,賣給軍方做心理戰,"[LOCK,+6],[BYTE,+2]",洛克防務買下技術用於戰場心理作戰，雙方都有利潤。,Military buys deepfake tech for psyops.,,主打LOCK上漲
+E08-C,開源釋出製造混亂,"[BYTE,-7],[NARC,+3],[LOCK,+4]",你把技術免費開源，市場上人人都有深偽工具，拜特的獨家優勢消失。,"Tech goes open-source, ByteSec loses edge.",,主打BYTE下跌
+E09-A,大筆投資當股東,"[NARC,+9],[LOCK,+1]",診所擴張成功，藥品需求暴增，保全服務也跟著水漲船高。,"Underground clinics boom, drug demand surges.",,主打NARC上漲
+E09-B,只提供藥品供應,"[NARC,+2],[BYTE,-3]",你當供應商抽成，風險小利潤穩定，但規模有限。,"Drug supply deal secured, steady returns.",,穩定小漲
+E09-C,拒絕並舉報搶地盤,"[NARC,-8],[BYTE,+4],[LOCK,+1]",你把對手的計畫洩漏給當局，趁機搶佔他們的客源。,"Rival clinic reported, market share seized.",,主打NARC下跌
+E10-A,入股劫持計畫,"[BYTE,+5],[LOCK,-10]",衛星被成功劫持，洛克無人機全數失聯。拜特公開叫賣存取權限。,"Satellite hijacked, LockDefense drones grounded.",,BYTE漲LOCK跌
+E10-B,通知洛克換取回報,"[LOCK,+7],[BYTE,-6]",你把計畫洩漏給洛克，他們反制成功並追殺駭客。拜特勢力受挫。,"LockDefense counters hack, ByteSec network exposed.",,LOCK漲BYTE跌
+E10-C,兩邊都不幫坐收漁利,"[NARC,+3],[LOCK,-2],[BYTE,-1]",雙方鬥到兩敗俱傷，你趁亂在藥品市場撿便宜。,"Both sides weakened, pharma picks up scraps.",,NARC小漲其餘跌
