@@ -1547,6 +1547,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955788679}
   m_CullTransparentMesh: 1
+--- !u!114 &1073108820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4969978965806066412, guid: 46349e21300471c4e884c34e5b54e35c, type: 3}
+  m_PrefabInstance: {fileID: 513091494}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2518b5c832319c4f88ce08c2dfdb4e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlackMarketTrader.StockMarketManager
 --- !u!224 &1199547498 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7922190168807838393, guid: 0fca8e74d47b03d4e991e3e3151f79e6, type: 3}
@@ -2390,6 +2401,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 600262740932956023, guid: 6a37ffe15c35a524787185bafcd62767, type: 3}
+      propertyPath: _marketManager
+      value: 
+      objectReference: {fileID: 1073108820}
     - target: {fileID: 5356257525049058827, guid: 6a37ffe15c35a524787185bafcd62767, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
