@@ -38,11 +38,20 @@ namespace UI
 
         private void Start()
         {
-            // 初始化所有框為預設顏色
+            // 初始化所有框為預設顏色並載入角色名稱
             for (int i = 0; i < characterFrames.Length; i++)
             {
                 if (characterFrames[i] != null)
                     characterFrames[i].color = normalColor;
+
+                if (i < characterNames.Length && characterNames[i] != null)
+                {
+                    var charInfo = CharacterDataManager.GetCharacterByIndex(i);
+                    if (charInfo != null)
+                    {
+                        characterNames[i].text = $"{charInfo.Name}\n<size=80%>{charInfo.Nickname}</size>";
+                    }
+                }
             }
 
             if (selectionText != null)
@@ -81,7 +90,17 @@ namespace UI
                 characterFrames[index].color = selectedColor;
 
             if (selectionText != null)
-                selectionText.text = $"已選擇角色 {_keyLabels[index]}（{index + 1}號）";
+            {
+                var charInfo = CharacterDataManager.GetCharacterByIndex(index);
+                if (charInfo != null)
+                {
+                    selectionText.text = $"已選擇：{charInfo.Name} ({charInfo.Nickname})\n\n<size=80%>{charInfo.Description}</size>";
+                }
+                else
+                {
+                    selectionText.text = $"已選擇角色 {_keyLabels[index]}（{index + 1}號）";
+                }
+            }
 
             // 儲存選擇並進入遊戲
             _confirmed = true;

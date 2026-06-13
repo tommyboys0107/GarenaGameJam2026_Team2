@@ -1,0 +1,13 @@
+事件編號,事件名稱,影響,結果文字,Result,AudioID,ImageID
+A01,臨床試驗造假曝光,"[NARC,-15],[LOCK,+5],[BYTE,+12]",納克製藥被爆三期試驗數據全是捏造的，股價跳水。拜特資安趁機兜售『消滅證據』服務。,"Faked trials exposed, NarcPharma plummets.",A01-Result,A01-Result
+A02,政府標案外洩,"[NARC,-10],[LOCK,+18],[BYTE,+8]",一份千億國防標案內容被駭客提前洩漏，洛克防務搶先佈局，製藥部門預算被砍。,"Defense contract leaked, LockDefense surges.",,
+A03,暗網藥局促銷日,"[NARC,+20],[LOCK,-8],[BYTE,+6]",暗網年度促銷，處方藥與合成品訂單爆量。物流全靠加密通訊，軍火商被冷落了。,"Dark web pharmacy sale, drug orders explode.",,
+A04,零日漏洞被公開,"[NARC,+10],[LOCK,+8],[BYTE,-18]",拜特資安自家防火牆被發現零日漏洞，客戶信任崩盤。各方轉向實體交易避險。,"Zero-day exploit exposed, ByteSec trust collapses.",,
+A05,傭兵公司內戰,"[NARC,+8],[LOCK,-15],[BYTE,+10]",洛克旗下兩支傭兵隊互相開幹，軍火庫被炸毀。傷兵需要藥品，雙方都在搶購監控系統。,Mercenary mutiny destroys LockDefense arsenal.,,
+A06,跨國洗錢通道建立,"[NARC,+10],[LOCK,+10],[BYTE,+10]",新的跨國洗錢管道上線，黑市資金流動性大增，三大產業雨露均霑。,New laundering channel boosts entire black market.,,
+A07,吹哨者記者會,"[NARC,+12],[LOCK,-18],[BYTE,-8]",前員工召開記者會揭露洛克防務向恐怖組織賣武器，執法單位連帶盯上資安公司。藥品黑市反而更隱蔽。,Whistleblower exposes LockDefense arms deals.,,
+A08,AI深偽勒索潮,"[NARC,-5],[LOCK,-8],[BYTE,+20]",AI生成的深偽影片被大規模用於勒索，拜特資安的勒索軟體即服務（RaaS）銷量翻倍。,"Deepfake extortion wave, ByteSec RaaS booms.",,
+A09,地下診所連鎖擴張,"[NARC,+15],[LOCK,+8],[BYTE,-5]",無照地下診所在東南亞開了20家分店，藥品需求暴漲，還雇了洛克的保鑣駐點。,"Underground clinics expand, drug demand soars.",,
+A10,衛星通訊被劫持,"[NARC,+5],[LOCK,-12],[BYTE,+15]",駭客集團劫持軍用衛星通訊，洛克的無人機編隊全部失聯。拜特資安公開叫賣存取權限。,"Military satellite hijacked, drones go offline.",,
+A11,禁藥檢測技術突破,"[NARC,-20],[LOCK,+5],[BYTE,+12]",新型檢測技術讓九成違禁藥物無所遁形，納克的產品滯銷。客戶轉向數位犯罪領域。,New drug detection tech cripples NarcPharma sales.,,
+A12,國際軍火展黑幕,"[NARC,+8],[LOCK,+15],[BYTE,-12]",國際軍火展的VIP後台實為黑市交易會，軍火與生化製品訂單滿載。資安團隊被擋在門外。,Arms expo backdoor deals flood LockDefense orders.,,
