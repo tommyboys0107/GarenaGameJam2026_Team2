@@ -119,6 +119,65 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &193585827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 193585829}
+  - component: {fileID: 193585828}
+  m_Layer: 0
+  m_Name: GameFlowController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &193585828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193585827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9345b430cbcafec4ea8ee794e53fb1cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.GameFlowController
+  gameManager: {fileID: 760677885}
+  voteManager: {fileID: 1327887409}
+  voteStartTimes:
+  - 10
+  - 45
+  voteRounds:
+  - option1: "\u80A1\u5E02\u66B4\u8DCC"
+    option2: "\u9ED1\u5E02\u67E5\u7A05"
+    option3: "\u5167\u7DDA\u6D88\u606F"
+  - option1: "\u901A\u8CA8\u81A8\u8139"
+    option2: "\u4EA4\u6613\u51CD\u7D50"
+    option3: "\u9ED1\u5E55\u66DD\u5149"
+  - option1: "\u5168\u9762\u5D29\u76E4"
+    option2: "\u4E00\u591C\u66B4\u5BCC"
+    option3: "\u838A\u5BB6\u4ECB\u5165"
+--- !u!4 &193585829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193585827}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &197651694
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,7 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a130dd23eab79641baf893ff88c0aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.GameManager
-  gameDuration: 3
+  gameDuration: 60
 --- !u!4 &760677886
 Transform:
   m_ObjectHideFlags: 0
@@ -880,6 +939,66 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1327887408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1327887411}
+  - component: {fileID: 1327887410}
+  - component: {fileID: 1327887409}
+  m_Layer: 0
+  m_Name: TwitchSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1327887409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327887408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0486593057caa704bbdd14ef7c6ea6ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Twitch.TwitchVoteManager
+  twitchIRC: {fileID: 1327887410}
+  config: {fileID: 11400000, guid: f256c696f05f8d347945e3f81af83e69, type: 2}
+--- !u!114 &1327887410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327887408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496a66c1e20d62d40a77edb900085913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Twitch.TwitchIRC
+  config: {fileID: 11400000, guid: f256c696f05f8d347945e3f81af83e69, type: 2}
+--- !u!4 &1327887411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327887408}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1374134546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,3 +1409,5 @@ SceneRoots:
   - {fileID: 201131567}
   - {fileID: 1374134548}
   - {fileID: 2137137160}
+  - {fileID: 1327887411}
+  - {fileID: 193585829}

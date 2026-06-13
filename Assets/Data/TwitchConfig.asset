@@ -15,5 +15,5 @@ MonoBehaviour:
   channelName: karry9527
   oauthToken: 
   botUsername: 
-  voteDuration: 60
+  voteDuration: 10
   oneVotePerUser: 1
