@@ -67,7 +67,7 @@
 .stock-info-row {
     flex-direction: row;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 }
 
 .stock-color-dot {
@@ -109,15 +109,17 @@
 }
 
 .stock-price {
-    font-size: 20px;
+    font-size: 28px;
     color: rgba(255, 255, 255, 0.9);
     margin-right: 6px;
+    -unity-font-definition: url("project://database/Assets/Fonts/ChironHeiHK-Regular.ttf?fileID=12800000&guid=e03884947763e6b46aed78094d928451&type=3#ChironHeiHK-Regular");
 }
 
 .stock-trend {
-    font-size: 22px;
+    font-size: 28px;
     -unity-font-style: bold;
     color: rgba(255, 255, 255, 0.9);
+    -unity-text-align: upper-right;
 }
 
 .chart-area {
@@ -136,9 +138,11 @@
 }
 
 .y-label {
-    font-size: 32px;
-    color: rgba(180, 180, 200, 0.8);
+    font-size: 24px;
+    color: rgb(137, 137, 178);
     -unity-text-align: middle-right;
+    -unity-font-definition: url("project://database/Assets/Fonts/ChironHeiHK-Regular.ttf?fileID=12800000&guid=e03884947763e6b46aed78094d928451&type=3#ChironHeiHK-Regular");
+    -unity-font-style: normal;
 }
 
 .stock-chart {
