@@ -708,7 +708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a130dd23eab79641baf893ff88c0aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.GameManager
-  gameDuration: 60
 --- !u!4 &760677886
 Transform:
   m_ObjectHideFlags: 0
@@ -1381,6 +1380,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 600262740932956023, guid: 6a37ffe15c35a524787185bafcd62767, type: 3}
+      propertyPath: _gameManager
+      value: 
+      objectReference: {fileID: 760677885}
     - target: {fileID: 600262740932956023, guid: 6a37ffe15c35a524787185bafcd62767, type: 3}
       propertyPath: _marketManager
       value: 

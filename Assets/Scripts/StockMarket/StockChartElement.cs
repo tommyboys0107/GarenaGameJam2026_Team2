@@ -1,9 +1,36 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace BlackMarketTrader
 {
+    /// <summary>
+    /// 線圖繪製設定，可在 Inspector 上調整
+    /// </summary>
+    [Serializable]
+    public class ChartDrawSettings
+    {
+        [Header("繪圖範圍 (Padding)")]
+        public float PaddingLeft = 10f;
+        public float PaddingRight = 20f;
+        public float PaddingTop = 30f;
+        public float PaddingBottom = 20f;
+
+        [Header("線條粗細")]
+        public float StockLineWidth = 6f;
+        public float EventLineWidth = 1.5f;
+        public float GridLineWidth = 0.5f;
+
+        [Header("格線設定")]
+        public int HorizontalLines = 5;
+        public int VerticalLines = 6;
+        public Color GridColor = new Color(0.3f, 0.3f, 0.3f, 0.4f);
+
+        [Header("事件標記")]
+        public Color EventLineColor = new Color(1f, 1f, 0f, 0.7f);
+    }
+
     /// <summary>
     /// 股市線圖 UI Toolkit 顯示元件，負責繪製三條價格曲線及事件標記
     /// </summary>
@@ -14,22 +41,23 @@ namespace BlackMarketTrader
         private StockData[] _stocks;
         private List<StockEvent> _events;
         private int _currentTimeIndex;
-        private float _minPrice = 5f;
-        private float _maxPrice = 100f;
+        private float _minPrice = 0f;
+        private float _maxPrice = 1000f;
         private int _maxDataPoints = 60;
-
-        // 繪製參數
-        private const float PADDING_LEFT = 10f;
-        private const float PADDING_RIGHT = 20f;
-        private const float PADDING_TOP = 30f;
-        private const float PADDING_BOTTOM = 20f;
-        private const float LINE_WIDTH = 6f;
-        private const float EVENT_LINE_WIDTH = 1.5f;
-        private const float GRID_LINE_WIDTH = 0.5f;
+        private ChartDrawSettings _settings = new ChartDrawSettings();
 
         public StockChartElement()
         {
             generateVisualContent += OnGenerateVisualContent;
+        }
+
+        /// <summary>
+        /// 設定繪圖參數
+        /// </summary>
+        public void SetDrawSettings(ChartDrawSettings settings)
+        {
+            _settings = settings ?? new ChartDrawSettings();
+            MarkDirtyRepaint();
         }
 
         /// <summary>
@@ -56,20 +84,16 @@ namespace BlackMarketTrader
 
             if (rect.width < 1f || rect.height < 1f) return;
 
-            float chartLeft = PADDING_LEFT;
-            float chartRight = rect.width - PADDING_RIGHT;
-            float chartTop = PADDING_TOP;
-            float chartBottom = rect.height - PADDING_BOTTOM;
+            float chartLeft = _settings.PaddingLeft;
+            float chartRight = rect.width - _settings.PaddingRight;
+            float chartTop = _settings.PaddingTop;
+            float chartBottom = rect.height - _settings.PaddingBottom;
             float chartWidth = chartRight - chartLeft;
             float chartHeight = chartBottom - chartTop;
 
-            // 繪製背景格線
             DrawGrid(painter, chartLeft, chartTop, chartWidth, chartHeight);
-
-            // 繪製事件標記線
             DrawEventMarkers(painter, chartLeft, chartTop, chartWidth, chartHeight);
 
-            // 繪製三條股價線
             foreach (var stock in _stocks)
             {
                 DrawStockLine(painter, stock, chartLeft, chartTop, chartWidth, chartHeight);
@@ -78,26 +102,23 @@ namespace BlackMarketTrader
 
         private void DrawGrid(Painter2D painter, float left, float top, float width, float height)
         {
-            var gridColor = new Color(0.3f, 0.3f, 0.3f, 0.4f);
-            painter.strokeColor = gridColor;
-            painter.lineWidth = GRID_LINE_WIDTH;
+            painter.strokeColor = _settings.GridColor;
+            painter.lineWidth = _settings.GridLineWidth;
 
-            // 水平線 (價格刻度)
-            int horizontalLines = 5;
-            for (int i = 0; i <= horizontalLines; i++)
+            int hLines = _settings.HorizontalLines;
+            for (int i = 0; i <= hLines; i++)
             {
-                float y = top + (height / horizontalLines) * i;
+                float y = top + (height / hLines) * i;
                 painter.BeginPath();
                 painter.MoveTo(new Vector2(left, y));
                 painter.LineTo(new Vector2(left + width, y));
                 painter.Stroke();
             }
 
-            // 垂直線 (時間刻度)
-            int verticalLines = 6;
-            for (int i = 0; i <= verticalLines; i++)
+            int vLines = _settings.VerticalLines;
+            for (int i = 0; i <= vLines; i++)
             {
-                float x = left + (width / verticalLines) * i;
+                float x = left + (width / vLines) * i;
                 painter.BeginPath();
                 painter.MoveTo(new Vector2(x, top));
                 painter.LineTo(new Vector2(x, top + height));
@@ -111,7 +132,7 @@ namespace BlackMarketTrader
             if (stock.PriceHistory.Count < 2) return;
 
             painter.strokeColor = stock.LineColor;
-            painter.lineWidth = LINE_WIDTH;
+            painter.lineWidth = _settings.StockLineWidth;
             painter.lineCap = LineCap.Round;
             painter.lineJoin = LineJoin.Round;
             painter.BeginPath();
@@ -124,7 +145,6 @@ namespace BlackMarketTrader
             {
                 float x = left + (width / (_maxDataPoints - 1)) * i;
                 float normalizedPrice = Mathf.InverseLerp(_minPrice, _maxPrice, stock.PriceHistory[startIndex + i]);
-                // Y軸反轉（價格高在上方）
                 float y = top + height * (1f - normalizedPrice);
 
                 if (i == 0)
@@ -140,22 +160,18 @@ namespace BlackMarketTrader
         {
             if (_events == null || _events.Count == 0) return;
 
-            var eventLineColor = new Color(1f, 1f, 0f, 0.7f); // 黃色
-            painter.strokeColor = eventLineColor;
-            painter.lineWidth = EVENT_LINE_WIDTH;
+            painter.strokeColor = _settings.EventLineColor;
+            painter.lineWidth = _settings.EventLineWidth;
 
-            // 計算當前可見範圍
             int visibleStart = Mathf.Max(0, _currentTimeIndex - _maxDataPoints + 1);
 
             foreach (var evt in _events)
             {
-                // 只繪製可見範圍內的事件
                 if (evt.TimeIndex < visibleStart || evt.TimeIndex > _currentTimeIndex) continue;
 
                 int relativeIndex = evt.TimeIndex - visibleStart;
                 float x = left + (width / (_maxDataPoints - 1)) * relativeIndex;
 
-                // 繪製垂直虛線
                 painter.BeginPath();
                 painter.MoveTo(new Vector2(x, top));
                 painter.LineTo(new Vector2(x, top + height));

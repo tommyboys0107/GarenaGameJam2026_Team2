@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
-using Data;
+using Gameplay;
 
 namespace BlackMarketTrader
 {
@@ -8,6 +8,8 @@ namespace BlackMarketTrader
     public class StockChartUIController : MonoBehaviour
     {
         [SerializeField] private StockMarketManager _marketManager;
+        [SerializeField] private GameManager _gameManager;
+        [SerializeField] private ChartDrawSettings _chartSettings = new ChartDrawSettings();
 
         private UIDocument _uiDocument;
         private StockChartElement _chartElement;
@@ -17,10 +19,6 @@ namespace BlackMarketTrader
         private Label[] _yAxisLabels;
         private Label _timerLabel;
         private VisualElement _eventLabelContainer;
-
-        private float _totalGameTime;
-        private float _timeRemaining;
-        private bool _timerRunning;
 
         private void Awake()
         {
@@ -39,6 +37,7 @@ namespace BlackMarketTrader
                 _chartElement.name = "stock-chart";
                 _chartElement.AddToClassList("stock-chart");
                 _chartElement.style.flexGrow = 1;
+                _chartElement.SetDrawSettings(_chartSettings);
                 chartArea.Insert(0, _chartElement);
             }
 
@@ -63,11 +62,6 @@ namespace BlackMarketTrader
 
             // Timer label
             _timerLabel = root.Q<Label>("timer-label");
-            var timeConfig = CSVLoader.LoadTimeConfig();
-            _totalGameTime = timeConfig.totalGameTime;
-            _timeRemaining = _totalGameTime;
-            _timerRunning = true;
-            UpdateTimerDisplay();
 
             if (_marketManager != null)
             {
@@ -87,22 +81,15 @@ namespace BlackMarketTrader
 
         private void Update()
         {
-            if (!_timerRunning) return;
-
-            _timeRemaining -= Time.deltaTime;
-            if (_timeRemaining <= 0f)
-            {
-                _timeRemaining = 0f;
-                _timerRunning = false;
-            }
             UpdateTimerDisplay();
         }
 
         private void UpdateTimerDisplay()
         {
-            if (_timerLabel == null) return;
-            int minutes = Mathf.FloorToInt(_timeRemaining / 60f);
-            int seconds = Mathf.FloorToInt(_timeRemaining % 60f);
+            if (_timerLabel == null || _gameManager == null) return;
+            float time = _gameManager.TimeRemaining;
+            int minutes = Mathf.FloorToInt(time / 60f);
+            int seconds = Mathf.FloorToInt(time % 60f);
             _timerLabel.text = $"{minutes:00}:{seconds:00}";
         }
 
