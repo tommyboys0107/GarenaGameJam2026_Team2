@@ -14,20 +14,38 @@
         <!-- 線圖區 -->
         <ui:VisualElement name="chart-section" class="chart-section">
             <ui:VisualElement name="stock-info-panel" class="stock-info-panel">
+                <!-- 納克製藥 -->
                 <ui:VisualElement class="stock-info-row">
                     <ui:VisualElement class="stock-color-dot stock-color-a" />
-                    <ui:Label name="stock-name-0" text="納克製藥" class="stock-name" />
-                    <ui:Label name="stock-trend-0" text="" class="stock-trend" />
+                    <ui:VisualElement class="stock-info-content">
+                        <ui:Label name="stock-name-0" text="納克製藥" class="stock-name" />
+                        <ui:VisualElement class="stock-price-row">
+                            <ui:Label name="stock-price-0" text="$80" class="stock-price" />
+                            <ui:Label name="stock-trend-0" text="↑↑" class="stock-trend" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
                 </ui:VisualElement>
+                <!-- 洛克防務 -->
                 <ui:VisualElement class="stock-info-row">
                     <ui:VisualElement class="stock-color-dot stock-color-b" />
-                    <ui:Label name="stock-name-1" text="洛克防務" class="stock-name" />
-                    <ui:Label name="stock-trend-1" text="" class="stock-trend" />
+                    <ui:VisualElement class="stock-info-content">
+                        <ui:Label name="stock-name-1" text="洛克防務" class="stock-name" />
+                        <ui:VisualElement class="stock-price-row">
+                            <ui:Label name="stock-price-1" text="$100" class="stock-price" />
+                            <ui:Label name="stock-trend-1" text="-" class="stock-trend" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
                 </ui:VisualElement>
+                <!-- 拜特資安 -->
                 <ui:VisualElement class="stock-info-row">
                     <ui:VisualElement class="stock-color-dot stock-color-c" />
-                    <ui:Label name="stock-name-2" text="拜特資安" class="stock-name" />
-                    <ui:Label name="stock-trend-2" text="" class="stock-trend" />
+                    <ui:VisualElement class="stock-info-content">
+                        <ui:Label name="stock-name-2" text="拜特資安" class="stock-name" />
+                        <ui:VisualElement class="stock-price-row">
+                            <ui:Label name="stock-price-2" text="$120" class="stock-price" />
+                            <ui:Label name="stock-trend-2" text="↓" class="stock-trend" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
             <!-- Y軸刻度數字 -->

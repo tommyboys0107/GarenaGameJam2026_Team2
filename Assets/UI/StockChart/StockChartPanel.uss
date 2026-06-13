@@ -1,6 +1,3 @@
-/* Stock Chart Panel */
-
-/* === 上半部容器 === */
 .top-panel {
     flex-direction: row;
     width: 100%;
@@ -11,7 +8,6 @@
     position: relative;
 }
 
-/* === 左側頭像區 (400px) === */
 .avatar-area {
     width: 400px;
     flex-shrink: 0;
@@ -53,13 +49,11 @@
     border-color: rgba(120, 120, 150, 0.4);
 }
 
-/* === 線圖區域（包含商品資訊 + 圖表） === */
 .chart-section {
     flex-grow: 1;
     flex-direction: row;
 }
 
-/* 商品資訊（線圖左側） */
 .stock-info-panel {
     width: 160px;
     flex-shrink: 0;
@@ -105,19 +99,33 @@
     color: rgba(240, 240, 240, 0.95);
 }
 
+.stock-info-content {
+    flex-direction: column;
+}
+
+.stock-price-row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.stock-price {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-right: 6px;
+}
+
 .stock-trend {
     font-size: 22px;
     -unity-font-style: bold;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-/* 線圖 */
 .chart-area {
     flex-grow: 1;
     flex-direction: column;
     position: relative;
 }
 
-/* Y軸刻度 */
 .y-axis {
     width: 80px;
     flex-shrink: 0;
@@ -138,17 +146,16 @@
     min-height: 100px;
 }
 
-/* === 右上角計時器 === */
 .timer-label {
     position: absolute;
     top: 12px;
     right: 16px;
-    font-size: 32px;
+    font-size: 42px;
     -unity-font-style: bold;
     color: rgba(255, 255, 255, 0.9);
+    -unity-font-definition: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=d89762fe8c885ec4fa9cbaaee238c79d&type=3#NotInter-Regular");
 }
 
-/* === 事件標記 === */
 .event-labels {
     position: absolute;
     bottom: 8px;

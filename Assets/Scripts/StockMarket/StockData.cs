@@ -77,7 +77,7 @@ public string GetTrendDisplayText()
             {
                 case TrendLevel.BigRise:   return "↑↑";
                 case TrendLevel.SmallRise: return "↑";
-                case TrendLevel.Flat:      return "→";
+                case TrendLevel.Flat:      return "-";;
                 case TrendLevel.SmallDrop: return "↓";
                 case TrendLevel.BigDrop:   return "↓↓";
                 default: return "";
@@ -87,15 +87,15 @@ public string GetTrendDisplayText()
         /// <summary>
         /// 取得趨勢對應的顏色
         /// </summary>
-        public Color GetTrendColor()
+public Color GetTrendColor()
         {
             switch (CurrentTrend)
             {
-                case TrendLevel.BigRise:   return new Color(1f, 0.2f, 0.2f);   // 紅色
-                case TrendLevel.SmallRise: return new Color(1f, 0.5f, 0.3f);   // 橘紅
-                case TrendLevel.Flat:      return new Color(0.8f, 0.8f, 0.8f); // 灰白
-                case TrendLevel.SmallDrop: return new Color(0.3f, 0.8f, 0.3f); // 淺綠
-                case TrendLevel.BigDrop:   return new Color(0.2f, 1f, 0.2f);   // 綠色
+                case TrendLevel.BigRise:   return new Color(1f, 0.1f, 0.1f);   // 大紅
+                case TrendLevel.SmallRise: return new Color(1f, 0.4f, 0.4f);   // 淺紅
+                case TrendLevel.Flat:      return new Color(0.9f, 0.9f, 0.9f); // 白
+                case TrendLevel.SmallDrop: return new Color(0.4f, 1f, 0.4f);   // 淺綠
+                case TrendLevel.BigDrop:   return new Color(0.1f, 0.9f, 0.1f); // 大綠
                 default: return Color.white;
             }
         }

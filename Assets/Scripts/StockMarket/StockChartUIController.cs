@@ -13,6 +13,7 @@ namespace BlackMarketTrader
         private StockChartElement _chartElement;
         private Label[] _stockNameLabels;
         private Label[] _stockTrendLabels;
+        private Label[] _stockPriceLabels;
         private Label[] _yAxisLabels;
         private Label _timerLabel;
         private VisualElement _eventLabelContainer;
@@ -43,10 +44,12 @@ namespace BlackMarketTrader
 
             _stockNameLabels = new Label[3];
             _stockTrendLabels = new Label[3];
+            _stockPriceLabels = new Label[3];
             for (int i = 0; i < 3; i++)
             {
                 _stockNameLabels[i] = root.Q<Label>($"stock-name-{i}");
                 _stockTrendLabels[i] = root.Q<Label>($"stock-trend-{i}");
+                _stockPriceLabels[i] = root.Q<Label>($"stock-price-{i}");
             }
 
             // Y軸刻度 Label
@@ -127,6 +130,12 @@ namespace BlackMarketTrader
 
                 if (_stockNameLabels[i] != null)
                     _stockNameLabels[i].text = stock.Name;
+
+                if (_stockPriceLabels[i] != null)
+                {
+                    _stockPriceLabels[i].text = $"${stock.CurrentPrice:F0}";
+                    _stockPriceLabels[i].style.color = stock.GetTrendColor();
+                }
 
                 if (_stockTrendLabels[i] != null)
                 {
