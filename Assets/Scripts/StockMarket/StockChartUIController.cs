@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using Data;
 using Gameplay;
 
 namespace BlackMarketTrader
@@ -9,6 +10,7 @@ namespace BlackMarketTrader
     {
         [SerializeField] private StockMarketManager _marketManager;
         [SerializeField] private GameManager _gameManager;
+        [SerializeField] private GameFlowController _gameFlowController;
         [SerializeField] private ChartDrawSettings _chartSettings = new ChartDrawSettings();
 
         private UIDocument _uiDocument;
@@ -68,6 +70,12 @@ namespace BlackMarketTrader
                 _marketManager.OnPriceUpdated += RefreshChart;
                 _marketManager.OnEventTriggered += OnEventTriggered;
             }
+
+            if (_gameFlowController != null)
+            {
+                _gameFlowController.OnTraderEventResolved += OnTraderResolved;
+                _gameFlowController.OnAudienceEventResolved += OnAudienceResolved;
+            }
         }
 
         private void OnDisable()
@@ -76,6 +84,12 @@ namespace BlackMarketTrader
             {
                 _marketManager.OnPriceUpdated -= RefreshChart;
                 _marketManager.OnEventTriggered -= OnEventTriggered;
+            }
+
+            if (_gameFlowController != null)
+            {
+                _gameFlowController.OnTraderEventResolved -= OnTraderResolved;
+                _gameFlowController.OnAudienceEventResolved -= OnAudienceResolved;
             }
         }
 
@@ -110,6 +124,7 @@ namespace BlackMarketTrader
             );
 
             UpdateYAxisLabels(minPrice, maxPrice);
+            UpdateEventLabels();
 
             for (int i = 0; i < 3 && i < _marketManager.Stocks.Length; i++)
             {
@@ -146,22 +161,99 @@ namespace BlackMarketTrader
             }
         }
 
+private void UpdateEventLabels()
+        {
+            if (_eventLabelContainer == null || _marketManager == null) return;
+
+            _eventLabelContainer.Clear();
+
+            var events = _marketManager.Events;
+            if (events == null || events.Count == 0) return;
+
+            int maxDataPoints = 60;
+            int visibleStart = Mathf.Max(0, _marketManager.CurrentTimeIndex - maxDataPoints + 1);
+            float containerWidth = _eventLabelContainer.resolvedStyle.width;
+            if (containerWidth <= 0) return;
+
+            float paddingLeft = _chartSettings.PaddingLeft;
+            float paddingRight = _chartSettings.PaddingRight;
+            float chartWidth = containerWidth - paddingLeft - paddingRight;
+
+            foreach (var evt in events)
+            {
+                if (evt.TimeIndex < visibleStart || evt.TimeIndex > _marketManager.CurrentTimeIndex) continue;
+
+                int relativeIndex = evt.TimeIndex - visibleStart;
+                float x = paddingLeft + (chartWidth / (maxDataPoints - 1)) * relativeIndex;
+
+                var label = new Label(evt.EventName);
+                label.AddToClassList("event-marker-label");
+                label.style.position = Position.Absolute;
+                label.style.left = x;
+                label.style.bottom = 8;
+                _eventLabelContainer.Add(label);
+            }
+        }
+
+
         private void OnEventTriggered(StockEvent stockEvent)
         {
-            if (_eventLabelContainer == null) return;
-
-            var label = new Label(stockEvent.EventName);
-            label.AddToClassList("event-marker-label");
-            _eventLabelContainer.Add(label);
-
-            while (_eventLabelContainer.childCount > 5)
-                _eventLabelContainer.RemoveAt(0);
-
+            // label 位置在 RefreshChart 中統一更新
             RefreshChart();
         }
 
         public void ForceRefresh()
         {
+            RefreshChart();
+        }
+
+        /// <summary>
+        /// 玩家事件結果 — 顯示選項名稱在線圖上
+        /// </summary>
+        private void OnTraderResolved(ChoiceInfo choice)
+        {
+            if (_marketManager == null || choice == null) return;
+            ApplyEffectsAndMark(choice.name, choice.effects);
+        }
+
+        /// <summary>
+        /// 觀眾事件結果 — 顯示事件名稱在線圖上
+        /// </summary>
+        private void OnAudienceResolved(AudienceEventInfo audienceEvent)
+        {
+            if (_marketManager == null || audienceEvent == null) return;
+            ApplyEffectsAndMark(audienceEvent.name, audienceEvent.effects);
+        }
+
+        private void ApplyEffectsAndMark(string eventName, StockEffect[] effects)
+        {
+            if (effects == null) return;
+
+            foreach (var effect in effects)
+            {
+                for (int i = 0; i < _marketManager.Stocks.Length; i++)
+                {
+                    string code = i switch
+                    {
+                        0 => "NARC",
+                        1 => "LOCK",
+                        2 => "BYTE",
+                        _ => ""
+                    };
+
+                    if (effect.stockCode == code)
+                    {
+                        _marketManager.Stocks[i].CurrentPrice = Mathf.Clamp(
+                            _marketManager.Stocks[i].CurrentPrice + effect.value,
+                            _marketManager.MinPrice,
+                            _marketManager.MaxPrice
+                        );
+                    }
+                }
+            }
+
+            // 在線圖上標記事件（顯示選項/事件名稱）
+            _marketManager.TriggerEvent(eventName, -1, _marketManager.Stocks[0].CurrentTrend);
             RefreshChart();
         }
     }

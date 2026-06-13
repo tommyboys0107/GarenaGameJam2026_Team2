@@ -1388,6 +1388,10 @@ PrefabInstance:
       propertyPath: _marketManager
       value: 
       objectReference: {fileID: 513091495}
+    - target: {fileID: 600262740932956023, guid: 6a37ffe15c35a524787185bafcd62767, type: 3}
+      propertyPath: _gameFlowController
+      value: 
+      objectReference: {fileID: 193585828}
     - target: {fileID: 5356257525049058827, guid: 6a37ffe15c35a524787185bafcd62767, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

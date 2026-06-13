@@ -70,15 +70,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BlackMarketTrader.StockChartUIController
   _marketManager: {fileID: 0}
   _gameManager: {fileID: 0}
+  _gameFlowController: {fileID: 0}
   _chartSettings:
     PaddingLeft: 10
     PaddingRight: 50
     PaddingTop: 30
     PaddingBottom: 20
     StockLineWidth: 10
-    EventLineWidth: 2
+    EventLineWidth: 1
     GridLineWidth: 1
     HorizontalLines: 5
     VerticalLines: 6
-    GridColor: {r: 0.3, g: 0.3, b: 0.3, a: 0.4}
-    EventLineColor: {r: 1, g: 1, b: 0, a: 0.7}
+    GridColor: {r: 0.3, g: 0.3, b: 0.3, a: 0.62352943}
+    EventLineColor: {r: 1, g: 0.9440169, b: 0.4198113, a: 0.59607846}
