@@ -6,53 +6,43 @@ namespace UI
 {
     /// <summary>
     /// 右下角電視上的三選一選項 UI。
-    /// 使用 RectTransform rotation 來模擬透視感（電視螢幕角度）。
+    /// 使用 3D TextMeshPro 物件放在世界空間中，對齊電視螢幕位置與角度。
+    /// 透視感由 Camera 自然產生。
     /// </summary>
     public class TVChoiceUI : MonoBehaviour
     {
-        [Header("電視容器（套用透視旋轉的父物件）")]
-        [SerializeField] private RectTransform tvPanel;
+        [Header("電視螢幕容器（控制整體位置和旋轉）")]
+        [SerializeField] private Transform tvScreenRoot;
 
-        [Header("透視旋轉角度")]
-        [SerializeField] private Vector3 perspectiveRotation = new Vector3(2f, -15f, 1f);
-
-        [Header("選項文字")]
-        [SerializeField] private TextMeshProUGUI titleText;
-        [SerializeField] private TextMeshProUGUI option1Text;
-        [SerializeField] private TextMeshProUGUI option2Text;
-        [SerializeField] private TextMeshProUGUI option3Text;
+        [Header("選項文字 (3D TextMeshPro)")]
+        [SerializeField] private TextMeshPro titleText;
+        [SerializeField] private TextMeshPro option1Text;
+        [SerializeField] private TextMeshPro option2Text;
+        [SerializeField] private TextMeshPro option3Text;
 
         [Header("投票數顯示")]
-        [SerializeField] private TextMeshProUGUI vote1CountText;
-        [SerializeField] private TextMeshProUGUI vote2CountText;
-        [SerializeField] private TextMeshProUGUI vote3CountText;
+        [SerializeField] private TextMeshPro vote1CountText;
+        [SerializeField] private TextMeshPro vote2CountText;
+        [SerializeField] private TextMeshPro vote3CountText;
 
         [Header("倒數計時")]
-        [SerializeField] private TextMeshProUGUI timerText;
+        [SerializeField] private TextMeshPro timerText;
 
         /// <summary>目前是否顯示中</summary>
         public bool IsShowing { get; private set; }
 
         private void Awake()
         {
-            // 套用透視旋轉
-            if (tvPanel != null)
-                tvPanel.localRotation = Quaternion.Euler(perspectiveRotation);
-
             Hide();
         }
 
         /// <summary>
         /// 顯示三選一選項。
         /// </summary>
-        /// <param name="title">事件標題</param>
-        /// <param name="opt1">選項 1 文字</param>
-        /// <param name="opt2">選項 2 文字</param>
-        /// <param name="opt3">選項 3 文字</param>
         public void Show(string title, string opt1, string opt2, string opt3)
         {
-            if (tvPanel != null)
-                tvPanel.gameObject.SetActive(true);
+            if (tvScreenRoot != null)
+                tvScreenRoot.gameObject.SetActive(true);
 
             if (titleText != null)
                 titleText.text = title;
@@ -97,12 +87,15 @@ namespace UI
             if (titleText != null)
                 titleText.text = resultText;
 
-            // 高亮獲勝選項
             var texts = new[] { option1Text, option2Text, option3Text };
             for (int i = 0; i < 3; i++)
             {
                 if (texts[i] != null)
-                    texts[i].alpha = (i == winnerIndex) ? 1f : 0.3f;
+                {
+                    var color = texts[i].color;
+                    color.a = (i == winnerIndex) ? 1f : 0.3f;
+                    texts[i].color = color;
+                }
             }
         }
 
@@ -111,8 +104,8 @@ namespace UI
         /// </summary>
         public void Hide()
         {
-            if (tvPanel != null)
-                tvPanel.gameObject.SetActive(false);
+            if (tvScreenRoot != null)
+                tvScreenRoot.gameObject.SetActive(false);
 
             IsShowing = false;
         }
