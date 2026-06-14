@@ -1246,8 +1246,8 @@ MonoBehaviour:
   bgmSource: {fileID: 900567769}
   sfxSource: {fileID: 900567768}
   voiceSource: {fileID: 900567767}
-  bgmClip: {fileID: 0}
-  clickSfxClip: {fileID: 0}
+  bgmClip: {fileID: 8300000, guid: 3fbeaf2fd4f3947779a963259723e47f, type: 3}
+  clickSfxClip: {fileID: 8300000, guid: 4657fd8bac24d486b9392c3e4ffe2bb8, type: 3}
   goalSelectUI: {fileID: 396008777}
 --- !u!4 &900567771
 Transform:
