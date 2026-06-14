@@ -64,6 +64,11 @@ namespace BlackMarketTrader
             InitializeStocks();
         }
 
+        private void Start()
+        {
+            StartMarket();
+        }
+
         private void InitializeStocks()
         {
             var stockInfos = CSVLoader.LoadStocks();
