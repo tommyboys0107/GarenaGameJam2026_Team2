@@ -6,10 +6,13 @@
     border-bottom-width: 0;
     border-bottom-color: rgba(100, 100, 120, 0.6);
     position: relative;
+    background-image: url("project://database/Assets/Textures/frame.png?fileID=2800000&guid=c42260c13d2b31b488dc0a89fc19c342&type=3#frame");
+    background-position-y: top 0;
+    background-size: 100% 119%;
 }
 
 .avatar-area {
-    width: 400px;
+    width: 360px;
     flex-shrink: 0;
     flex-grow: 0;
     flex-direction: column;
@@ -21,14 +24,14 @@
 }
 
 .avatar-portrait {
-    width: 295px;
-    height: 288px;
+    width: 100%;
+    height: 100%;
     flex-shrink: 0;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 6px;
     border-width: 0;
     border-color: rgba(0, 0, 0, 0);
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .emote-buttons {
@@ -56,20 +59,26 @@
 }
 
 .stock-info-panel {
-    width: 160px;
+    width: 268px;
     flex-shrink: 0;
     flex-direction: column;
     justify-content: center;
     padding: 8px;
-    margin-left: 32px;
+    margin-left: -20px;
     margin-right: 24px;
     margin-top: 18px;
+    padding-left: 20px;
+    background-position-x: left 0;
+    background-image: url("project://database/Assets/Textures/colorUI.png?fileID=2800000&guid=d9ec5c27a4b2b924191ad6a2ae2f65a2&type=3#colorUI");
 }
 
 .stock-info-row {
     flex-direction: row;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 44px;
+    background-size: auto auto;
+    margin-top: 37px;
+    margin-left: 59px;
 }
 
 .stock-color-dot {
@@ -82,37 +91,14 @@
     flex-shrink: 0;
 }
 
-.stock-color-a {
-    background-color: rgb(255, 77, 77);
-    margin-right: 16px;
-}
 
-.stock-color-b {
-    background-color: rgb(77, 128, 255);
-    margin-right: 16px;
-}
-
-.stock-color-c {
-    background-color: rgb(77, 255, 77);
-    margin-right: 16px;
-    filter: none;
-}
 
 .stock-name {
     font-size: 26px;
     -unity-font-style: bold;
-    margin-right: 4px;
+    margin-right: 8px;
     color: rgba(240, 240, 240, 0.95);
-}
-
-.stock-info-content {
-    flex-direction: column;
-}
-
-.stock-price-row {
-    flex-direction: row;
-    align-items: center;
-    margin-top: -7px;
+    -unity-font-definition: url("project://database/Assets/Fonts/ChironHeiHK-Regular.ttf?fileID=12800000&guid=e03884947763e6b46aed78094d928451&type=3#ChironHeiHK-Regular");
 }
 
 .stock-price {
@@ -126,7 +112,6 @@
     font-size: 28px;
     -unity-font-style: bold;
     color: rgba(255, 255, 255, 0.9);
-    -unity-text-align: upper-right;
 }
 
 .chart-area {
@@ -140,8 +125,8 @@
     flex-shrink: 0;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 .y-label {
