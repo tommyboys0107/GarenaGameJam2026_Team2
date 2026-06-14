@@ -545,6 +545,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 760677885}
+    - target: {fileID: 1141253393517428714, guid: 5f2e5aef7dc3df84a90d15b806d4e790, type: 3}
+      propertyPath: winConditionChecker
+      value: 
+      objectReference: {fileID: 6614378768298344546}
     - target: {fileID: 5598347680318085993, guid: 5f2e5aef7dc3df84a90d15b806d4e790, type: 3}
       propertyPath: m_LocalPosition.x
       value: 960
@@ -884,6 +888,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04ef3cb3233e40b4d8ab4ab1abf21f91, type: 3}
+--- !u!114 &6614378768298344546 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6426647390604277723, guid: 04ef3cb3233e40b4d8ab4ab1abf21f91, type: 3}
+  m_PrefabInstance: {fileID: 6614378768298344545}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 233daab1df066f94696d026e26676d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.WinConditionChecker
 --- !u!1001 &9052043548667218961
 PrefabInstance:
   m_ObjectHideFlags: 0
