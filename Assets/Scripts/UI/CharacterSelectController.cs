@@ -310,8 +310,8 @@ namespace UI
                 string percentText = goal.targetPercent >= 0 ? $"+{goal.targetPercent}%" : $"{goal.targetPercent}%";
                 var percentLabel = new Label(percentText);
                 percentLabel.style.color = goal.targetPercent >= 0
-                    ? new Color(0.3f, 1f, 0.3f, 1f)
-                    : new Color(1f, 0.3f, 0.3f, 1f);
+                    ? new Color(1f, 0.3f, 0.3f, 1f)
+                    : new Color(0.3f, 1f, 0.3f, 1f);
                 percentLabel.style.fontSize = 36;
                 percentLabel.style.unityTextAlign = TextAnchor.MiddleCenter;
                 percentLabel.style.marginTop = 6;
