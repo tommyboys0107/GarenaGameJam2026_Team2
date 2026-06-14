@@ -135,7 +135,12 @@ namespace BlackMarketTrader
 
                 if (_stockPriceLabels[i] != null)
                 {
-                    _stockPriceLabels[i].text = $"${stock.CurrentPrice:F0}";
+                    // 顯示漲跌幅百分比（相對於初始價格）
+                    float changePercent = (stock.InitialPrice > 0)
+                        ? (stock.CurrentPrice - stock.InitialPrice) / stock.InitialPrice * 100f
+                        : 0f;
+                    string sign = changePercent >= 0 ? "+" : "";
+                    _stockPriceLabels[i].text = $"{sign}{changePercent:F1}%";
                     _stockPriceLabels[i].style.color = stock.GetTrendColor();
                 }
 
