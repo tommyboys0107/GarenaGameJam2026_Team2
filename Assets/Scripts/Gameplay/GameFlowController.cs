@@ -32,6 +32,7 @@ namespace Gameplay
         [SerializeField] private GameObject npcMsg;
         [SerializeField] private GameObject npcMsgBG;
         [SerializeField] private TMPro.TMP_Text npcMsgContent;
+        [SerializeField] private GameObject npcBG;
 
         [Header("時間設定（從 TimeData.csv 自動讀取，Inspector 值為備用）")]
         [SerializeField] private float startDelay = 10f;
@@ -114,6 +115,7 @@ namespace Gameplay
             if (npcImage != null) npcImage.SetActive(false);
             if (npcMsg != null) npcMsg.SetActive(false);
             if (npcMsgBG != null) npcMsgBG.SetActive(false);
+            if (npcBG != null) npcBG.SetActive(false);
         }
 
         private void ApplyTimeConfig()
@@ -253,6 +255,7 @@ namespace Gameplay
             if (npcImage != null) npcImage.SetActive(false);
             if (npcMsg != null) npcMsg.SetActive(false);
             if (npcMsgBG != null) npcMsgBG.SetActive(false);
+            if (npcBG != null) npcBG.SetActive(false);
 
             // 關閉操盤手按鈕 UI
             if (traderChoiceUI != null) traderChoiceUI.Hide();
@@ -318,6 +321,7 @@ namespace Gameplay
                 if (npcImage != null) npcImage.SetActive(false);
                 if (npcMsg != null) npcMsg.SetActive(false);
                 if (npcMsgBG != null) npcMsgBG.SetActive(false);
+                if (npcBG != null) npcBG.SetActive(false);
 
                 Debug.Log("[GameFlow] 所有事件 slot 結束");
                 return;
@@ -403,6 +407,7 @@ namespace Gameplay
             if (npcImage != null) npcImage.SetActive(true);
             if (npcMsg != null) npcMsg.SetActive(true);
             if (npcMsgBG != null) npcMsgBG.SetActive(true);
+            if (npcBG != null) npcBG.SetActive(true);
             if (npcMsgContent != null) npcMsgContent.text = eventInfo.description;
 
             IsWaitingForChoice = true;

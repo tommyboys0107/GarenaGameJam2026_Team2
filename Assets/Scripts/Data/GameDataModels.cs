@@ -17,10 +17,16 @@ namespace Data
     [Serializable]
     public class CharacterInfo
     {
-        public string id;         // C01
-        public string name;       // 維乃德
-        public string nickname;   // 教父
-        public string description;
+        public string id;              // C01
+        public string name;            // 維乃德·卡索
+        public string gender;          // 男
+        public string description;     // 西西里裁縫店老闆...
+        public StockEffect[] specialty; // [NARC,+15],[BYTE,-10]
+        public string selectQuote;     // In this business...
+        public string selectImageId;   // C01_C
+        public string unselectImageId; // C01
+        public string portraitImageId; // C01_F
+        public string audioId;         // C01_Intro
     }
 
     [Serializable]
@@ -59,10 +65,13 @@ namespace Data
     [Serializable]
     public class GoalInfo
     {
-        public string id;         // G01
-        public string nickname;   // 外號，如 "教父 (Il Padrino)"
-        public string stockCode;  // NARC
-        public int targetPercent; // 40 or -40
+        public string id;              // G01
+        public string nickname;        // 絕命毒師 (Il Farmacista)
+        public string nicknameDesc;    // 掌握納克製藥的地下配方網路...
+        public string unselectIconId;  // G01
+        public string selectIconId;    // G01_L
+        public string stockCode;       // NARC
+        public int targetPercent;      // 40 or -40
     }
 
     [Serializable]

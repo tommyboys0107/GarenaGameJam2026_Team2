@@ -38,13 +38,19 @@ namespace Data
 
             foreach (var cols in lines)
             {
-                if (cols.Length < 4) continue;
+                if (cols.Length < 10) continue;
                 list.Add(new CharacterInfo
                 {
                     id = cols[0].Trim(),
                     name = cols[1].Trim(),
-                    nickname = cols[2].Trim(),
-                    description = cols[3].Trim()
+                    gender = cols[2].Trim(),
+                    description = cols[3].Trim(),
+                    specialty = ParseEffects(cols[4]),
+                    selectQuote = cols[5].Trim(),
+                    selectImageId = cols[6].Trim(),
+                    unselectImageId = cols[7].Trim(),
+                    portraitImageId = cols[8].Trim(),
+                    audioId = cols[9].Trim()
                 });
             }
 
@@ -130,13 +136,16 @@ namespace Data
 
             foreach (var cols in lines)
             {
-                if (cols.Length < 4) continue;
+                if (cols.Length < 7) continue;
                 list.Add(new GoalInfo
                 {
                     id = cols[0].Trim(),
                     nickname = cols[1].Trim(),
-                    stockCode = cols[2].Trim(),
-                    targetPercent = int.Parse(cols[3].Trim())
+                    nicknameDesc = cols[2].Trim(),
+                    unselectIconId = cols[3].Trim(),
+                    selectIconId = cols[4].Trim(),
+                    stockCode = cols[5].Trim(),
+                    targetPercent = int.Parse(cols[6].Trim())
                 });
             }
 
