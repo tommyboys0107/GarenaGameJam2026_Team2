@@ -76,7 +76,7 @@ MonoBehaviour:
     PaddingRight: 50
     PaddingTop: 30
     PaddingBottom: 20
-    StockLineWidth: 10
+    StockLineWidth: 3
     EventLineWidth: 1
     GridLineWidth: 1
     HorizontalLines: 5
