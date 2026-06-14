@@ -241,7 +241,7 @@ namespace UI
             }
 
             // 描述文字
-            var descText = CreateText(midRow.transform, goal.nicknameDesc, 15, new Color(0.75f, 0.75f, 0.75f), FontStyles.Normal, TextAlignmentOptions.TopLeft);
+            var descText = CreateText(midRow.transform, goal.nicknameDesc, 22, new Color(0.75f, 0.75f, 0.75f), FontStyles.Normal, TextAlignmentOptions.TopLeft);
             if (descText != null)
             {
                 var descLE = descText.gameObject.AddComponent<LayoutElement>();
