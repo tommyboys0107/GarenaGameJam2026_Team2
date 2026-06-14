@@ -198,15 +198,19 @@ namespace BlackMarketTrader
         /// </summary>
         private void NaturalDrift()
         {
+            // 所有股票用同一個漂移方向，避免趨勢各自亂跳
+            float sharedDriftPercent = UnityEngine.Random.Range(_driftPercentMin, _driftPercentMax);
+
             var sb = new System.Text.StringBuilder("[StockMarket] 自然漂移: ");
             foreach (var stock in Stocks)
             {
-                float driftPercent = UnityEngine.Random.Range(_driftPercentMin, _driftPercentMax);
-                float newTarget = stock.CurrentPrice * (1f + driftPercent / 100f);
+                // 各股票可以有微小差異，但方向一致
+                float stockDrift = sharedDriftPercent + UnityEngine.Random.Range(-0.5f, 0.5f);
+                float newTarget = stock.BasePrice * (1f + stockDrift / 100f);
                 newTarget = Mathf.Clamp(newTarget, _minPrice, _maxPrice);
                 stock.SetTargetAbsolute(newTarget, _driftTransitionDuration);
                 stock.IsEventDriven = false;
-                sb.Append($"{stock.Name}→${newTarget:F0}({driftPercent:+0.0;-0.0}%) ");
+                sb.Append($"{stock.Name}→${newTarget:F0}({stockDrift:+0.0;-0.0}%) ");
             }
             Debug.Log(sb.ToString());
         }

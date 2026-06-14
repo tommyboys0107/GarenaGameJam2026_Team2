@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlackMarketTrader.StockMarketManager
   _tickInterval: 1
-  _minPrice: 0
-  _maxPrice: 1000
+  _minPrice: 200
+  _maxPrice: 800
   _maxDataPoints: 60
   _transitionDuration: 5
   _enableDrift: 1
