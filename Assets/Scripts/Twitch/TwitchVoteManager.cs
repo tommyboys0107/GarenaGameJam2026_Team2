@@ -26,6 +26,9 @@ namespace Twitch
         public float TimeRemaining { get; private set; }
         public string[] CurrentOptions { get; private set; }
 
+        /// <summary>暫停控制。設為 true 時投票倒數不會推進。</summary>
+        public bool IsPaused { get; set; }
+
         private int[] _votes;
         private HashSet<string> _votedUsers;
         private float _voteTimer;
@@ -54,7 +57,7 @@ namespace Twitch
 
         private void Update()
         {
-            if (!IsVoting) return;
+            if (!IsVoting || IsPaused) return;
 
             _voteTimer -= Time.deltaTime;
             TimeRemaining = Mathf.Max(0f, _voteTimer);

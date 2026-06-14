@@ -161,6 +161,8 @@ namespace Gameplay
             }
             if (traderChoiceUI != null)
                 traderChoiceUI.OnChoiceSelected += HandleTraderButtonChoice;
+            if (gameManager != null)
+                gameManager.OnPauseChanged += HandlePauseChanged;
         }
 
         private void OnDisable()
@@ -172,6 +174,17 @@ namespace Gameplay
             }
             if (traderChoiceUI != null)
                 traderChoiceUI.OnChoiceSelected -= HandleTraderButtonChoice;
+            if (gameManager != null)
+                gameManager.OnPauseChanged -= HandlePauseChanged;
+        }
+
+        /// <summary>
+        /// 暫停/恢復時同步投票倒數。
+        /// </summary>
+        private void HandlePauseChanged(bool paused)
+        {
+            if (voteManager != null)
+                voteManager.IsPaused = paused;
         }
 
         /// <summary>

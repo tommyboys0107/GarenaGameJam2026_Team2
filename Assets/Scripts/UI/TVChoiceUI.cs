@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 namespace UI
 {
@@ -26,6 +27,10 @@ namespace UI
         [SerializeField] private TextMeshPro vote2CountText;
         [SerializeField] private TextMeshPro vote3CountText;
 
+        [Header("結果動畫設定")]
+        [SerializeField] private float resultAnimDuration = 0.5f;
+        [SerializeField] private Ease resultAnimEase = Ease.OutCubic;
+
         [Header("倒數計時")]
         [SerializeField] private TextMeshPro timerText;
 
@@ -35,12 +40,28 @@ namespace UI
         /// <summary>目前是否顯示中</summary>
         public bool IsShowing { get; private set; }
 
+        /// <summary>結果動畫完成時觸發。</summary>
+        public event Action OnResultAnimationComplete;
+
         // 快取已載入的觀眾事件圖片，避免重複從 Resources 讀取
         private System.Collections.Generic.Dictionary<string, Sprite> _audienceImageCache
             = new System.Collections.Generic.Dictionary<string, Sprite>();
 
+        // 結果動畫內部狀態
+        private Vector3[] _optionOriginalPositions;
+        private Tween _activeResultTween;
+
         private void Awake()
         {
+            // Cache original positions before any animation moves them
+            _optionOriginalPositions = new Vector3[3];
+            var texts = new TextMeshPro[] { option1Text, option2Text, option3Text };
+            for (int i = 0; i < 3; i++)
+            {
+                if (texts[i] != null)
+                    _optionOriginalPositions[i] = texts[i].transform.localPosition;
+            }
+
             Hide();
         }
 
@@ -62,25 +83,54 @@ namespace UI
             if (tvScreenRoot != null)
                 tvScreenRoot.gameObject.SetActive(true);
 
-            // 新事件開始時隱藏上一次的圖片
             HideAudienceImage();
 
-            if (titleText != null)
-                titleText.text = title;
+            // Kill any in-progress tweens on option texts and title
+            var texts = new TextMeshPro[] { option1Text, option2Text, option3Text };
+            foreach (var t in texts)
+            {
+                if (t != null) DOTween.Kill(t.transform);
+            }
+            if (titleText != null) DOTween.Kill(titleText.transform);
+            _activeResultTween = null;
 
+            // Reactivate all option GameObjects
+            foreach (var t in texts)
+            {
+                if (t != null) t.gameObject.SetActive(true);
+            }
+
+            // Restore cached positions
+            for (int i = 0; i < 3; i++)
+            {
+                if (texts[i] != null)
+                    texts[i].transform.localPosition = _optionOriginalPositions[i];
+            }
+
+            // Reactivate title
+            if (titleText != null)
+                titleText.gameObject.SetActive(true);
+
+            // Set text content
+            if (titleText != null) titleText.text = title;
             if (option1Text != null) option1Text.text = $"1. {opt1}";
             if (option2Text != null) option2Text.text = $"2. {opt2}";
             if (option3Text != null) option3Text.text = $"3. {opt3}";
 
-            // 重置選項文字透明度（ShowResult 會改 alpha）
+            // Reset alpha to 1.0
             ResetOptionColors();
 
-            // 清空票數
+            // Reactivate vote count GameObjects
+            if (vote1CountText != null) vote1CountText.gameObject.SetActive(true);
+            if (vote2CountText != null) vote2CountText.gameObject.SetActive(true);
+            if (vote3CountText != null) vote3CountText.gameObject.SetActive(true);
+
+            // Reset vote counts
             if (vote1CountText != null) vote1CountText.text = "0";
             if (vote2CountText != null) vote2CountText.text = "0";
             if (vote3CountText != null) vote3CountText.text = "0";
 
-            // 清空倒數
+            // Clear timer
             if (timerText != null) timerText.text = "";
 
             IsShowing = true;
@@ -116,20 +166,58 @@ namespace UI
         }
 
         /// <summary>
-        /// 顯示結果。
+        /// 顯示結果：隱藏落選選項和標題，將獲選選項平滑移動到目標位置。
         /// </summary>
         public void ShowResult(int winnerIndex, string resultText)
         {
-            var texts = new[] { option1Text, option2Text, option3Text };
+            var optionTexts = new TextMeshPro[] { option1Text, option2Text, option3Text };
+            var voteTexts = new TextMeshPro[] { vote1CountText, vote2CountText, vote3CountText };
+
+            // Validate winnerIndex
+            if (winnerIndex < 0 || winnerIndex > 2 || optionTexts[winnerIndex] == null)
+            {
+                Debug.LogWarning($"[TVChoiceUI] ShowResult: invalid winnerIndex={winnerIndex} or null option Transform");
+                return;
+            }
+
+            // --- Hide losers ---
             for (int i = 0; i < 3; i++)
             {
-                if (texts[i] != null)
-                {
-                    var color = texts[i].color;
-                    color.a = (i == winnerIndex) ? 1f : 0.3f;
-                    texts[i].color = color;
-                }
+                if (i == winnerIndex) continue;
+                if (optionTexts[i] != null) optionTexts[i].gameObject.SetActive(false);
+                if (voteTexts[i] != null) voteTexts[i].gameObject.SetActive(false);
             }
+
+            // --- Hide title ---
+            if (titleText != null)
+                titleText.gameObject.SetActive(false);
+
+            // --- Hide ALL vote counts (including winner's) ---
+            foreach (var vt in voteTexts)
+            {
+                if (vt != null) vt.gameObject.SetActive(false);
+            }
+
+            // --- Animate winner to target Y ---
+            Transform winnerTransform = optionTexts[winnerIndex].transform;
+
+            // Kill previous tween if still running
+            if (_activeResultTween != null && _activeResultTween.IsActive())
+            {
+                _activeResultTween.Kill();
+            }
+
+            float targetY = -0.67f;
+            float duration = Mathf.Clamp(resultAnimDuration, 0.1f, 2.0f);
+
+            _activeResultTween = winnerTransform
+                .DOLocalMoveY(targetY, duration)
+                .SetEase(resultAnimEase)
+                .OnComplete(() =>
+                {
+                    _activeResultTween = null;
+                    OnResultAnimationComplete?.Invoke();
+                });
         }
 
         /// <summary>
