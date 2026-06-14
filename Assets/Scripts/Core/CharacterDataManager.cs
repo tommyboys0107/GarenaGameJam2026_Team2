@@ -6,11 +6,16 @@ namespace Core
     [System.Serializable]
     public class CharacterInfo
     {
-        public string Id;          // 編號
-        public string Name;        // 角色名稱
-        public string Nickname;    // 外號
-        public string Description; // 角色描述
-        public string ImageID;     // 角色圖片 ID (e.g. C01_Face)
+        public string Id;              // 編號
+        public string Name;            // 角色名稱
+        public string Nickname;        // 外號
+        public string Description;     // 角色描述
+        public string Specialty;       // 角色特長 (e.g. "[NARC,+15],[BYTE,-10]")
+        public string ImageID;         // 角色圖片 ID (舊欄位，向後相容)
+        public string SelectImageID;   // 選取時顯示的圖片 (e.g. C01_C)
+        public string UnselectImageID; // 未選取時顯示的圖片 (e.g. C01)
+        public string PortraitImageID; // 右側大圖 (e.g. C01_F)
+        public string AudioID;         // 語音 ID
     }
 
     /// <summary>
@@ -52,7 +57,12 @@ namespace Core
                     Name = row.TryGetValue("角色名稱", out var name) ? name : "",
                     Nickname = row.TryGetValue("外號", out var nick) ? nick : "",
                     Description = row.TryGetValue("角色描述", out var desc) ? desc : "",
-                    ImageID = row.TryGetValue("ImageID", out var imgId) ? imgId : ""
+                    Specialty = row.TryGetValue("角色特長", out var spec) ? spec : "",
+                    ImageID = row.TryGetValue("ImageID", out var imgId) ? imgId : "",
+                    SelectImageID = row.TryGetValue("SelectImageID", out var selImg) ? selImg : "",
+                    UnselectImageID = row.TryGetValue("UnselectImageID", out var unselImg) ? unselImg : "",
+                    PortraitImageID = row.TryGetValue("PortraitImageID", out var portImg) ? portImg : "",
+                    AudioID = row.TryGetValue("AudioID", out var audioId) ? audioId : ""
                 };
 
                 _characterDict[info.Id] = info;

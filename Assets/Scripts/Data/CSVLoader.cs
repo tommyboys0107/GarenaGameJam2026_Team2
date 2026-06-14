@@ -38,19 +38,13 @@ namespace Data
 
             foreach (var cols in lines)
             {
-                if (cols.Length < 10) continue;
+                if (cols.Length < 4) continue;
                 list.Add(new CharacterInfo
                 {
                     id = cols[0].Trim(),
                     name = cols[1].Trim(),
-                    gender = cols[2].Trim(),
-                    description = cols[3].Trim(),
-                    specialty = ParseEffects(cols[4]),
-                    selectQuote = cols[5].Trim(),
-                    selectImageId = cols[6].Trim(),
-                    unselectImageId = cols[7].Trim(),
-                    portraitImageId = cols[8].Trim(),
-                    audioId = cols[9].Trim()
+                    nickname = cols[2].Trim(),
+                    description = cols[3].Trim()
                 });
             }
 
@@ -134,18 +128,19 @@ namespace Data
             var lines = ReadCSV("GoalData");
             var list = new List<GoalInfo>();
 
+            // CSV 欄位：編號,外號,外號敘述,IconID,目標股票,目標漲幅(%)
             foreach (var cols in lines)
             {
-                if (cols.Length < 7) continue;
+                if (cols.Length < 6) continue;
+                string percentStr = cols[5].Trim();
+                if (!int.TryParse(percentStr, out int percent)) continue;
+
                 list.Add(new GoalInfo
                 {
                     id = cols[0].Trim(),
                     nickname = cols[1].Trim(),
-                    nicknameDesc = cols[2].Trim(),
-                    unselectIconId = cols[3].Trim(),
-                    selectIconId = cols[4].Trim(),
-                    stockCode = cols[5].Trim(),
-                    targetPercent = int.Parse(cols[6].Trim())
+                    stockCode = cols[4].Trim(),
+                    targetPercent = percent
                 });
             }
 

@@ -1,24 +1,40 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Style src="CharacterSelect.uss" />
 
-    <!-- Character Select Page (visible initially) -->
+    <!-- Character Select Page -->
     <ui:VisualElement name="character-page" class="page">
+        <!-- 背景圖 CharacterBG — 直接在 USS 中設定背景 -->
         <ui:VisualElement name="background-image" class="background-image" />
-        <ui:Label name="title" text="選擇角色" class="title" />
-        <ui:VisualElement name="character-grid" class="grid-2x3" />
+
+        <!-- 角色卡片 — 6 個 slot 寫死位置 -->
+        <ui:VisualElement name="character-grid" class="character-grid">
+            <ui:VisualElement name="card-slot-0" class="card-slot card-slot-0" />
+            <ui:VisualElement name="card-slot-1" class="card-slot card-slot-1" />
+            <ui:VisualElement name="card-slot-2" class="card-slot card-slot-2" />
+            <ui:VisualElement name="card-slot-3" class="card-slot card-slot-3" />
+            <ui:VisualElement name="card-slot-4" class="card-slot card-slot-4" />
+            <ui:VisualElement name="card-slot-5" class="card-slot card-slot-5" />
+        </ui:VisualElement>
+
+        <!-- 右側大圖 -->
+        <ui:VisualElement name="portrait-image" class="portrait-image" />
+
+        <!-- 底部資訊面板 -->
+        <ui:VisualElement name="bottom-info" class="bottom-info">
+            <ui:Label name="character-name" class="character-name" />
+            <ui:Label name="character-description" class="character-description" />
+            <ui:VisualElement name="confirm-button" class="confirm-button">
+                <ui:Label name="confirm-text" text="確認" class="confirm-text" />
+            </ui:VisualElement>
+        </ui:VisualElement>
     </ui:VisualElement>
 
-    <!-- Goal Select Page (hidden initially, starts off-screen to the right) -->
+    <!-- Goal Select Page -->
     <ui:VisualElement name="goal-page" class="page page-right">
         <ui:Label name="goal-title" text="選擇目標" class="title" />
         <ui:VisualElement name="goal-grid" class="grid-2x3" />
     </ui:VisualElement>
 
-    <!-- Tooltip (hidden by default) -->
-    <ui:VisualElement name="tooltip" class="tooltip hidden">
-        <ui:Label name="tooltip-text" />
-    </ui:VisualElement>
-
-    <!-- Fade Overlay (full-screen black, transparent initially) -->
+    <!-- Fade Overlay -->
     <ui:VisualElement name="fade-overlay" class="fade-overlay" />
 </ui:UXML>
