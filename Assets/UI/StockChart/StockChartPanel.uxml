@@ -40,6 +40,6 @@
                 <ui:VisualElement name="event-labels" class="event-labels"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:Label name="timer-label" text="01:30" class="timer-label"/>
+        <ui:Label name="timer-label" text="01:30" class="timer-label" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/wt005.ttf?fileID=12800000&amp;guid=03f5930aca50af045bbb9db5b1791838&amp;type=3#wt005&quot;); margin-top: 20px; margin-right: 10px;"/>
     </ui:VisualElement>
 </ui:UXML>
