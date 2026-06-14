@@ -26,6 +26,9 @@ namespace Gameplay
         [Header("事件描述 UI")]
         [SerializeField] private TMPro.TMP_Text eventDescriptionText;
 
+        [Header("NPC 圖片（操盤手事件時顯示）")]
+        [SerializeField] private GameObject npcImage;
+
         [Header("時間設定（從 TimeData.csv 自動讀取，Inspector 值為備用）")]
         [SerializeField] private float startDelay = 10f;
         [SerializeField] private float slotDuration = 20f;
@@ -102,6 +105,10 @@ namespace Gameplay
             // 初始隱藏事件描述文字
             if (eventDescriptionText != null)
                 eventDescriptionText.gameObject.SetActive(false);
+
+            // 遊戲開始時關閉 NPC
+            if (npcImage != null)
+                npcImage.SetActive(false);
         }
 
         private void ApplyTimeConfig()
@@ -235,6 +242,10 @@ namespace Gameplay
             IsWaitingForChoice = false;
             var chosen = _currentTraderChoices[choiceIndex];
 
+            // 關閉 NPC 圖片
+            if (npcImage != null)
+                npcImage.SetActive(false);
+
             Debug.Log($"[GameFlow] 玩家選擇: {chosen.name} → 影響: {FormatEffects(chosen.effects)}");
 
             // 隱藏倒數
@@ -291,6 +302,11 @@ namespace Gameplay
             {
                 // 所有 slot 結束
                 _slotActive = false;
+
+                // 確保 NPC 關閉
+                if (npcImage != null)
+                    npcImage.SetActive(false);
+
                 Debug.Log("[GameFlow] 所有事件 slot 結束");
                 return;
             }
@@ -374,6 +390,10 @@ namespace Gameplay
             // 操盤手事件不顯示投票數
             if (tvChoiceUI != null)
                 tvChoiceUI.SetVoteCountVisible(false);
+
+            // 顯示 NPC 圖片
+            if (npcImage != null)
+                npcImage.SetActive(true);
 
             IsWaitingForChoice = true;
             _playerTimer = 0f;

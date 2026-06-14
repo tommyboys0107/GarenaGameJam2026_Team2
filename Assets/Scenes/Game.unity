@@ -310,11 +310,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329685325237708677, guid: b44356047e7496e4e8114889e5aedb3b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.56441
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329685325237708677, guid: b44356047e7496e4e8114889e5aedb3b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.19776
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329685325237708677, guid: b44356047e7496e4e8114889e5aedb3b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -335,6 +335,14 @@ PrefabInstance:
     - target: {fileID: 8329685325237708677, guid: b44356047e7496e4e8114889e5aedb3b, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329685325237708677, guid: b44356047e7496e4e8114889e5aedb3b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329685325237708677, guid: b44356047e7496e4e8114889e5aedb3b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4.28
       objectReference: {fileID: 0}
     - target: {fileID: 8329685325237708677, guid: b44356047e7496e4e8114889e5aedb3b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -528,6 +536,10 @@ PrefabInstance:
     - target: {fileID: 197236084698877416, guid: 5f2e5aef7dc3df84a90d15b806d4e790, type: 3}
       propertyPath: m_Name
       value: ResultPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 197236084698877416, guid: 5f2e5aef7dc3df84a90d15b806d4e790, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1141253393517428714, guid: 5f2e5aef7dc3df84a90d15b806d4e790, type: 3}
       propertyPath: gameManager
@@ -751,8 +763,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 87
+  orthographic: 0
   orthographic size: 10
   m_Depth: 0
   m_CullingMask:
@@ -855,6 +867,10 @@ PrefabInstance:
       propertyPath: stockMarketManager
       value: 
       objectReference: {fileID: 513091495}
+    - target: {fileID: 8368872851854622671, guid: 04ef3cb3233e40b4d8ab4ab1abf21f91, type: 3}
+      propertyPath: npcImage
+      value: 
+      objectReference: {fileID: 9052043548667218962}
     - target: {fileID: 8368872851854622671, guid: 04ef3cb3233e40b4d8ab4ab1abf21f91, type: 3}
       propertyPath: tvChoiceUI
       value: 
@@ -969,6 +985,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f14f7ded656503742a8b75bea21bd053, type: 3}
+--- !u!1 &9052043548667218962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1225810581352397375, guid: f14f7ded656503742a8b75bea21bd053, type: 3}
+  m_PrefabInstance: {fileID: 9052043548667218961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
