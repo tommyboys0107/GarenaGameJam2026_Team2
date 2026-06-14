@@ -37,6 +37,16 @@ namespace UI
         }
 
         /// <summary>
+        /// 設定投票數字是否顯示（觀眾事件才顯示）。
+        /// </summary>
+        public void SetVoteCountVisible(bool visible)
+        {
+            if (vote1CountText != null) vote1CountText.gameObject.SetActive(visible);
+            if (vote2CountText != null) vote2CountText.gameObject.SetActive(visible);
+            if (vote3CountText != null) vote3CountText.gameObject.SetActive(visible);
+        }
+
+        /// <summary>
         /// 顯示三選一選項。
         /// </summary>
         public void Show(string title, string opt1, string opt2, string opt3)

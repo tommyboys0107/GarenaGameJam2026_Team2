@@ -1,7 +1,9 @@
 Key,Value,備註
-traderEventTime,10,操盤手事件時長，單位為秒數
+traderEventTime,20,操盤手事件時長，單位為秒數
 traderEventCount,6,操盤手事件次數
-audienceEventTime,10,觀眾事件時長，單位為秒數
+audienceEventTime,20,觀眾事件時長，單位為秒數
 audienceEventCount,3,觀眾事件次數
-totalGameTime,90,遊戲總時長，單位為秒數
+totalGameTime,235,遊戲總時長，單位為秒數
 trendAffectInterval,5,趨勢每x秒影響股價，以股票的初始價格乘上該%數，例如 x 秒內 +80$*5%
+startDuration,10,剛開始沒有事件的時間
+eventInterval,5,每個事件之間的間隔時間，單位為秒數

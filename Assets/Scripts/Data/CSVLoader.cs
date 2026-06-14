@@ -162,6 +162,8 @@ namespace Data
                     case "audienceEventCount": config.audienceEventCount = val; break;
                     case "totalGameTime": config.totalGameTime = val; break;
                     case "trendAffectInterval": config.trendAffectInterval = val; break;
+                    case "startDuration": config.startDuration = val; break;
+                    case "eventInterval": config.eventInterval = val; break;
                 }
             }
 

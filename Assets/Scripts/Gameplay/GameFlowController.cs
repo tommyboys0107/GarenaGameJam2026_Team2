@@ -26,12 +26,12 @@ namespace Gameplay
         [Header("事件描述 UI")]
         [SerializeField] private TMPro.TMP_Text eventDescriptionText;
 
-        [Header("時間設定")]
-        [Tooltip("每個事件 slot 的持續時間（秒）")]
-        [SerializeField] private float slotDuration = 10f;
-
-        [Tooltip("玩家選擇的時間限制（秒），超時自動選第一個")]
-        [SerializeField] private float playerChoiceTimeout = 8f;
+        [Header("時間設定（從 TimeData.csv 自動讀取，Inspector 值為備用）")]
+        [SerializeField] private float startDelay = 10f;
+        [SerializeField] private float slotDuration = 20f;
+        [SerializeField] private float audienceSlotDuration = 20f;
+        [SerializeField] private float eventInterval = 5f;
+        [SerializeField] private float playerChoiceTimeout = 20;
 
         // === 對外事件 ===
 
@@ -82,6 +82,8 @@ namespace Gameplay
         private EventSlotType[] _schedule;
         private float _slotTimer;
         private bool _slotActive;
+        private float _startDelayTimer;
+        private bool _started;
 
         // 玩家事件暫存
         private float _playerTimer;
@@ -94,7 +96,42 @@ namespace Gameplay
         private void Awake()
         {
             LoadCSVData();
+            ApplyTimeConfig();
             BuildSchedule();
+        }
+
+        private void ApplyTimeConfig()
+        {
+            var config = CSVLoader.LoadTimeConfig();
+            startDelay = config.startDuration;
+            slotDuration = config.traderEventTime;
+            audienceSlotDuration = config.audienceEventTime;
+            eventInterval = config.eventInterval;
+            playerChoiceTimeout = config.traderEventTime;
+
+            // 同步 Twitch 投票時長到 TwitchConfig
+            if (voteManager != null)
+            {
+                var twitchIRC = voteManager.GetComponent<Twitch.TwitchIRC>();
+                if (twitchIRC != null)
+                {
+                    // 透過反射取得 private config 欄位
+                    var field = typeof(Twitch.TwitchIRC).GetField("config",
+                        System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                    if (field != null)
+                    {
+                        var twitchConfig = field.GetValue(twitchIRC) as Twitch.TwitchConfig;
+                        if (twitchConfig != null)
+                        {
+                            twitchConfig.voteDuration = config.audienceEventTime;
+                            Debug.Log($"[GameFlow] TwitchConfig.voteDuration 同步為 {config.audienceEventTime} 秒");
+                        }
+                    }
+                }
+            }
+
+            Debug.Log($"[GameFlow] TimeConfig 載入: startDelay={startDelay}, traderSlot={slotDuration}, " +
+                      $"audienceSlot={audienceSlotDuration}, interval={eventInterval}, timeout={playerChoiceTimeout}");
         }
 
         private void OnEnable()
@@ -154,8 +191,12 @@ namespace Gameplay
                         tvChoiceUI.UpdateTimer(voteManager.TimeRemaining);
                 }
 
-                // Slot 結束，進入下一個
-                if (_slotTimer >= slotDuration)
+                // Slot 結束，等待間隔後進入下一個
+                float currentSlotDuration = (CurrentSlotType == EventSlotType.Audience)
+                    ? audienceSlotDuration
+                    : slotDuration;
+
+                if (_slotTimer >= currentSlotDuration + eventInterval)
                 {
                     EndCurrentSlot();
                     AdvanceToNextSlot();
@@ -163,8 +204,16 @@ namespace Gameplay
             }
             else
             {
-                // 遊戲開始後啟動第一個 slot
-                AdvanceToNextSlot();
+                // 開始延遲倒數
+                if (!_started)
+                {
+                    _startDelayTimer += Time.deltaTime;
+                    if (_startDelayTimer >= startDelay)
+                    {
+                        _started = true;
+                        AdvanceToNextSlot();
+                    }
+                }
             }
         }
 
@@ -315,6 +364,10 @@ namespace Gameplay
             if (tvChoiceUI != null)
                 tvChoiceUI.Show(title, opt1, opt2, opt3);
 
+            // 操盤手事件不顯示投票數
+            if (tvChoiceUI != null)
+                tvChoiceUI.SetVoteCountVisible(false);
+
             IsWaitingForChoice = true;
             _playerTimer = 0f;
 
@@ -339,6 +392,10 @@ namespace Gameplay
             // 顯示在 TVChoiceUI
             if (tvChoiceUI != null)
                 tvChoiceUI.Show("觀眾投票", opt1, opt2, opt3);
+
+            // 觀眾事件顯示投票數
+            if (tvChoiceUI != null)
+                tvChoiceUI.SetVoteCountVisible(true);
 
             // 啟動 Twitch 投票
             if (voteManager != null)

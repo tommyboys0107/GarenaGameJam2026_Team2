@@ -70,10 +70,12 @@ namespace Data
     {
         public int traderEventTime;      // 10
         public int traderEventCount;     // 6
-        public int audienceEventTime;    // 10
+        public int audienceEventTime;    // 20
         public int audienceEventCount;   // 3
-        public int totalGameTime;        // 90
+        public int totalGameTime;        // 235
         public int trendAffectInterval;  // 5
+        public int startDuration;        // 10
+        public int eventInterval;        // 5
     }
 
     [Serializable]
