@@ -78,9 +78,9 @@ namespace BlackMarketTrader
             Stocks = new StockData[3];
 
             Color[] colors = {
-                new Color(1f, 0.3f, 0.3f),
-                new Color(0.3f, 0.5f, 1f),
-                new Color(0.3f, 1f, 0.3f)
+                new Color(0.3f, 1f, 0.3f),  // NARC 納克製藥 - 綠
+                new Color(1f, 0.3f, 0.3f),  // LOCK 洛克防務 - 紅
+                new Color(0.3f, 0.5f, 1f)   // BYTE 拜特資安 - 藍
             };
             float[] volatilities = { _volatilityA, _volatilityB, _volatilityC };
 
