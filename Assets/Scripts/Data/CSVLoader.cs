@@ -43,7 +43,7 @@ namespace Data
                 {
                     id = cols[0].Trim(),
                     name = cols[1].Trim(),
-                    nickname = cols[2].Trim(),
+                    gender = cols[2].Trim(),
                     description = cols[3].Trim()
                 });
             }

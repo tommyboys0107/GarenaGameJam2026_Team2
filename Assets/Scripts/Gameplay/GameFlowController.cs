@@ -175,6 +175,14 @@ namespace Gameplay
         }
 
         /// <summary>
+        /// 操盤手按鈕 UI 點選回呼，轉發到 SelectTraderChoice。
+        /// </summary>
+        private void HandleTraderButtonChoice(int index)
+        {
+            SelectTraderChoice(index);
+        }
+
+        /// <summary>
         /// 即時更新 TV UI 上的投票數字。
         /// </summary>
         private void HandleVoteUpdated(int[] votes)
@@ -246,9 +254,7 @@ namespace Gameplay
         public void SelectTraderChoice(int choiceIndex)
         {
             if (!IsWaitingForChoice || CurrentSlotType != EventSlotType.Trader) return;
-            if (_currentTraderChoices == null || choiceIndex < 0 || choiceIndex >= _currentTraderChoices.Length) return;
-
-            IsWaitingForChoice = false;
+            if (_currentTraderChoices == null || choiceIndex < 0 || choiceIndex >= _currentTraderChoices.Length) return;            IsWaitingForChoice = false;
             var chosen = _currentTraderChoices[choiceIndex];
 
             // 關閉 NPC 圖片和訊息
