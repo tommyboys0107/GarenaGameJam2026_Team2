@@ -22,6 +22,7 @@ namespace Gameplay
         [SerializeField] private GameManager gameManager;
         [SerializeField] private TwitchVoteManager voteManager;
         [SerializeField] private TVChoiceUI tvChoiceUI;
+        [SerializeField] private TraderChoiceUI traderChoiceUI;
 
         [Header("事件描述 UI")]
         [SerializeField] private TMPro.TMP_Text eventDescriptionText;
@@ -153,12 +154,21 @@ namespace Gameplay
         {
             if (voteManager != null)
                 voteManager.OnVoteComplete += HandleAudienceVoteComplete;
+            if (traderChoiceUI != null)
+                traderChoiceUI.OnChoiceSelected += HandleTraderButtonChoice;
         }
 
         private void OnDisable()
         {
             if (voteManager != null)
                 voteManager.OnVoteComplete -= HandleAudienceVoteComplete;
+            if (traderChoiceUI != null)
+                traderChoiceUI.OnChoiceSelected -= HandleTraderButtonChoice;
+        }
+
+        private void HandleTraderButtonChoice(int index)
+        {
+            SelectTraderChoice(index);
         }
 
         private void Update()
@@ -174,23 +184,6 @@ namespace Gameplay
                 if (CurrentSlotType == EventSlotType.Trader && IsWaitingForChoice)
                 {
                     _playerTimer += Time.deltaTime;
-
-                    // 更新 TV UI 的倒數
-                    float remaining = playerChoiceTimeout - _playerTimer;
-                    if (tvChoiceUI != null)
-                        tvChoiceUI.UpdateTimer(remaining);
-
-                    // 偵測鍵盤輸入 1/2/3 (New Input System)
-                    var kb = Keyboard.current;
-                    if (kb != null)
-                    {
-                        if (kb.digit1Key.wasPressedThisFrame || kb.numpad1Key.wasPressedThisFrame)
-                            SelectTraderChoice(0);
-                        else if (kb.digit2Key.wasPressedThisFrame || kb.numpad2Key.wasPressedThisFrame)
-                            SelectTraderChoice(1);
-                        else if (kb.digit3Key.wasPressedThisFrame || kb.numpad3Key.wasPressedThisFrame)
-                            SelectTraderChoice(2);
-                    }
 
                     // 超時自動選第一個
                     if (_playerTimer >= playerChoiceTimeout)
@@ -250,6 +243,9 @@ namespace Gameplay
             if (npcImage != null) npcImage.SetActive(false);
             if (npcMsg != null) npcMsg.SetActive(false);
             if (npcMsgBG != null) npcMsgBG.SetActive(false);
+
+            // 關閉操盤手按鈕 UI
+            if (traderChoiceUI != null) traderChoiceUI.Hide();
 
             Debug.Log($"[GameFlow] 玩家選擇: {chosen.name} → 影響: {FormatEffects(chosen.effects)}");
 
@@ -385,17 +381,13 @@ namespace Gameplay
             }
 
             // 顯示在 TVChoiceUI
-            string title = eventInfo.name;
             string opt1 = _currentTraderChoices.Length > 0 ? _currentTraderChoices[0].name : "";
             string opt2 = _currentTraderChoices.Length > 1 ? _currentTraderChoices[1].name : "";
             string opt3 = _currentTraderChoices.Length > 2 ? _currentTraderChoices[2].name : "";
 
-            if (tvChoiceUI != null)
-                tvChoiceUI.Show(title, opt1, opt2, opt3);
-
-            // 操盤手事件不顯示投票數
-            if (tvChoiceUI != null)
-                tvChoiceUI.SetVoteCountVisible(false);
+            // 操盤手事件：用中間按鈕 UI，不用 TV
+            if (traderChoiceUI != null)
+                traderChoiceUI.Show(opt1, opt2, opt3);
 
             // 顯示 NPC 圖片和訊息
             if (npcImage != null) npcImage.SetActive(true);
