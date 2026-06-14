@@ -1,0 +1,1742 @@
+fileFormatVersion: 2
+guid: cc0441d527b43e745ad1e98b5de2040c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7653736329559378956
+    second: Atmosphere_0
+  - first:
+      213: 8919316552437279016
+    second: Atmosphere_1
+  - first:
+      213: -5802589908097380631
+    second: Atmosphere_2
+  - first:
+      213: 4451293280429027889
+    second: Atmosphere_3
+  - first:
+      213: 1428938331842999647
+    second: Atmosphere_4
+  - first:
+      213: 6519990692267727776
+    second: Atmosphere_5
+  - first:
+      213: -990008647091105725
+    second: Atmosphere_6
+  - first:
+      213: 3283742969726605136
+    second: Atmosphere_7
+  - first:
+      213: -5302947239198295251
+    second: Atmosphere_8
+  - first:
+      213: 908668901524815819
+    second: Atmosphere_9
+  - first:
+      213: 5420262240185552518
+    second: Atmosphere_10
+  - first:
+      213: 6353993855207205939
+    second: Atmosphere_11
+  - first:
+      213: -1214013260641467959
+    second: Atmosphere_12
+  - first:
+      213: 6807241724771121604
+    second: Atmosphere_13
+  - first:
+      213: 3349690364662274328
+    second: Atmosphere_14
+  - first:
+      213: 5972371188949856430
+    second: Atmosphere_15
+  - first:
+      213: -1702784458635807892
+    second: Atmosphere_16
+  - first:
+      213: 2085741163337690273
+    second: Atmosphere_17
+  - first:
+      213: 7518576586817518984
+    second: Atmosphere_18
+  - first:
+      213: 1048184848491706796
+    second: Atmosphere_19
+  - first:
+      213: 9130314752359671306
+    second: Atmosphere_20
+  - first:
+      213: 8919898380286111863
+    second: Atmosphere_21
+  - first:
+      213: -7619682842501002045
+    second: Atmosphere_22
+  - first:
+      213: 1462061240965062263
+    second: Atmosphere_23
+  - first:
+      213: -1495102229998867137
+    second: Atmosphere_24
+  - first:
+      213: -3016961445805983896
+    second: Atmosphere_25
+  - first:
+      213: 2943371265232547517
+    second: Atmosphere_26
+  - first:
+      213: 6017735763371878655
+    second: Atmosphere_27
+  - first:
+      213: 338247351415341298
+    second: Atmosphere_28
+  - first:
+      213: -3995478288238432134
+    second: Atmosphere_29
+  - first:
+      213: -977803881558771361
+    second: Atmosphere_30
+  - first:
+      213: -2104096500406416986
+    second: Atmosphere_31
+  - first:
+      213: -7636825862367326819
+    second: Atmosphere_32
+  - first:
+      213: -2194562480167008246
+    second: Atmosphere_33
+  - first:
+      213: 1453524126760044810
+    second: Atmosphere_34
+  - first:
+      213: 3678723962767670034
+    second: Atmosphere_35
+  - first:
+      213: -999841282385311749
+    second: Atmosphere_36
+  - first:
+      213: -2229749383670199536
+    second: Atmosphere_37
+  - first:
+      213: -7951297144017670788
+    second: Atmosphere_38
+  - first:
+      213: 3335928832541395782
+    second: Atmosphere_39
+  - first:
+      213: -158766952560486100
+    second: Atmosphere_40
+  - first:
+      213: -3211621260138936492
+    second: Atmosphere_41
+  - first:
+      213: 2116291054401443533
+    second: Atmosphere_42
+  - first:
+      213: 4201793297957791284
+    second: Atmosphere_43
+  - first:
+      213: 3521638413526167742
+    second: Atmosphere_44
+  - first:
+      213: -3738937664573301939
+    second: Atmosphere_45
+  - first:
+      213: 6511062112371007280
+    second: Atmosphere_46
+  - first:
+      213: -3215058750478615869
+    second: Atmosphere_47
+  - first:
+      213: -5476296484599701580
+    second: Atmosphere_48
+  - first:
+      213: -8732364889812197965
+    second: Atmosphere_49
+  - first:
+      213: -7165424547912138624
+    second: Atmosphere_50
+  - first:
+      213: 2739271494319390463
+    second: Atmosphere_51
+  - first:
+      213: 2330159884988570390
+    second: Atmosphere_52
+  - first:
+      213: -1542608423406644455
+    second: Atmosphere_53
+  - first:
+      213: 3963681580795109662
+    second: Atmosphere_54
+  - first:
+      213: 7323451900531758149
+    second: Atmosphere_55
+  - first:
+      213: 4316989256894100114
+    second: Atmosphere_56
+  - first:
+      213: 7601782086163770809
+    second: Atmosphere_57
+  - first:
+      213: -9146672605558710223
+    second: Atmosphere_58
+  - first:
+      213: 5877147884450317976
+    second: Atmosphere_59
+  - first:
+      213: 4088322310992974712
+    second: Atmosphere_60
+  - first:
+      213: -25107234154462262
+    second: Atmosphere_61
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Atmosphere_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1400
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f37c180c5778c590800000000000000
+      internalID: -7653736329559378956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 758
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 829294bd527c7cb70800000000000000
+      internalID: 8919316552437279016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 766
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eec696d83f097fa0800000000000000
+      internalID: -5802589908097380631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 770
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1323e0397ab26cd30800000000000000
+      internalID: 4451293280429027889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_4
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 772
+        width: 73
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f55f07b87db94d310800000000000000
+      internalID: 1428938331842999647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_5
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 769
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ab987f7df8ab7a50800000000000000
+      internalID: 6519990692267727776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_6
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 760
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 340d1997168c242f0800000000000000
+      internalID: -990008647091105725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_7
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 779
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0579d3c35d2329d20800000000000000
+      internalID: 3283742969726605136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_8
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 773
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b72f805952866b0800000000000000
+      internalID: -5302947239198295251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_9
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 767
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcfb4d53d8d3c9c00800000000000000
+      internalID: 908668901524815819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_10
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 773
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e09b72ac3a83b40800000000000000
+      internalID: 5420262240185552518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_11
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 772
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33ce3a41fbbed2850800000000000000
+      internalID: 6353993855207205939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_12
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 770
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c10ade1f55f62fe0800000000000000
+      internalID: -1214013260641467959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_13
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 772
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c93339484e287e50800000000000000
+      internalID: 6807241724771121604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_14
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 767
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8195e35a3ad7c7e20800000000000000
+      internalID: 3349690364662274328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_15
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 772
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea0322014ff12e250800000000000000
+      internalID: 5972371188949856430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_16
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 766
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c63f4fd7e8e7e58e0800000000000000
+      internalID: -1702784458635807892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_17
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 774
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac272e898a02fc10800000000000000
+      internalID: 2085741163337690273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_18
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 772
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88db3d11299575860800000000000000
+      internalID: 7518576586817518984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_19
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 763
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca97b41f096eb8e00800000000000000
+      internalID: 1048184848491706796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_20
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 775
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0628ed84e465be70800000000000000
+      internalID: 9130314752359671306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_21
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 766
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77039853158d9cb70800000000000000
+      internalID: 8919898380286111863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_22
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 765
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ccc69753d2714690800000000000000
+      internalID: -7619682842501002045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_23
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 770
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77ed69bc3f84a4410800000000000000
+      internalID: 1462061240965062263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_24
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 761
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3de5067174504be0800000000000000
+      internalID: -1495102229998867137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_25
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 773
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8677fa1bc899126d0800000000000000
+      internalID: -3016961445805983896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_26
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 767
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbe27423294f8d820800000000000000
+      internalID: 2943371265232547517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_27
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 767
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff8e1ff1bca438350800000000000000
+      internalID: 6017735763371878655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_28
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 765
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f0045b8c22b1b400800000000000000
+      internalID: 338247351415341298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_29
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 758
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7033c17aa53d88c0800000000000000
+      internalID: -3995478288238432134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_30
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 759
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f59f0b3ec842e62f0800000000000000
+      internalID: -977803881558771361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_31
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 752
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a90220816fbcc2e0800000000000000
+      internalID: -2104096500406416986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_32
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 758
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9d441ef65b840690800000000000000
+      internalID: -7636825862367326819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_33
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 757
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a08ce343d095b81e0800000000000000
+      internalID: -2194562480167008246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_34
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 763
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a090efffd74fb2410800000000000000
+      internalID: 1453524126760044810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_35
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 757
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21bfb7314f37d0330800000000000000
+      internalID: 3678723962767670034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_36
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 758
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf707aba6a9df12f0800000000000000
+      internalID: -999841282385311749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_37
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 753
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01b0130dfb65e01e0800000000000000
+      internalID: -2229749383670199536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_38
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 754
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7daf33106157a190800000000000000
+      internalID: -7951297144017670788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_39
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 760
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b0d9349999b4e20800000000000000
+      internalID: 3335928832541395782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_40
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 759
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c299f8e3c42fbcdf0800000000000000
+      internalID: -158766952560486100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_41
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 762
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4578354da770e63d0800000000000000
+      internalID: -3211621260138936492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_42
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 758
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc65fea50839e5d10800000000000000
+      internalID: 2116291054401443533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_43
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 761
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43624601eb4cf4a30800000000000000
+      internalID: 4201793297957791284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_44
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 754
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb0f8998a7f5fd030800000000000000
+      internalID: 3521638413526167742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_45
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 759
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b97c9f000ac1cc0800000000000000
+      internalID: -3738937664573301939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_46
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 757
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03fd06e7e70fb5a50800000000000000
+      internalID: 6511062112371007280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_47
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 762
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3caf5bdb911d163d0800000000000000
+      internalID: -3215058750478615869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_48
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 757
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bfd6b6ac594004b0800000000000000
+      internalID: -5476296484599701580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_49
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 758
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bd96a5166860d680800000000000000
+      internalID: -8732364889812197965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_50
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 758
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08045d4765c4f8c90800000000000000
+      internalID: -7165424547912138624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_51
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 756
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffeb24a29e8d30620800000000000000
+      internalID: 2739271494319390463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_52
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 759
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61bdb96d114665020800000000000000
+      internalID: 2330159884988570390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_53
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 760
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 913525fdfcd879ae0800000000000000
+      internalID: -1542608423406644455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_54
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 757
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e112d02b563d10730800000000000000
+      internalID: 3963681580795109662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_55
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 758
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 544dad4c3b022a560800000000000000
+      internalID: 7323451900531758149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_56
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 757
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 292b9545bd609eb30800000000000000
+      internalID: 4316989256894100114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_57
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 763
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd28b90884fe7960800000000000000
+      internalID: 7601782086163770809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_58
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 91
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13060e4f9bd701180800000000000000
+      internalID: -9146672605558710223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_59
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 82
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8968919ccd2df8150800000000000000
+      internalID: 5877147884450317976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_60
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 49
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8735a022b73acb830800000000000000
+      internalID: 4088322310992974712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atmosphere_61
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 22
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac34ee28a1dc6aff0800000000000000
+      internalID: -25107234154462262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Atmosphere_0: -7653736329559378956
+      Atmosphere_1: 8919316552437279016
+      Atmosphere_10: 5420262240185552518
+      Atmosphere_11: 6353993855207205939
+      Atmosphere_12: -1214013260641467959
+      Atmosphere_13: 6807241724771121604
+      Atmosphere_14: 3349690364662274328
+      Atmosphere_15: 5972371188949856430
+      Atmosphere_16: -1702784458635807892
+      Atmosphere_17: 2085741163337690273
+      Atmosphere_18: 7518576586817518984
+      Atmosphere_19: 1048184848491706796
+      Atmosphere_2: -5802589908097380631
+      Atmosphere_20: 9130314752359671306
+      Atmosphere_21: 8919898380286111863
+      Atmosphere_22: -7619682842501002045
+      Atmosphere_23: 1462061240965062263
+      Atmosphere_24: -1495102229998867137
+      Atmosphere_25: -3016961445805983896
+      Atmosphere_26: 2943371265232547517
+      Atmosphere_27: 6017735763371878655
+      Atmosphere_28: 338247351415341298
+      Atmosphere_29: -3995478288238432134
+      Atmosphere_3: 4451293280429027889
+      Atmosphere_30: -977803881558771361
+      Atmosphere_31: -2104096500406416986
+      Atmosphere_32: -7636825862367326819
+      Atmosphere_33: -2194562480167008246
+      Atmosphere_34: 1453524126760044810
+      Atmosphere_35: 3678723962767670034
+      Atmosphere_36: -999841282385311749
+      Atmosphere_37: -2229749383670199536
+      Atmosphere_38: -7951297144017670788
+      Atmosphere_39: 3335928832541395782
+      Atmosphere_4: 1428938331842999647
+      Atmosphere_40: -158766952560486100
+      Atmosphere_41: -3211621260138936492
+      Atmosphere_42: 2116291054401443533
+      Atmosphere_43: 4201793297957791284
+      Atmosphere_44: 3521638413526167742
+      Atmosphere_45: -3738937664573301939
+      Atmosphere_46: 6511062112371007280
+      Atmosphere_47: -3215058750478615869
+      Atmosphere_48: -5476296484599701580
+      Atmosphere_49: -8732364889812197965
+      Atmosphere_5: 6519990692267727776
+      Atmosphere_50: -7165424547912138624
+      Atmosphere_51: 2739271494319390463
+      Atmosphere_52: 2330159884988570390
+      Atmosphere_53: -1542608423406644455
+      Atmosphere_54: 3963681580795109662
+      Atmosphere_55: 7323451900531758149
+      Atmosphere_56: 4316989256894100114
+      Atmosphere_57: 7601782086163770809
+      Atmosphere_58: -9146672605558710223
+      Atmosphere_59: 5877147884450317976
+      Atmosphere_6: -990008647091105725
+      Atmosphere_60: 4088322310992974712
+      Atmosphere_61: -25107234154462262
+      Atmosphere_7: 3283742969726605136
+      Atmosphere_8: -5302947239198295251
+      Atmosphere_9: 908668901524815819
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
