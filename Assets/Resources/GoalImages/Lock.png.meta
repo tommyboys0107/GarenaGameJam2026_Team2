@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 1db7d0a125d4b465890c5dfb30eae2c6
+guid: c342992d5516f4eeda941254261fb7b7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6692781160814943255
-    second: G01_0
+      213: -5620155193319629329
+    second: Lock_0
+  - first:
+      213: 717643947602433640
+    second: Lock_1
+  - first:
+      213: -7901436235853946331
+    second: Lock_2
+  - first:
+      213: 3383569086138778819
+    second: Lock_3
+  - first:
+      213: 342379830741364218
+    second: Lock_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: G01_0
+      name: Lock_0
       rect:
         serializedVersion: 2
-        x: 64
-        y: 54
-        width: 329
-        height: 350
+        x: 0
+        y: 36
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71c1dc1810981ec50800000000000000
-      internalID: 6692781160814943255
+      spriteID: feddd97e0a23102b0800000000000000
+      internalID: -5620155193319629329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 8
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8665d0c3e5595f900800000000000000
+      internalID: 717643947602433640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock_2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 36
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 522a68a6b95785290800000000000000
+      internalID: -7901436235853946331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c48b4c282ad4fe20800000000000000
+      internalID: 3383569086138778819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afde89d54a060c400800000000000000
+      internalID: 342379830741364218
       vertices: []
       indices: 
       edges: []
@@ -125,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      G01_0: 6692781160814943255
+      Lock_0: -5620155193319629329
+      Lock_1: 717643947602433640
+      Lock_2: -7901436235853946331
+      Lock_3: 3383569086138778819
+      Lock_4: 342379830741364218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

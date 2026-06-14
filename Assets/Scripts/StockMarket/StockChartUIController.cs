@@ -278,33 +278,44 @@ private void UpdateEventLabels()
 
         /// <summary>
         /// 根據 GameData.SelectedCharacterIndex 載入對應角色頭像。
-        /// 圖片路徑: Resources/CharacterImages/C0X_Face.png
+        /// 使用 CharacterData.csv 中的 SelectImageID 欄位。
         /// </summary>
         private void LoadCharacterFace()
         {
             if (_avatarPortrait == null) return;
 
-            int charIndex = Core.GameData.SelectedCharacterIndex; // 0~5
-            string charId = $"C{(charIndex + 1):D2}"; // C01 ~ C06
-            string path = $"CharacterImages/{charId}_Face";
+            int charIndex = Core.GameData.SelectedCharacterIndex;
 
+            // 從 CharacterDataManager 取得 SelectImageID
+            Core.CharacterDataManager.LoadData();
+            var character = Core.CharacterDataManager.GetCharacterByIndex(charIndex);
+
+            string selectId;
+            if (character != null && !string.IsNullOrEmpty(character.SelectImageID))
+            {
+                selectId = character.SelectImageID;
+            }
+            else
+            {
+                selectId = $"C{(charIndex + 1):D2}_C";
+            }
+
+            string path = $"CharacterImages/{selectId}";
             var texture = Resources.Load<Texture2D>(path);
             if (texture != null)
             {
                 _avatarPortrait.style.backgroundImage = new StyleBackground(texture);
                 _avatarPortrait.style.unityBackgroundScaleMode = ScaleMode.ScaleToFit;
-                Debug.Log($"[StockChartUI] 載入角色頭像: {path}");
             }
             else
             {
-                // 預設用 C01
-                var fallback = Resources.Load<Texture2D>("CharacterImages/C01_Face");
+                var fallback = Resources.Load<Texture2D>("CharacterImages/C01_C");
                 if (fallback != null)
                 {
                     _avatarPortrait.style.backgroundImage = new StyleBackground(fallback);
                     _avatarPortrait.style.unityBackgroundScaleMode = ScaleMode.ScaleToFit;
                 }
-                Debug.LogWarning($"[StockChartUI] 找不到角色頭像: {path}，使用預設 C01");
+                Debug.LogWarning($"[StockChartUI] 找不到角色頭像: {path}");
             }
         }
     }
