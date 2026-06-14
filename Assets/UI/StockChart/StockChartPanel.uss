@@ -111,6 +111,7 @@
 .stock-price-row {
     flex-direction: row;
     align-items: center;
+    margin-top: -7px;
 }
 
 .stock-price {
