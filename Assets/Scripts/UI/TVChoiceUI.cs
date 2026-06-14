@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 namespace UI
@@ -28,8 +29,15 @@ namespace UI
         [Header("倒數計時")]
         [SerializeField] private TextMeshPro timerText;
 
+        [Header("觀眾事件圖片")]
+        [SerializeField] private Image audienceEventImage;
+
         /// <summary>目前是否顯示中</summary>
         public bool IsShowing { get; private set; }
+
+        // 快取已載入的觀眾事件圖片，避免重複從 Resources 讀取
+        private System.Collections.Generic.Dictionary<string, Sprite> _audienceImageCache
+            = new System.Collections.Generic.Dictionary<string, Sprite>();
 
         private void Awake()
         {
@@ -53,6 +61,9 @@ namespace UI
         {
             if (tvScreenRoot != null)
                 tvScreenRoot.gameObject.SetActive(true);
+
+            // 新事件開始時隱藏上一次的圖片
+            HideAudienceImage();
 
             if (titleText != null)
                 titleText.text = title;
@@ -122,12 +133,53 @@ namespace UI
         }
 
         /// <summary>
+        /// 顯示觀眾事件對應的圖片。從 Resources/AudienPic/{imageId} 載入。
+        /// </summary>
+        public void ShowAudienceImage(string imageId)
+        {
+            if (audienceEventImage == null) return;
+
+            if (string.IsNullOrEmpty(imageId))
+            {
+                audienceEventImage.gameObject.SetActive(false);
+                return;
+            }
+
+            Sprite sprite;
+            if (!_audienceImageCache.TryGetValue(imageId, out sprite))
+            {
+                sprite = Resources.Load<Sprite>($"AudienPic/{imageId}");
+                if (sprite == null)
+                {
+                    Debug.LogWarning($"[TVChoiceUI] 找不到觀眾事件圖片: AudienPic/{imageId}");
+                    audienceEventImage.gameObject.SetActive(false);
+                    return;
+                }
+                _audienceImageCache[imageId] = sprite;
+            }
+
+            audienceEventImage.sprite = sprite;
+            audienceEventImage.gameObject.SetActive(true);
+        }
+
+        /// <summary>
+        /// 隱藏觀眾事件圖片。
+        /// </summary>
+        public void HideAudienceImage()
+        {
+            if (audienceEventImage != null)
+                audienceEventImage.gameObject.SetActive(false);
+        }
+
+        /// <summary>
         /// 隱藏電視選項面板。
         /// </summary>
         public void Hide()
         {
             if (tvScreenRoot != null)
                 tvScreenRoot.gameObject.SetActive(false);
+
+            HideAudienceImage();
 
             IsShowing = false;
         }

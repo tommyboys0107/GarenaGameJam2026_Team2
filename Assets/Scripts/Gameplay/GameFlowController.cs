@@ -474,6 +474,10 @@ namespace Gameplay
             if (tvChoiceUI != null)
                 tvChoiceUI.ShowResult(winnerIndex, winner.resultText);
 
+            // 顯示觀眾事件圖片（如果該選項有設定 imageId）
+            if (tvChoiceUI != null && !string.IsNullOrEmpty(winner.imageId))
+                tvChoiceUI.ShowAudienceImage(winner.imageId);
+
             // 顯示詳細描述
             if (eventDescriptionText != null)
                 eventDescriptionText.text = winner.resultText;
