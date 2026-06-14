@@ -35,6 +35,9 @@ namespace UI
         [SerializeField] private AudioClip bgmClip;
         [SerializeField] private AudioClip clickSfxClip;
 
+        [Header("Goal Select Panel (uGUI)")]
+        [SerializeField] private GoalSelectUI goalSelectUI;
+
         // === State ===
         private enum State { SelectingCharacter, SelectingGoal, TransitioningOut }
         private State _currentState;
@@ -224,9 +227,27 @@ namespace UI
             if (_selectedCharIndex < 0) return;
 
             PlayClickSfx();
-            _currentState = State.TransitioningOut;
-            TriggerFadeOut();
-            FadeBgmAndLoadGame();
+            _currentState = State.SelectingGoal;
+
+            // 顯示目標選擇面板
+            if (goalSelectUI != null)
+            {
+                goalSelectUI.Show(
+                    _selectedCharIndex,
+                    onBack: () =>
+                    {
+                        // 返回角色選擇
+                        _currentState = State.SelectingCharacter;
+                    },
+                    onGoalSelected: (goalIndex) =>
+                    {
+                        // 目標選定，開始轉場
+                        _currentState = State.TransitioningOut;
+                        TriggerFadeOut();
+                        FadeBgmAndLoadGame();
+                    }
+                );
+            }
         }
 
         // ====================================================
@@ -310,28 +331,12 @@ namespace UI
         }
 
         // ====================================================
-        // Goal Keyboard (保留)
+        // Goal Keyboard (由 GoalSelectUI 處理)
         // ====================================================
 
         private void PollGoalKeyboard()
         {
-            if (Keyboard.current == null) return;
-            if (Keyboard.current.escapeKey.wasPressedThisFrame) { _currentState = State.SelectingCharacter; return; }
-            if (Keyboard.current.qKey.wasPressedThisFrame) SelectGoal(0);
-            else if (Keyboard.current.wKey.wasPressedThisFrame) SelectGoal(1);
-            else if (Keyboard.current.eKey.wasPressedThisFrame) SelectGoal(2);
-            else if (Keyboard.current.aKey.wasPressedThisFrame) SelectGoal(3);
-            else if (Keyboard.current.sKey.wasPressedThisFrame) SelectGoal(4);
-            else if (Keyboard.current.dKey.wasPressedThisFrame) SelectGoal(5);
-        }
-
-        private void SelectGoal(int index)
-        {
-            GameData.SelectedGoalIndex = index;
-            PlayClickSfx();
-            _currentState = State.TransitioningOut;
-            TriggerFadeOut();
-            FadeBgmAndLoadGame();
+            // 由 GoalSelectUI 內部 Update 處理按鍵
         }
     }
 }

@@ -1,13 +1,13 @@
 事件編號,事件名稱,影響,結果文字,Result,AudioID,ImageID
 A01,<color=yellow>製藥</color>臨床試驗造假曝光,"[NARC,-15],[BYTE,+12]",<color=yellow>納克製藥</color>被爆三期試驗數據全是捏造的，股價跳水。<color=yellow>拜特資安</color>趁機兜售『消滅證據』服務。,"Faked trials exposed, NarcPharma plummets.",A01-Result,A01-Result
-A02,政府國防標案外洩,"[LOCK,+18],[BYTE,+8]",一份千億國防標案內容被<color=yellow>駭客</color>提前洩漏，<color=yellow>洛克防務</color>搶先佈局。,"Defense contract leaked, LockDefense surges.",,
-A03,暗網<color=yellow>藥局</color>促銷日,"[NARC,+20],[LOCK,-8],[BYTE,+6]",暗網年度促銷，<color=yellow>處方藥</color>與合成品訂單爆量。物流全靠加密通訊，<color=yellow>軍火</color>商被冷落了。,"Dark web pharmacy sale, drug orders explode.",,
-A04,零日漏洞被公開,"[NARC,+10],[LOCK,+8],[BYTE,-18]",<color=yellow>拜特資安</color>自家防火牆被發現零日漏洞，客戶信任崩盤。各方轉向實體交易避險。,"Zero-day exploit exposed, ByteSec trust collapses.",,
-A05,<color=yellow>傭兵</color>公司內戰,"[NARC,+8],[LOCK,-15],[BYTE,+10]",<color=yellow>洛克</color>旗下兩支<color=yellow>傭兵</color>隊互相開幹，<color=yellow>軍火</color>庫被炸毀。傷兵需要<color=yellow>藥品</color>，雙方都在搶購監控系統。,Mercenary mutiny destroys LockDefense arsenal.,,
-A06,跨國洗錢通道建立,"[NARC,+10],[LOCK,+10],[BYTE,+10]",新的跨國洗錢管道上線，黑市資金流動性大增，三大產業雨露均霑。,New laundering channel boosts entire black market.,,
-A07,吹哨者記者會,"[NARC,+12],[LOCK,-18],[BYTE,-8]",前員工召開記者會揭露<color=yellow>洛克防務</color>向恐怖組織賣<color=yellow>武器</color>，執法單位連帶盯上<color=yellow>資安</color>公司。<color=yellow>藥品</color>黑市反而更隱蔽。,Whistleblower exposes LockDefense arms deals.,,
-A08,AI深偽勒索潮,"[NARC,-5],[LOCK,-8],[BYTE,+20]",AI生成的深偽影片被大規模用於勒索，<color=yellow>拜特資安</color>的勒索軟體即服務（RaaS）銷量翻倍。,"Deepfake extortion wave, ByteSec RaaS booms.",,
-A09,地下<color=yellow>診所</color>連鎖擴張,"[NARC,+15],[LOCK,+8],[BYTE,-5]",無照地下<color=yellow>診所</color>在東南亞開了20家分店，<color=yellow>藥品</color>需求暴漲，還雇了<color=yellow>洛克</color>的<color=yellow>保鑣</color>駐點。,"Underground clinics expand, drug demand soars.",,
-A10,衛星通訊被劫持,"[NARC,+5],[LOCK,-12],[BYTE,+15]",<color=yellow>駭客</color>集團劫持<color=yellow>軍用</color>衛星通訊，<color=yellow>洛克</color>的無人機編隊全部失聯。<color=yellow>拜特資安</color>公開叫賣存取權限。,"Military satellite hijacked, drones go offline.",,
-A11,<color=yellow>禁藥</color>檢測技術突破,"[NARC,-20],[LOCK,+5],[BYTE,+12]",新型檢測技術讓九成違禁<color=yellow>藥物</color>無所遁形，<color=yellow>納克</color>的產品滯銷。客戶轉向數位犯罪領域。,New drug detection tech cripples NarcPharma sales.,,
-A12,國際<color=yellow>軍火</color>展黑幕,"[NARC,+8],[LOCK,+15],[BYTE,-12]",國際<color=yellow>軍火</color>展的VIP後台實為黑市交易會，<color=yellow>軍火</color>與生化製品訂單滿載。<color=yellow>資安</color>團隊被擋在門外。,Arms expo backdoor deals flood LockDefense orders.,,
+A02,政府國防標案外洩,"[LOCK,+18],[BYTE,+8]",一份千億國防標案內容被<color=yellow>駭客</color>提前洩漏，<color=yellow>洛克防務</color>搶先佈局。,"Defense contract leaked, LockDefense surges.",,A02-Result
+A03,暗網<color=yellow>藥局</color>促銷日,"[NARC,+20],[LOCK,-8],[BYTE,+6]",暗網年度促銷，<color=yellow>處方藥</color>與合成品訂單爆量。物流全靠加密通訊，<color=yellow>軍火</color>商被冷落了。,"Dark web pharmacy sale, drug orders explode.",,A03-Result
+A04,零日漏洞被公開,"[NARC,+10],[LOCK,+8],[BYTE,-18]",<color=yellow>拜特資安</color>自家防火牆被發現零日漏洞，客戶信任崩盤。各方轉向實體交易避險。,"Zero-day exploit exposed, ByteSec trust collapses.",,A04-Result
+A05,<color=yellow>傭兵</color>公司內戰,"[NARC,+8],[LOCK,-15],[BYTE,+10]",<color=yellow>洛克</color>旗下兩支<color=yellow>傭兵</color>隊互相開幹，<color=yellow>軍火</color>庫被炸毀。傷兵需要<color=yellow>藥品</color>，雙方都在搶購監控系統。,Mercenary mutiny destroys LockDefense arsenal.,,A05-Result
+A06,跨國洗錢通道建立,"[NARC,+10],[LOCK,+10],[BYTE,+10]",新的跨國洗錢管道上線，黑市資金流動性大增，三大產業雨露均霑。,New laundering channel boosts entire black market.,,A06-Result
+A07,吹哨者記者會,"[NARC,+12],[LOCK,-18],[BYTE,-8]",前員工召開記者會揭露<color=yellow>洛克防務</color>向恐怖組織賣<color=yellow>武器</color>，執法單位連帶盯上<color=yellow>資安</color>公司。<color=yellow>藥品</color>黑市反而更隱蔽。,Whistleblower exposes LockDefense arms deals.,,A07-Result
+A08,AI深偽勒索潮,"[NARC,-5],[LOCK,-8],[BYTE,+20]",AI生成的深偽影片被大規模用於勒索，<color=yellow>拜特資安</color>的勒索軟體即服務（RaaS）銷量翻倍。,"Deepfake extortion wave, ByteSec RaaS booms.",,A08-Result
+A09,地下<color=yellow>診所</color>連鎖擴張,"[NARC,+15],[LOCK,+8],[BYTE,-5]",無照地下<color=yellow>診所</color>在東南亞開了20家分店，<color=yellow>藥品</color>需求暴漲，還雇了<color=yellow>洛克</color>的<color=yellow>保鑣</color>駐點。,"Underground clinics expand, drug demand soars.",,A09-Result
+A10,衛星通訊被劫持,"[NARC,+5],[LOCK,-12],[BYTE,+15]",<color=yellow>駭客</color>集團劫持<color=yellow>軍用</color>衛星通訊，<color=yellow>洛克</color>的無人機編隊全部失聯。<color=yellow>拜特資安</color>公開叫賣存取權限。,"Military satellite hijacked, drones go offline.",,A10-Result
+A11,<color=yellow>禁藥</color>檢測技術突破,"[NARC,-20],[LOCK,+5],[BYTE,+12]",新型檢測技術讓九成違禁<color=yellow>藥物</color>無所遁形，<color=yellow>納克</color>的產品滯銷。客戶轉向數位犯罪領域。,New drug detection tech cripples NarcPharma sales.,,A11-Result
+A12,國際<color=yellow>軍火</color>展黑幕,"[NARC,+8],[LOCK,+15],[BYTE,-12]",國際<color=yellow>軍火</color>展的VIP後台實為黑市交易會，<color=yellow>軍火</color>與生化製品訂單滿載。<color=yellow>資安</color>團隊被擋在門外。,Arms expo backdoor deals flood LockDefense orders.,,A12-Result

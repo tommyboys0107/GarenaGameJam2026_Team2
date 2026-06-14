@@ -128,18 +128,21 @@ namespace Data
             var lines = ReadCSV("GoalData");
             var list = new List<GoalInfo>();
 
-            // CSV 欄位：編號,外號,外號敘述,IconID,目標股票,目標漲幅(%)
+            // CSV 欄位：編號,外號,外號敘述,UnselectIconID,SelectIconID,目標股票,目標漲幅(%)
             foreach (var cols in lines)
             {
-                if (cols.Length < 6) continue;
-                string percentStr = cols[5].Trim();
+                if (cols.Length < 7) continue;
+                string percentStr = cols[6].Trim();
                 if (!int.TryParse(percentStr, out int percent)) continue;
 
                 list.Add(new GoalInfo
                 {
                     id = cols[0].Trim(),
                     nickname = cols[1].Trim(),
-                    stockCode = cols[4].Trim(),
+                    nicknameDesc = cols[2].Trim(),
+                    unselectIconId = cols[3].Trim(),
+                    selectIconId = cols[4].Trim(),
+                    stockCode = cols[5].Trim(),
                     targetPercent = percent
                 });
             }
