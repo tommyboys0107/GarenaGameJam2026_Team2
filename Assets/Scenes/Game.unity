@@ -415,6 +415,51 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3466405041042095836, guid: b44356047e7496e4e8114889e5aedb3b, type: 3}
   m_PrefabInstance: {fileID: 908955909}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &927326117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 927326119}
+  - component: {fileID: 927326118}
+  m_Layer: 0
+  m_Name: VoteTestPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &927326118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927326117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b0e5442403e3f41af302f9096bc32a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.VoteTestPanel
+  voteManager: {fileID: 6614378768298344547}
+--- !u!4 &927326119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927326117}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1246942466
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 197236084698877416, guid: 5f2e5aef7dc3df84a90d15b806d4e790, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1141253393517428714, guid: 5f2e5aef7dc3df84a90d15b806d4e790, type: 3}
       propertyPath: gameManager
@@ -856,7 +901,7 @@ PrefabInstance:
     - target: {fileID: 2921488394034496054, guid: 04ef3cb3233e40b4d8ab4ab1abf21f91, type: 3}
       propertyPath: stockMarketManager
       value: 
-      objectReference: {fileID: 4969978965806066412, guid: 46349e21300471c4e884c34e5b54e35c, type: 3}
+      objectReference: {fileID: 513091495}
     - target: {fileID: 3216459293816088914, guid: 04ef3cb3233e40b4d8ab4ab1abf21f91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -945,6 +990,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233daab1df066f94696d026e26676d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.WinConditionChecker
+--- !u!114 &6614378768298344547 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7729974889443754585, guid: 04ef3cb3233e40b4d8ab4ab1abf21f91, type: 3}
+  m_PrefabInstance: {fileID: 6614378768298344545}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0486593057caa704bbdd14ef7c6ea6ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Twitch.TwitchVoteManager
 --- !u!1001 &9052043548667218961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1069,3 +1125,4 @@ SceneRoots:
   - {fileID: 1246942468}
   - {fileID: 6614378768298344545}
   - {fileID: 1928734311}
+  - {fileID: 927326119}

@@ -59,6 +59,9 @@ namespace BlackMarketTrader
         private float _driftTimer;
         private bool _isRunning = false;
 
+        /// <summary>暫停控制。設為 true 時 Update 不會推進價格。</summary>
+        public bool IsPaused { get; set; }
+
         private void Awake()
         {
             InitializeStocks();
@@ -117,7 +120,7 @@ namespace BlackMarketTrader
 
         private void Update()
         {
-            if (!_isRunning) return;
+            if (!_isRunning || IsPaused) return;
 
             // 每幀更新價格（平滑移動向目標）
             foreach (var stock in Stocks)

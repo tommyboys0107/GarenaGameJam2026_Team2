@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Data;
 using BlackMarketTrader;
 
@@ -30,6 +31,12 @@ namespace Gameplay
         /// <summary>遊戲是否正在進行</summary>
         public bool IsPlaying { get; private set; }
 
+        /// <summary>遊戲是否暫停中</summary>
+        public bool IsPaused { get; private set; }
+
+        /// <summary>暫停狀態改變時觸發 (true=暫停, false=恢復)</summary>
+        public event Action<bool> OnPauseChanged;
+
         private void Start()
         {
             var timeConfig = CSVLoader.LoadTimeConfig();
@@ -41,6 +48,50 @@ namespace Gameplay
         {
             TimeRemaining = GameDuration;
             IsPlaying = true;
+            IsPaused = false;
+        }
+
+        /// <summary>
+        /// 暫停遊戲。GameFlowController 和 StockMarketManager 都會停止推進。
+        /// </summary>
+        public void Pause()
+        {
+            if (!IsPlaying || IsPaused) return;
+
+            IsPaused = true;
+
+            // 暫停股市（使用 IsPaused 而非 StopMarket，避免重置計時器）
+            if (stockMarketManager != null)
+                stockMarketManager.IsPaused = true;
+
+            Debug.Log("[GameManager] 遊戲暫停");
+            OnPauseChanged?.Invoke(true);
+        }
+
+        /// <summary>
+        /// 恢復遊戲。
+        /// </summary>
+        public void Resume()
+        {
+            if (!IsPlaying || !IsPaused) return;
+
+            IsPaused = false;
+
+            // 恢復股市
+            if (stockMarketManager != null)
+                stockMarketManager.IsPaused = false;
+
+            Debug.Log("[GameManager] 遊戲恢復");
+            OnPauseChanged?.Invoke(false);
+        }
+
+        /// <summary>
+        /// 切換暫停/恢復。
+        /// </summary>
+        public void TogglePause()
+        {
+            if (IsPaused) Resume();
+            else Pause();
         }
 
         /// <summary>
@@ -64,7 +115,18 @@ namespace Gameplay
 
         private void Update()
         {
-            if (!IsPlaying) return;
+            // Esc 鍵切換暫停（遊戲進行中隨時可用）
+            if (IsPlaying)
+            {
+                var kb = Keyboard.current;
+                if (kb != null && kb.escapeKey.wasPressedThisFrame)
+                {
+                    TogglePause();
+                    return;
+                }
+            }
+
+            if (!IsPlaying || IsPaused) return;
 
             TimeRemaining -= Time.deltaTime;
 

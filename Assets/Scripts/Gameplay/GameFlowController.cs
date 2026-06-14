@@ -153,7 +153,10 @@ namespace Gameplay
         private void OnEnable()
         {
             if (voteManager != null)
+            {
                 voteManager.OnVoteComplete += HandleAudienceVoteComplete;
+                voteManager.OnVoteUpdated += HandleVoteUpdated;
+            }
             if (traderChoiceUI != null)
                 traderChoiceUI.OnChoiceSelected += HandleTraderButtonChoice;
         }
@@ -161,19 +164,26 @@ namespace Gameplay
         private void OnDisable()
         {
             if (voteManager != null)
+            {
                 voteManager.OnVoteComplete -= HandleAudienceVoteComplete;
+                voteManager.OnVoteUpdated -= HandleVoteUpdated;
+            }
             if (traderChoiceUI != null)
                 traderChoiceUI.OnChoiceSelected -= HandleTraderButtonChoice;
         }
 
-        private void HandleTraderButtonChoice(int index)
+        /// <summary>
+        /// 即時更新 TV UI 上的投票數字。
+        /// </summary>
+        private void HandleVoteUpdated(int[] votes)
         {
-            SelectTraderChoice(index);
+            if (tvChoiceUI != null)
+                tvChoiceUI.UpdateVotes(votes);
         }
 
         private void Update()
         {
-            if (gameManager == null || !gameManager.IsPlaying) return;
+            if (gameManager == null || !gameManager.IsPlaying || gameManager.IsPaused) return;
 
             // Slot 計時
             if (_slotActive)

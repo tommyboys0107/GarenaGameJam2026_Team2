@@ -110,11 +110,44 @@ namespace Twitch
         }
 
         /// <summary>
+        /// 強制以指定的選項索引作為贏家結束投票（測試用）。
+        /// </summary>
+        /// <param name="winnerIndex">獲勝選項索引 (0, 1, 2)</param>
+        public void ForceEndVoteWithWinner(int winnerIndex)
+        {
+            if (!IsVoting) return;
+            if (winnerIndex < 0 || winnerIndex > 2) return;
+
+            IsVoting = false;
+
+            Debug.Log($"[TwitchVote] 強制結束投票！指定贏家: {CurrentOptions[winnerIndex]} " +
+                      $"(票數: {_votes[0]}/{_votes[1]}/{_votes[2]})");
+
+            twitchIRC.SendChatMessage(
+                $"✅ 投票結束（測試）！獲勝: {CurrentOptions[winnerIndex]} " +
+                $"({_votes[0]}/{_votes[1]}/{_votes[2]} 票)");
+
+            OnVoteComplete?.Invoke(winnerIndex);
+        }
+
+        /// <summary>
         /// 取得目前票數的複本。
         /// </summary>
         public int[] GetCurrentVotes()
         {
             return (int[])_votes.Clone();
+        }
+
+        /// <summary>
+        /// 模擬一筆投票（測試用）。繞過 Twitch IRC，直接以假使用者身份投票。
+        /// </summary>
+        /// <param name="fakeUsername">模擬的使用者名稱</param>
+        /// <param name="optionIndex">選項索引 (0, 1, 2)</param>
+        public void SimulateVote(string fakeUsername, int optionIndex)
+        {
+            if (!IsVoting) return;
+            if (optionIndex < 0 || optionIndex > 2) return;
+            HandleChatMessage(fakeUsername, (optionIndex + 1).ToString());
         }
 
         private void HandleChatMessage(string username, string message)
