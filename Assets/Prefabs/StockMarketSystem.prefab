@@ -52,9 +52,9 @@ MonoBehaviour:
   _transitionDuration: 5
   _enableDrift: 1
   _driftInterval: 2
-  _driftTransitionDuration: 2.5
-  _driftPercentMin: -3
-  _driftPercentMax: 3
+  _driftTransitionDuration: 5
+  _driftPercentMin: -5
+  _driftPercentMax: 5
   _trendThresholds:
     SmallRiseThreshold: 0.3
     BigRiseThreshold: 1

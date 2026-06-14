@@ -114,6 +114,33 @@ namespace BlackMarketTrader
             float minPrice = _marketManager.MinPrice;
             float maxPrice = _marketManager.MaxPrice;
 
+            // 動態調整 Y 軸範圍：根據可見數據的實際最大/最小值
+            float dataMin = float.MaxValue;
+            float dataMax = float.MinValue;
+            foreach (var stock in _marketManager.Stocks)
+            {
+                foreach (var price in stock.PriceHistory)
+                {
+                    if (price < dataMin) dataMin = price;
+                    if (price > dataMax) dataMax = price;
+                }
+            }
+
+            if (dataMin < float.MaxValue && dataMax > float.MinValue)
+            {
+                float range = dataMax - dataMin;
+                float padding = Mathf.Max(range * 0.15f, 10f); // 至少留 10 的 padding
+                minPrice = Mathf.Max(_marketManager.MinPrice, dataMin - padding);
+                maxPrice = Mathf.Min(_marketManager.MaxPrice, dataMax + padding);
+                // 確保最小範圍
+                if (maxPrice - minPrice < 20f)
+                {
+                    float mid = (dataMin + dataMax) * 0.5f;
+                    minPrice = mid - 10f;
+                    maxPrice = mid + 10f;
+                }
+            }
+
             _chartElement.UpdateData(
                 _marketManager.Stocks,
                 _marketManager.Events,
