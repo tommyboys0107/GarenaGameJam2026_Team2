@@ -98,6 +98,10 @@ namespace Gameplay
             LoadCSVData();
             ApplyTimeConfig();
             BuildSchedule();
+
+            // 初始隱藏事件描述文字
+            if (eventDescriptionText != null)
+                eventDescriptionText.gameObject.SetActive(false);
         }
 
         private void ApplyTimeConfig()
@@ -298,9 +302,12 @@ namespace Gameplay
             Debug.Log($"[GameFlow] Slot {CurrentSlotIndex + 1}/{_schedule.Length} 開始 — 類型: {CurrentSlotType}");
             OnSlotStarted?.Invoke(CurrentSlotIndex, CurrentSlotType);
 
-            // 清空上一輪的描述文字
+            // 顯示事件描述 GameObject 並清空文字
             if (eventDescriptionText != null)
+            {
+                eventDescriptionText.gameObject.SetActive(true);
                 eventDescriptionText.text = "";
+            }
 
             if (CurrentSlotType == EventSlotType.Trader)
             {

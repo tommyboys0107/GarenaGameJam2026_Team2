@@ -1,0 +1,132 @@
+/* ============================================================
+   ResultPanel.uss
+   結算畫面 UI Toolkit 樣式
+   ============================================================ */
+
+/* === Full-screen overlay container === */
+.result-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+/* === Result Card === */
+.result-card {
+    width: 500px;
+    padding: 40px;
+    background-color: rgba(15, 15, 30, 0.95);
+    border-width: 2px;
+    border-color: rgba(255, 215, 0, 0.6);
+    border-radius: 16px;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* === Title (success/fail) === */
+.result-title {
+    font-size: 48px;
+    color: rgb(255, 215, 0);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* === Divider line === */
+.divider {
+    width: 80%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* === Goal info === */
+.goal-info {
+    font-size: 28px;
+    color: rgb(200, 200, 200);
+    -unity-text-align: middle-center;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    white-space: normal;
+}
+
+/* === Result detail === */
+.result-detail {
+    font-size: 24px;
+    color: rgb(160, 220, 255);
+    -unity-text-align: middle-center;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    white-space: normal;
+}
+
+/* === Button row === */
+.button-row {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* === Action buttons === */
+.action-button {
+    font-size: 24px;
+    padding: 12px 32px;
+    margin-left: 12px;
+    margin-right: 12px;
+    border-radius: 10px;
+    border-width: 2px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    transition-property: background-color, border-color, scale;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.action-button:hover {
+    scale: 1.05 1.05;
+}
+
+.action-button:active {
+    scale: 0.95 0.95;
+}
+
+/* === Replay Button === */
+.replay-button {
+    color: rgb(255, 255, 255);
+    background-color: rgba(40, 120, 200, 0.8);
+    border-color: rgba(80, 160, 255, 0.8);
+}
+
+.replay-button:hover {
+    background-color: rgba(60, 140, 220, 0.95);
+    border-color: rgba(120, 180, 255, 1);
+}
+
+/* === Title Button === */
+.title-button {
+    color: rgb(200, 200, 200);
+    background-color: rgba(60, 60, 80, 0.8);
+    border-color: rgba(120, 120, 140, 0.6);
+}
+
+.title-button:hover {
+    background-color: rgba(80, 80, 110, 0.95);
+    border-color: rgba(200, 200, 200, 0.8);
+    color: white;
+}
+
+/* === Visible state (for animation) === */
+.result-container.visible {
+    opacity: 1;
+}

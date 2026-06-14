@@ -86,3 +86,10 @@ A 2D stock-manipulation game for Garena Game Jam 2026. Players manipulate stock 
 - Keep systems decoupled so teammates work in parallel
 - Twitch integration is the core differentiator — keep it stable
 - Rapid iteration; test via `StockChartTest` scene or Play mode in `Game` scene
+
+## MCP 操作規範
+
+- **場景設定一律用 MCP 完成** — 建立腳本後，必須透過 MCP 工具（`manage_components`、`manage_gameobject`、`manage_scene` 等）直接將 component 掛上 GameObject、設定 SerializeField 引用、存檔場景。不要只列出手動步驟讓使用者自己做。
+- **完整流程**：建立腳本 → `refresh_unity` 等編譯 → `manage_components(add)` 掛 component → `manage_components(set_property)` 設定引用 → `manage_scene(save)` 存檔
+- **物件引用設定**：使用 `set_property` 搭配 `{"path": "Assets/..."}` (asset) 或同場景物件的 instance ID 來綁定引用
+- **場景切換**：操作前先確認目前場景（`get_active`），需要時用 `load` 切換到正確場景再操作

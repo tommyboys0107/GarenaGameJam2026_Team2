@@ -27,6 +27,15 @@ namespace Core
             SceneManager.LoadScene(GameScene);
         }
 
+        /// <summary>
+        /// 重新載入遊戲場景（重玩）。
+        /// GameData 是 static，角色/目標選擇會保留。
+        /// </summary>
+        public static void ReloadGame()
+        {
+            SceneManager.LoadScene(GameScene);
+        }
+
         public static void QuitGame()
         {
 #if UNITY_EDITOR

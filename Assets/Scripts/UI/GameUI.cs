@@ -7,8 +7,9 @@ using Core;
 namespace UI
 {
     /// <summary>
-    /// 遊戲場景的 UI 控制器。
-    /// 顯示倒數計時，遊戲結束後顯示結算面板。
+    /// 遊戲場景的 HUD UI 控制器。
+    /// 顯示倒數計時與角色資訊。
+    /// 結算面板已移至 ResultPanelUI (UI Toolkit)。
     /// </summary>
     public class GameUI : MonoBehaviour
     {
@@ -19,34 +20,28 @@ namespace UI
         [SerializeField] private TextMeshProUGUI timerText;
         [SerializeField] private TextMeshProUGUI characterInfoText;
 
-        [Header("結算面板")]
-        [SerializeField] private GameObject resultPanel;
-        [SerializeField] private TextMeshProUGUI resultText;
-        [SerializeField] private Button okButton;
+        [Header("事件描述")]
+        [SerializeField] private GameObject eventDescriptionObject;
 
         private void Start()
         {
-            // 隱藏結算面板
-            if (resultPanel != null)
-                resultPanel.SetActive(false);
-
             // 顯示角色資訊
             if (characterInfoText != null)
                 characterInfoText.text = $"角色 {GameData.SelectedCharacterIndex + 1} 號";
 
-            // 監聽遊戲結束
-            if (gameManager != null)
-                gameManager.OnGameOver += ShowResult;
+            // 初始隱藏事件描述 GameObject
+            if (eventDescriptionObject != null)
+                eventDescriptionObject.SetActive(false);
 
-            // OK 按鈕回到 Title
-            if (okButton != null)
-                okButton.onClick.AddListener(OnOkClicked);
+            // 監聽遊戲結束，停止計時顯示
+            if (gameManager != null)
+                gameManager.OnGameOver += OnGameOver;
         }
 
         private void OnDestroy()
         {
             if (gameManager != null)
-                gameManager.OnGameOver -= ShowResult;
+                gameManager.OnGameOver -= OnGameOver;
         }
 
         private void Update()
@@ -61,22 +56,14 @@ namespace UI
             }
         }
 
-        private void ShowResult()
+        private void OnGameOver()
         {
             if (timerText != null)
                 timerText.text = "0";
 
-            if (resultPanel != null)
-                resultPanel.SetActive(true);
-
-            if (resultText != null)
-                resultText.text = "時間到！\n結算中...";
-        }
-
-        private void OnOkClicked()
-        {
-            GameData.Reset();
-            SceneLoader.LoadTitle();
+            // 隱藏事件描述
+            if (eventDescriptionObject != null)
+                eventDescriptionObject.SetActive(false);
         }
     }
 }

@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Style src="ResultPanel.uss" />
+
+    <!-- Result Panel (hidden initially, shown on game end) -->
+    <ui:VisualElement name="result-container" class="result-container">
+        <ui:VisualElement name="result-card" class="result-card">
+            <ui:Label name="result-title" text="任務完成！" class="result-title" />
+            <ui:VisualElement class="divider" />
+            <ui:Label name="goal-info" text="目標：NARC 漲幅 +40%" class="goal-info" />
+            <ui:Label name="result-detail" text="實際：NARC +52.3%" class="result-detail" />
+            <ui:VisualElement class="divider" />
+            <ui:VisualElement name="button-row" class="button-row">
+                <ui:Button name="replay-button" text="重新開始" class="action-button replay-button" />
+                <ui:Button name="title-button" text="返回首頁" class="action-button title-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
