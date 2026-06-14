@@ -584,6 +584,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StockMarketSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 4969978965806066412, guid: 46349e21300471c4e884c34e5b54e35c, type: 3}
+      propertyPath: _enableDrift
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7284148171228050001, guid: 46349e21300471c4e884c34e5b54e35c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
