@@ -1,5 +1,5 @@
 Key,Value,備註
-traderEventTime,15,操盤手事件時長，單位為秒數
+traderEventTime,5,操盤手事件時長，單位為秒數
 traderEventCount,6,操盤手事件次數
 audienceEventTime,15,觀眾事件時長，單位為秒數
 audienceEventCount,3,觀眾事件次數
