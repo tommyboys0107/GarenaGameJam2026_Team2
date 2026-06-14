@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7284148171228050001}
   - component: {fileID: 4969978965806066412}
   - component: {fileID: 6357246629720015372}
+  - component: {fileID: 8730140033993848716}
   m_Layer: 0
   m_Name: StockMarketSystem
   m_TagString: Untagged
@@ -58,6 +59,8 @@ MonoBehaviour:
   _trendThresholds:
     SmallRiseThreshold: 0.3
     BigRiseThreshold: 1
+  _enableNoise: 1
+  _noisePercent: 5
   _volatilityA: 1
   _volatilityB: 1
   _volatilityC: 1
@@ -74,3 +77,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlackMarketTrader.StockMarketTestRunner
   _marketManager: {fileID: 4969978965806066412}
+--- !u!114 &8730140033993848716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615102044336175387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c909acbeebd9849a2bdf3d0ef44ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.StockTestInput
+  stockMarketManager: {fileID: 4969978965806066412}
+  enableTestKeys: 1
