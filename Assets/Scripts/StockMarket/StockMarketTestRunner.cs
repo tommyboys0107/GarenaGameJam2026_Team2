@@ -26,24 +26,24 @@ namespace BlackMarketTrader
             var keyboard = Keyboard.current;
             if (keyboard == null) return;
 
-            // 按 1: NARC +30
-            if (keyboard.digit1Key.wasPressedThisFrame)
+            // 按 4: NARC +30
+            if (keyboard.digit4Key.wasPressedThisFrame)
             {
                 _marketManager.ApplyStockEffect("NARC", 30);
                 _marketManager.TriggerEvent("政策利多", -1, TrendLevel.Flat);
                 Debug.Log("[StockMarket] NARC +30");
             }
 
-            // 按 2: LOCK -20
-            if (keyboard.digit2Key.wasPressedThisFrame)
+            // 按 5: LOCK -20
+            if (keyboard.digit5Key.wasPressedThisFrame)
             {
                 _marketManager.ApplyStockEffect("LOCK", -20);
                 _marketManager.TriggerEvent("市場崩盤", -1, TrendLevel.Flat);
                 Debug.Log("[StockMarket] LOCK -20");
             }
 
-            // 按 3: 全部 +20
-            if (keyboard.digit3Key.wasPressedThisFrame)
+            // 按 6: 全部 +20
+            if (keyboard.digit6Key.wasPressedThisFrame)
             {
                 _marketManager.ApplyStockEffect("NARC", 20);
                 _marketManager.ApplyStockEffect("LOCK", 20);
@@ -52,8 +52,8 @@ namespace BlackMarketTrader
                 Debug.Log("[StockMarket] All +20");
             }
 
-            // 按 4: 全部 -30
-            if (keyboard.digit4Key.wasPressedThisFrame)
+            // 按 7: 全部 -30
+            if (keyboard.digit7Key.wasPressedThisFrame)
             {
                 _marketManager.ApplyStockEffect("NARC", -30);
                 _marketManager.ApplyStockEffect("LOCK", -30);

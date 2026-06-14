@@ -11,7 +11,7 @@ namespace Gameplay
     /// F4=NARC-10%, F5=LOCK-10%, F6=BYTE-10%
     /// Inspector 可開關。
     /// 
-    /// 注意：數字鍵 1~4 已被 StockMarketTestRunner 使用。
+    /// 注意：數字鍵 4~7 已被 StockMarketTestRunner 使用。
     /// </summary>
     public class StockTestInput : MonoBehaviour
     {
