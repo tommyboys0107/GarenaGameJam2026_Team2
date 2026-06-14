@@ -28,6 +28,9 @@ namespace Gameplay
 
         [Header("NPC 圖片（操盤手事件時顯示）")]
         [SerializeField] private GameObject npcImage;
+        [SerializeField] private GameObject npcMsg;
+        [SerializeField] private GameObject npcMsgBG;
+        [SerializeField] private TMPro.TMP_Text npcMsgContent;
 
         [Header("時間設定（從 TimeData.csv 自動讀取，Inspector 值為備用）")]
         [SerializeField] private float startDelay = 10f;
@@ -107,8 +110,9 @@ namespace Gameplay
                 eventDescriptionText.gameObject.SetActive(false);
 
             // 遊戲開始時關閉 NPC
-            if (npcImage != null)
-                npcImage.SetActive(false);
+            if (npcImage != null) npcImage.SetActive(false);
+            if (npcMsg != null) npcMsg.SetActive(false);
+            if (npcMsgBG != null) npcMsgBG.SetActive(false);
         }
 
         private void ApplyTimeConfig()
@@ -242,9 +246,10 @@ namespace Gameplay
             IsWaitingForChoice = false;
             var chosen = _currentTraderChoices[choiceIndex];
 
-            // 關閉 NPC 圖片
-            if (npcImage != null)
-                npcImage.SetActive(false);
+            // 關閉 NPC 圖片和訊息
+            if (npcImage != null) npcImage.SetActive(false);
+            if (npcMsg != null) npcMsg.SetActive(false);
+            if (npcMsgBG != null) npcMsgBG.SetActive(false);
 
             Debug.Log($"[GameFlow] 玩家選擇: {chosen.name} → 影響: {FormatEffects(chosen.effects)}");
 
@@ -304,8 +309,9 @@ namespace Gameplay
                 _slotActive = false;
 
                 // 確保 NPC 關閉
-                if (npcImage != null)
-                    npcImage.SetActive(false);
+                if (npcImage != null) npcImage.SetActive(false);
+                if (npcMsg != null) npcMsg.SetActive(false);
+                if (npcMsgBG != null) npcMsgBG.SetActive(false);
 
                 Debug.Log("[GameFlow] 所有事件 slot 結束");
                 return;
@@ -391,9 +397,11 @@ namespace Gameplay
             if (tvChoiceUI != null)
                 tvChoiceUI.SetVoteCountVisible(false);
 
-            // 顯示 NPC 圖片
-            if (npcImage != null)
-                npcImage.SetActive(true);
+            // 顯示 NPC 圖片和訊息
+            if (npcImage != null) npcImage.SetActive(true);
+            if (npcMsg != null) npcMsg.SetActive(true);
+            if (npcMsgBG != null) npcMsgBG.SetActive(true);
+            if (npcMsgContent != null) npcMsgContent.text = eventInfo.description;
 
             IsWaitingForChoice = true;
             _playerTimer = 0f;
