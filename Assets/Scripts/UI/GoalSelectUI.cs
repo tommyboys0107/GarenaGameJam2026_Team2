@@ -71,6 +71,10 @@ namespace UI
             // 生成目標卡片
             PopulateGoalCards();
 
+            // 更新底部提示文字
+            if (bottomText != null)
+                bottomText.text = "按 Q / W / E / A / S / D 選擇你的目標，別讓市場察覺你的下一步";
+
             // 顯示面板
             panel.SetActive(true);
             if (canvasGroup != null)
@@ -303,7 +307,7 @@ namespace UI
             tmp.fontStyle = style;
             tmp.alignment = alignment;
             tmp.enableWordWrapping = true;
-            tmp.overflowMode = TextOverflowModes.Ellipsis;
+            tmp.overflowMode = TextOverflowModes.Overflow;
             if (_font != null) tmp.font = _font;
             return tmp;
         }
