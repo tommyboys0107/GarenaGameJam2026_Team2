@@ -178,8 +178,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5C1A\u672A\u8F38\u5165 Twitch \u983B\u9053 ID\n\u89C0\u773E\u6295\u7968\u529F\u80FD\u5C07\u7121\u6CD5\u4F7F\u7528"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d4f947a103b8c14489fe351206c0f732, type: 2}
-  m_sharedMaterial: {fileID: -2307730219457870205, guid: d4f947a103b8c14489fe351206c0f732, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
+  m_sharedMaterial: {fileID: 7362725948581316873, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -369,7 +369,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -150, y: -125}
-  m_SizeDelta: {x: 200, y: 60}
+  m_SizeDelta: {x: 240, y: 77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &186121020
 MonoBehaviour:
@@ -384,14 +384,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4, g: 0.4, b: 0.4, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e3051c537e8c6445ab19a074629f249b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1137255, g: 0.10980393, b: 0.10588236, a: 1}
+  m_Color: {r: 0.69411767, g: 0.20784315, b: 0.20392159, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -798,8 +798,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u8FD4\u56DE"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f98889d0aa7b449adb8cc3a85600dfb6, type: 2}
-  m_sharedMaterial: {fileID: -2307730219457870205, guid: f98889d0aa7b449adb8cc3a85600dfb6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
+  m_sharedMaterial: {fileID: 7362725948581316873, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -893,7 +893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &537813666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,7 +987,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 36.64}
+  m_AnchoredPosition: {x: 0, y: 26.2}
   m_SizeDelta: {x: 380, y: 124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &552882590
@@ -1010,10 +1010,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u8F38\u5165 Twitch \u983B\u9053 ID\uFF1A"
+  m_text: "\u8F38\u5165 Twitch \u983B\u9053 ID"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d4f947a103b8c14489fe351206c0f732, type: 2}
-  m_sharedMaterial: {fileID: -2307730219457870205, guid: d4f947a103b8c14489fe351206c0f732, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
+  m_sharedMaterial: {fileID: 7362725948581316873, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1037,8 +1037,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1102,6 +1102,14 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u95DC\u9589"
       objectReference: {fileID: 0}
+    - target: {fileID: 2745142962491550274, guid: 60a3561664f514673b2486abcd737791, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
+    - target: {fileID: 2745142962491550274, guid: 60a3561664f514673b2486abcd737791, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7362725948581316873, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
     - target: {fileID: 3074629070706777862, guid: 60a3561664f514673b2486abcd737791, type: 3}
       propertyPath: m_Name
       value: CloseButton
@@ -1416,8 +1424,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u76F4\u63A5\u958B\u59CB"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d4f947a103b8c14489fe351206c0f732, type: 2}
-  m_sharedMaterial: {fileID: -2307730219457870205, guid: d4f947a103b8c14489fe351206c0f732, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
+  m_sharedMaterial: {fileID: 7362725948581316873, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1528,7 +1536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -17.51}
+  m_AnchoredPosition: {x: 0, y: -20.4}
   m_SizeDelta: {x: 380, y: 124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1125790891
@@ -1551,17 +1559,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: your ID
+  m_text: Twitch ID
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
+  m_sharedMaterial: {fileID: 7362725948581316873, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3432618393
-  m_fontColor: {r: 0.6, g: 0.6, b: 0.6, a: 0.8}
+    rgba: 3422552064
+  m_fontColor: {r: 0, g: 0, b: 0, a: 0.8}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1578,8 +1586,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1643,6 +1651,14 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u88FD\u4F5C\u4EBA\u54E1"
       objectReference: {fileID: 0}
+    - target: {fileID: 2745142962491550274, guid: 60a3561664f514673b2486abcd737791, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
+    - target: {fileID: 2745142962491550274, guid: 60a3561664f514673b2486abcd737791, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7362725948581316873, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
     - target: {fileID: 3074629070706777862, guid: 60a3561664f514673b2486abcd737791, type: 3}
       propertyPath: m_Name
       value: CreditButton
@@ -1764,6 +1780,14 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u96E2\u958B"
       objectReference: {fileID: 0}
+    - target: {fileID: 2745142962491550274, guid: 60a3561664f514673b2486abcd737791, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
+    - target: {fileID: 2745142962491550274, guid: 60a3561664f514673b2486abcd737791, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7362725948581316873, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
     - target: {fileID: 3074629070706777862, guid: 60a3561664f514673b2486abcd737791, type: 3}
       propertyPath: m_Name
       value: ExitButton
@@ -1934,8 +1958,8 @@ MonoBehaviour:
     \u4F01\u5283\u3001\u7A0B\u5F0F\u3001\u97F3\u6A02\u97F3\u6548\nKerry: \u7A0B\u5F0F\nDidi:
     \u7F8E\u8853\n\u6D41\u661F: \u7F8E\u8853"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d4f947a103b8c14489fe351206c0f732, type: 2}
-  m_sharedMaterial: {fileID: -2307730219457870205, guid: d4f947a103b8c14489fe351206c0f732, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
+  m_sharedMaterial: {fileID: 7362725948581316873, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2291,14 +2315,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8, g: 0.3, b: 0.3, a: 1}
+  m_Color: {r: 1, g: 0.4669811, b: 0.4669811, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e3051c537e8c6445ab19a074629f249b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2334,7 +2358,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 150, y: -125}
-  m_SizeDelta: {x: 200, y: 60}
+  m_SizeDelta: {x: 240, y: 77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1615998244
 GameObject:
@@ -2470,8 +2494,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
+  m_sharedMaterial: {fileID: 7362725948581316873, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2798,7 +2822,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 400}
+  m_SizeDelta: {x: 758.2, y: 387.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1980042152
 MonoBehaviour:
@@ -2813,14 +2837,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -9019689803946020522, guid: af3d6bd73619e45b2b072c33cf58b05d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2911,6 +2935,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2012545294}
     m_Modifications:
+    - target: {fileID: 2745142962491550274, guid: 60a3561664f514673b2486abcd737791, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
+    - target: {fileID: 2745142962491550274, guid: 60a3561664f514673b2486abcd737791, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7362725948581316873, guid: 6479283c01010e444a916c3cd4c381de, type: 2}
     - target: {fileID: 3074629070706777862, guid: 60a3561664f514673b2486abcd737791, type: 3}
       propertyPath: m_Name
       value: StartButton
