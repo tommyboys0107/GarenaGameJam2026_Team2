@@ -1,7 +1,7 @@
 編號,角色名稱,性別,角色描述,角色特長,選取台詞,SelectImageID,UnselectImageID,PortraitImageID,AudioID
-C01,維乃德·卡索,男,西西里裁縫店老闆，笑容可掬，從不親自動手,"[NARC,+15],[BYTE,-10]","In this business, trust is the only currency that never inflates.",C01_C,C01,C01_F,C01_Intro
-C02,洛乃佐·費拉,男,拿坡里港口的報關行負責人，什麼都能過海關,"[LOCK,+15],[NARC,-10]",I don't start the fire. I just know where the ashes land.,C02_C,C02,C02_F,C02_Intro
-C03,馬可·維塔利,男,威尼斯賭場的夜班經理，沒人記得他的長相,"[BYTE,+15],[LOCK,-10]","You won't remember my face, but you'll remember this deal.",C03_C,C03,C03_F,C03_Intro
-C04,伊莎貝拉·羅西,女,米蘭高級餐廳主廚，她的特餐只接受預約,"[NARC,+15],[LOCK,-10]",Every meal I serve comes with a price. Some just don't read the menu.,C04_C,C04,C04_F,C04_Intro
-C05,席維亞·柯里昂,女,羅馬古董拍賣行鑑定師，經手的東西從不問來歷,"[LOCK,+15],[BYTE,-10]","Patience, darling. The market always rewards those who wait.",C05_C,C05,C05_F,C05_Intro
-C06,瓦倫提娜·奈利,女,佛羅倫斯珠寶設計師，成品總比原料貴十倍,"[BYTE,+15],[NARC,-10]",Beautiful things are dangerous. That's what makes them valuable.,C06_C,C06,C06_F,C06_Intro
+C01,維乃德·卡索,男,西西里裁縫店老闆，笑容可掬，從不親自動手,"[NARC,+30],[BYTE,-20]","In this business, trust is the only currency that never inflates.",C01_C,C01,C01_F,C01_Intro
+C02,洛乃佐·費拉,男,拿坡里港口的報關行負責人，什麼都能過海關,"[LOCK,+35],[NARC,-20]",I don't start the fire. I just know where the ashes land.,C02_C,C02,C02_F,C02_Intro
+C03,馬可·維塔利,男,威尼斯賭場的夜班經理，沒人記得他的長相,"[BYTE,+30],[LOCK,-20]","You won't remember my face, but you'll remember this deal.",C03_C,C03,C03_F,C03_Intro
+C04,伊莎貝拉·羅西,女,米蘭高級餐廳主廚，她的特餐只接受預約,"[NARC,+30],[LOCK,-25]",Every meal I serve comes with a price. Some just don't read the menu.,C04_C,C04,C04_F,C04_Intro
+C05,席維亞·柯里昂,女,羅馬古董拍賣行鑑定師，經手的東西從不問來歷,"[LOCK,+30],[BYTE,-20]","Patience, darling. The market always rewards those who wait.",C05_C,C05,C05_F,C05_Intro
+C06,瓦倫提娜·奈利,女,佛羅倫斯珠寶設計師，成品總比原料貴十倍,"[BYTE,+35],[NARC,-20]",Beautiful things are dangerous. That's what makes them valuable.,C06_C,C06,C06_F,C06_Intro
