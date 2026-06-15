@@ -14,6 +14,8 @@ namespace Core
 
         public static void LoadTitle()
         {
+            // 回到標題時，切斷 Twitch 連線（玩家可能想換 ID）
+            DisconnectTwitch();
             SceneManager.LoadScene(TitleScene);
         }
 
@@ -43,6 +45,16 @@ namespace Core
 #else
             Application.Quit();
 #endif
+        }
+
+        /// <summary>
+        /// 找到場景中的 TwitchIRC 並斷開連線。
+        /// </summary>
+        private static void DisconnectTwitch()
+        {
+            var irc = Object.FindAnyObjectByType<Twitch.TwitchIRC>();
+            if (irc != null)
+                irc.Disconnect();
         }
     }
 }

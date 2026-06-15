@@ -4,15 +4,11 @@ namespace Twitch
 {
     /// <summary>
     /// Twitch 連線設定的 ScriptableObject。
-    /// 在 Project 視窗右鍵 → Create → Twitch → Config 來建立。
+    /// channelName 用 static 變數保存，跨場景不會遺失，關閉遊戲自動清除。
     /// </summary>
     [CreateAssetMenu(fileName = "TwitchConfig", menuName = "Twitch/Config")]
     public class TwitchConfig : ScriptableObject
     {
-        [Header("Twitch 頻道設定")]
-        [Tooltip("要監聽的 Twitch 頻道名稱（小寫）")]
-        public string channelName = "";
-
         [Header("認證設定（選填）")]
         [Tooltip("OAuth Token（若留空則使用匿名連線，僅能讀取聊天）")]
         public string oauthToken = "";
@@ -28,8 +24,18 @@ namespace Twitch
         public bool oneVotePerUser = true;
 
         /// <summary>
+        /// Runtime 頻道名稱。static 確保跨場景存活，關閉遊戲自動清零。
+        /// </summary>
+        public static string channelName = "";
+
+        /// <summary>
         /// 是否使用匿名連線（justinfan 模式，唯讀）
         /// </summary>
         public bool IsAnonymous => string.IsNullOrEmpty(oauthToken);
+
+        /// <summary>
+        /// 是否已設定頻道名稱
+        /// </summary>
+        public bool HasChannel => !string.IsNullOrWhiteSpace(channelName);
     }
 }

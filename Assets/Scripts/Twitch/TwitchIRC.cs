@@ -52,7 +52,14 @@ namespace Twitch
                 return;
             }
 
-            Connect();
+            if (!string.IsNullOrWhiteSpace(TwitchConfig.channelName))
+            {
+                Connect();
+            }
+            else
+            {
+                Debug.Log("[TwitchIRC] 頻道名稱為空，不自動連線。");
+            }
         }
 
         private void Update()
@@ -96,7 +103,7 @@ namespace Twitch
                 }
 
                 // 加入頻道
-                _writer.WriteLine("JOIN #" + config.channelName.ToLower());
+                _writer.WriteLine("JOIN #" + TwitchConfig.channelName.ToLower());
 
                 _isConnected = true;
                 _shouldRun = true;
@@ -105,7 +112,7 @@ namespace Twitch
                 _readThread = new Thread(ReadLoop) { IsBackground = true };
                 _readThread.Start();
 
-                Debug.Log($"[TwitchIRC] 已連接到頻道: {config.channelName}");
+                Debug.Log($"[TwitchIRC] 已連接到頻道: {TwitchConfig.channelName}");
                 OnConnected?.Invoke();
             }
             catch (Exception e)
@@ -219,7 +226,7 @@ namespace Twitch
 
             try
             {
-                _writer.WriteLine($"PRIVMSG #{config.channelName.ToLower()} :{message}");
+                _writer.WriteLine($"PRIVMSG #{TwitchConfig.channelName.ToLower()} :{message}");
             }
             catch (Exception e)
             {
